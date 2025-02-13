@@ -1,7 +1,11 @@
+import { useContext } from "react";
+import userContext from "../contexts/userContexts";
+
 function NamePage() {
+  const { user, setUser } = useContext(userContext);
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-hidden ">
-      <div className=" flex flex-col justify-center mt-20 gap-8">
+      <div className=" flex flex-col justify-center mt-16 gap-8">
         <span className="flex flex-col items-center">
           <img
             className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"
@@ -24,27 +28,34 @@ function NamePage() {
               Vamos saber um pouco sobre você.
             </p>{" "}
           </span>
-          <div className="flex justify-center"> 
-            <div> 
-                <input className=" mt-10 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-2xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain" type="text" placeholder="Nome"/>
+          <div className="flex justify-center">
+            <div>
+              <input
+              maxLength={16}
+                value={user}
+                onChange={(e) => setUser(e.target.value)}
+                className=" mt-10 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
+                type="text"
+                placeholder="Nome"
+              />
             </div>
           </div>
         </div>
       </div>
       <div className="flex flex-row relative top-64 lg:relative mt-10 items-center md:items-center gap-6">
-            <button
-              className="w-[170px] hidden md:block  md:w-[220px] h-[60px]
+        <button
+          className="w-[170px] hidden md:block  md:w-[220px] h-[60px]
                     border border-yellowMain text-yel mb-12 text-2xl rounded-lg text-yellowMain hover:scale-105 transition-all font-semibold"
-            >
-              Voltar
-            </button>
-            <button
-              className="w-[300px] md:visible-false md:w-[220px] h-[60px]
+        >
+          Voltar
+        </button>
+        <button
+          className="w-[300px] md:visible-false md:w-[220px] h-[60px]
                     bg-yellowMain mb-12 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"
-            >
-              Continuar
-            </button>
-          </div>
+        >
+          Continuar
+        </button>
+      </div>
     </div>
   );
 }

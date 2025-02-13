@@ -1,15 +1,20 @@
-
-import './App.css'
-import Home from './pages/Home'
-import NamePage from './pages/NamePage'
+import { useState } from "react";
+import "./App.css";
+import UserContext from "./contexts/userContexts.jsx";
+import GoalPage from "./pages/GoalPage.jsx";
+import NamePage from "./pages/NamePage.jsx";
 
 function App() {
+  const [user, setUser] = useState("");
 
   return (
     <>
-      <NamePage />
+      <UserContext.Provider value={{ user, setUser }}> 
+        <NamePage />
+        <GoalPage />
+      </UserContext.Provider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
