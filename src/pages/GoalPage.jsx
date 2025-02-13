@@ -23,7 +23,7 @@ function GoalPage() {
   };
 
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-visible">
       <div className="flex flex-col justify-center mt-16 gap-8">
         <span className="flex flex-col items-center">
           <img
@@ -53,7 +53,7 @@ function GoalPage() {
                 className={`text-center w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl text-whiteMain 
                 ${
                   selectedButtons.includes(button.id)
-                    ? "border-yellowMain text-yellowMain"
+                    ? "border-yellowMain text-yellowMain text-4x1"
                     : ""
                 }`}
               >
