@@ -1,7 +1,7 @@
 function Home() {
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto ">
-      <div className=" flex flex-col justify-center mt-12 gap-8">
+      <div className=" flex flex-col justify-center mt-10 gap-8">
         <span>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-darker text-whiteMain font-semibold text-center">
             

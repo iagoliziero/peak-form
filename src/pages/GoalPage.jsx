@@ -15,16 +15,20 @@ function GoalPage() {
   ];
 
   const toggleSelection = (id) => {
-    setSelectedButton((prevSelected) =>
-      prevSelected.includes(id)
-        ? prevSelected.filter((btnId) => btnId !== id)
-        : [...prevSelected, id]
-    );
-  };
+    setSelectedButton((prevSelected) => {
+        if(prevSelected.includes(id)) {
+            return prevSelected.filter((btnId) => btnId !== id)
+        } else if(prevSelected.length < 2) {
+           return [...prevSelected, id]
+        }
+        return prevSelected
+    })
+  }
+
 
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto">
-      <div className="flex flex-col justify-center mt-16 gap-8">
+      <div className="flex flex-col justify-center mt-10 gap-8">
         <span className="flex flex-col items-center">
           <img
             className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"
@@ -63,7 +67,7 @@ function GoalPage() {
           </div>
         </div>
       </div>
-      <div className="mb-12 flex flex-row lg:relative mt-10 items-center md:items-center gap-6">
+      <div className="mb-10 flex flex-row lg:relative mt-10 items-center md:items-center gap-6">
         <button className="w-[170px] hidden md:block md:w-[220px] h-[60px] border border-yellowMain text-2xl rounded-lg text-yellowMain hover:scale-105 transition-all font-semibold">
           Voltar
         </button>
