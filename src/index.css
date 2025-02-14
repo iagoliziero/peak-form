@@ -3,55 +3,55 @@
 @tailwind utilities;
 
 .react-datepicker {
-    background-color: #262626 !important; /* Fundo azul escuro */
-    border: 1px solid #FFCB1F !important; /* Borda verde */
+    background-color: #262626 !important; 
+    border: 1px solid #FFCB1F !important; 
     color: white !important;
   }
   
-  /* 🔹 Cabeçalho do calendário */
+  
   .react-datepicker__header {
-    background-color: #FFCB1F !important; /* Fundo azul escuro mais claro */
-    border-bottom: 1px solid #FFCB1F !important; /* Linha verde abaixo */
+    background-color: #FFCB1F !important; 
+    border-bottom: 1px solid #FFCB1F !important; 
   }
   
-  /* 🔹 Texto do cabeçalho (mês e ano) */
+
   .react-datepicker__current-month {
-    color: #FFCB1F !important; /* Verde */
+    color: #FFCB1F !important; 
     font-weight: bold;
   }
   
-  /* 🔹 Botões de navegação (setas) */
+
   .react-datepicker__navigation {
     filter: invert(1);
-    color: #262626; /* Deixa as setas brancas */
+    color: #262626; 
   }
   
-  /* 🔹 Dias normais */
+
   .react-datepicker__day {
     color: white !important;
   }
   
-  /* 🔹 Dias selecionados */
+
   .react-datepicker__day--selected {
-    background-color: #FFCB1F !important; /* Verde */
+    background-color: #FFCB1F !important; 
     color: #262626 !important;
   }
   
-  /* 🔹 Dias ao passar o mouse */
+
   .react-datepicker__day:hover {
-    background-color: #FFCB1F !important; /* Verde claro */
+    background-color: #FFCB1F !important; 
     color: #262626 !important;
   }
 .react-datepicker__year-dropdown {
     background-color: #262626;
 
 }
-  /* 🔹 Dropdown do mês e ano */
+
 
   .react-datepicker__year-read-view--selected-year {
     color: #262626 !important;
   }
   .react-datepicker__current-month {
-    color: #262626 !important; /* Verde */
+    color: #262626 !important; 
     font-weight: bold;
   }
