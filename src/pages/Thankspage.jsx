@@ -12,11 +12,11 @@ function Thankspage() {
       </div>
       <div>
         <div className="mt-5 flex flex-col gap-5">
-          <h1 className="text-3xl leading-relaxed md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
+          <h1 className="text-4xl leading-relaxed md:text-5xl lg:text-5xl text-whiteMain text-center font-semibold">
             {" "}
             Ótimo! Você deu um grande <br /> passo na sua jornada.
           </h1>
-          <span className="text-center md:text-2xl gap-5   text-whiteMain">
+          <span className="text-center text-2xl md:text-2xl gap-5   text-whiteMain">
             {" "}
             <p>
               {" "}
@@ -24,7 +24,7 @@ function Thankspage() {
               Registre seus exercícios para garantir que está <br /> desafiando
               seu corpo da maneira certa.
             </p>{" "}
-            <p className="text-center  md:text-2xl text-whiteMain mt-10 mb-10">
+            <p className="text-center  text-2xl md:text-2xl text-whiteMain mt-10 mb-10">
               {" "}
               Vamos aos detalhes sobre a sua frequência de treino.
             </p>{" "}
