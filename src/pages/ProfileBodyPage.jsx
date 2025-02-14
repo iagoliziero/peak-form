@@ -23,13 +23,13 @@ function ProfileBodyPage() {
                 className=" mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
                 type="text"
                 placeholder="Sua altura"
-                
               />
-              <div className="left-32 md:left-36 bottom-11 relative text-center text-2xl  text-whiteMain"> cm</div>
+              <div className="left-32 md:left-36 bottom-11 relative text-center text-2xl  text-whiteMain">
+                {" "}
+                cm
+              </div>
             </div>
-            <div>
-                
-            </div>
+            <div></div>
           </div>
         </div>
 
@@ -38,8 +38,11 @@ function ProfileBodyPage() {
             {" "}
             Qual é o seu peso?
           </h1>
-          <span className="mt-2 text-center text-xl  text-whiteMain"> 
-            <p>Não tem problema inserir uma estimativa. <br />você pode atualizar posteriormente.</p>
+          <span className="mt-2 text-center text-xl  text-whiteMain">
+            <p>
+              Não tem problema inserir uma estimativa. <br />
+              você pode atualizar posteriormente.
+            </p>
           </span>
           <div className="flex justify-center">
             <div>
@@ -49,11 +52,12 @@ function ProfileBodyPage() {
                 type="text"
                 placeholder="Peso atual"
               />
-              <div className="left-32 md:left-36 bottom-11 relative text-center text-2xl  text-whiteMain"> kg</div>
+              <div className="left-32 md:left-36 bottom-11 relative text-center text-2xl  text-whiteMain">
+                {" "}
+                kg
+              </div>
             </div>
-            <div>
-                
-            </div>
+            <div></div>
           </div>
         </div>
 
@@ -70,14 +74,14 @@ function ProfileBodyPage() {
                 type="text"
                 placeholder="Meta de peso"
               />
-              <div className="left-32 md:left-36 bottom-11 relative text-center text-2xl  text-whiteMain"> kg</div>
+              <div className="left-32 md:left-36 bottom-11 relative text-center text-2xl  text-whiteMain">
+                {" "}
+                kg
+              </div>
             </div>
-            <div>
-                
-            </div>
+            <div></div>
           </div>
         </div>
-
       </div>
       <div className="flex flex-row  lg:relative items-center md:items-center gap-6 ">
         <button

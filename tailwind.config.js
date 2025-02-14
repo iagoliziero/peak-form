@@ -5,12 +5,16 @@ export default {
     screens: {
       'md': '640px',
       // => @media (min-width: 640px) { ... }
+      'mil': '960px',
 
       'lg': '1024px',
       // => @media (min-width: 1024px) { ... }
 
-      'xl': '1280px',
-      // => @media (min-width: 1280px) { ... }
+      'xl': '1281px',
+      // => @media (min-width: 1281px) { ... }
+      'xxl': '1470px',
+       // => @media (min-width: 1281px) { ... }
+       '3xl': '1820px'
     },
     extend: {
       colors: {
