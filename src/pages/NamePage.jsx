@@ -1,11 +1,18 @@
 import { useContext } from "react";
 import userContext from "../contexts/userContexts";
+import { useForm } from "react-hook-form";
 
 function NamePage() {
+  const {register, handleSubmit, formState:  {errors}} = useForm()
   const { user, setUser } = useContext(userContext);
+
+  const onSubmit = (data) => {
+    console.log(data.user)
+  }
+
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto ">
-      <div className=" flex flex-col justify-center mt-16 gap-8">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center overflow-auto ">
+      <div className=" flex flex-col justify-center mt-16 lg:mt-0 gap-8">
         <span className="flex flex-col items-center">
           <img
             className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"
@@ -28,21 +35,25 @@ function NamePage() {
               Vamos saber um pouco sobre você.
             </p>{" "}
           </span>
-          <div className="flex justify-center">
+          <div className="flex flex-col justify-center">
             <div>
               <input
-              maxLength={10}
+              {...register('user', {required: true})}
+                maxLength={10}
                 value={user}
                 onChange={(e) => setUser(e.target.value)}
-                className=" mt-10 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
+                className={ `mt-10 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${errors?.user ? "border-lightRed" : "focus:border-yellowMain" }`  
+                
+                }
                 type="text"
                 placeholder="Nome"
               />
             </div>
+            {errors?.user && <p className="text-lightRed mx-4 mt-1"> Digite um nome válido. </p>}
           </div>
         </div>
       </div>
-      <div className="flex flex-row relative top-64 lg:relative mt-10 items-center md:items-center gap-6 mb-10">
+      <div className="flex flex-row relative top-64 lg:top-40 lg:relative mt-6 items-center md:items-center gap-6 ">
         <button
           className="w-[170px] hidden md:block  md:w-[220px] h-[60px]
                     border border-yellowMain text-yel mb-12 text-2xl rounded-lg text-yellowMain hover:scale-105 transition-all font-semibold"
@@ -50,9 +61,10 @@ function NamePage() {
           Voltar
         </button>
         <button
+        onClick={()=> handleSubmit(onSubmit)()}
           className="w-[300px] md:visible-false md:w-[220px] h-[60px]
-                    bg-yellowMain mb-12 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"
-        >
+        bg-yellowMain mb-12 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"
+>
           Continuar
         </button>
       </div>

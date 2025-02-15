@@ -24,7 +24,8 @@ export default {
         'whiteMain': '#f3f3f3',
         'red': '#f03d3d',
         'orange': '#ff9c1f',
-        'gray': "#8a8a8a"
+        'gray': "#8a8a8a",
+        'lightRed': "#ff6961"
       },
       fontFamily: {
         sans: ['Darker Grotesque', 'sans-serif'], // Substitui a fonte padrão

@@ -43,7 +43,7 @@ import { Menu } from "lucide-react";
             </li>
               <button
                 className="block p-5 text-xl md:text-2xl  " >
-                Configuração
+                Perfil
               </button>
             <li>
               <button

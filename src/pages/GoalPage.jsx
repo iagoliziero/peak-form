@@ -27,7 +27,7 @@ function GoalPage() {
 
 
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto lg:justify-center">
       <div className="flex flex-col justify-center mt-10 gap-8">
         <span className="flex flex-col items-center">
           <img
@@ -52,6 +52,7 @@ function GoalPage() {
           <div className="flex flex-col items-center mt-8 gap-8">
             {buttons.map((button) => (
               <button
+        
                 key={button.id}
                 onClick={() => toggleSelection(button.id)}
                 className={`text-center w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl text-whiteMain 
@@ -67,11 +68,13 @@ function GoalPage() {
           </div>
         </div>
       </div>
-      <div className="mb-10 flex flex-row lg:relative mt-10 items-center md:items-center gap-6">
+      <div className="mb-10 flex flex-row lg:relative mt-6  items-center md:items-center gap-6">
         <button className="w-[170px] hidden md:block md:w-[220px] h-[60px] border border-yellowMain text-2xl rounded-lg text-yellowMain hover:scale-105 transition-all font-semibold">
           Voltar
         </button>
-        <button className="w-[300px] md:visible-false md:w-[220px] h-[60px] bg-yellowMain text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold">
+        <button 
+        
+        className="w-[300px] md:visible-false md:w-[220px] h-[60px] bg-yellowMain text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold">
           Continuar
         </button>
       </div>

@@ -25,7 +25,7 @@ function MainPage({ exercise }) {
         <DropdownMenu />
       </div>
       <nav className="hidden lg:block  ">
-        <ul className="flex gap-8 text-center text-2xl xl:text-3xl text-whiteMain ">
+        <ul className="flex gap-8 text-center text-2xl xl:text-2xl text-whiteMain ">
           <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
             {" "}
             Seu treino{" "}
@@ -41,7 +41,7 @@ function MainPage({ exercise }) {
           <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
             {" "}
             {" "}
-            Configuração
+            Perfil
           </li>
           <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
             {" "}
@@ -53,7 +53,7 @@ function MainPage({ exercise }) {
       <div className="w-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5">
         <div className="mt-10 flex justify-center ">
           <button
-            className="w-[300px] md:w-[260px] h-[60px] bg-yellowMain mb-12 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"
+            className="w-[300px] md:w-[360px] h-[60px] bg-yellowMain mb-8 mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"
           >
             Criar exercício
           </button>

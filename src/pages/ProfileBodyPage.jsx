@@ -1,6 +1,19 @@
+import { data } from "autoprefixer";
+import { useForm } from "react-hook-form";
+
 function ProfileBodyPage() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto ">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto lg:justify-center">
       <div className=" flex flex-col justify-center mt-10 gap-8">
         <span className="flex flex-col items-center">
           <img
@@ -19,17 +32,22 @@ function ProfileBodyPage() {
           <div className="flex justify-center">
             <div>
               <input
+                {...register("height", { required: true })}
                 maxLength={3}
-                className=" mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
-                type="text"
-                placeholder="Sua altura"
+                className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+                  errors?.height ? "border-lightRed" : "focus:border-yellowMain"
+                }`}
+                type="number"
+                placeholder="Sua altura "
               />
-              <div className="left-32 md:left-36 bottom-11 relative text-center text-2xl  text-whiteMain">
-                {" "}
-                cm
-              </div>
+              {errors?.height && (
+                <p className="text-lightRed mx-4 mt-1">
+                  {" "}
+                  A altura é obrigatório.{" "}
+                </p>
+              )}
             </div>
-            <div></div>
+            
           </div>
         </div>
 
@@ -47,17 +65,21 @@ function ProfileBodyPage() {
           <div className="flex justify-center">
             <div>
               <input
+                {...register("weight", { required: true })}
                 maxLength={3}
-                className=" mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
-                type="text"
+                className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
+                  errors?.weight ? "border-lightRed" : "focus:border-yellowMain"
+                }`}
+                type="number"
                 placeholder="Peso atual"
               />
-              <div className="left-32 md:left-36 bottom-11 relative text-center text-2xl  text-whiteMain">
-                {" "}
-                kg
-              </div>
+              {errors?.weight && (
+                <p className="text-lightRed mx-4 mt-1">
+                  {" "}
+                  O peso é obrigatório.{" "}
+                </p>
+              )}
             </div>
-            <div></div>
           </div>
         </div>
 
@@ -69,17 +91,21 @@ function ProfileBodyPage() {
           <div className="flex justify-center">
             <div>
               <input
+                {...register("goalWeight", { required: true })}
                 maxLength={3}
-                className=" mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
-                type="text"
+                className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
+                  errors?.weight ? "border-lightRed" : "focus:border-yellowMain"
+                }`}
+                type="number"
                 placeholder="Meta de peso"
               />
-              <div className="left-32 md:left-36 bottom-11 relative text-center text-2xl  text-whiteMain">
-                {" "}
-                kg
-              </div>
+              {errors?.goalWeight && (
+                <p className="text-lightRed mx-4 mt-1">
+                  {" "}
+                  A meta é obrigatória.{" "}
+                </p>
+              )}
             </div>
-            <div></div>
           </div>
         </div>
       </div>
@@ -91,6 +117,7 @@ function ProfileBodyPage() {
           Voltar
         </button>
         <button
+          onClick={() => handleSubmit(onSubmit)()}
           className="w-[300px] md:visible-false md:w-[220px] h-[60px]
                         bg-yellowMain mb-12 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"
         >
