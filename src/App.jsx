@@ -61,12 +61,12 @@ function App() {
   return (
     <>
       <UserContext.Provider value={{ user, setUser }}>
-           <Home /> 
+           {/* <Home /> 
            <NamePage /> 
           <GoalPage />  
            <ActivityPage /> 
           <ProfileBodyPage /> 
-          <MainPage exercise={exercise} />   
+          <MainPage exercise={exercise} />    */}
          <LoginPage />
       </UserContext.Provider>
     </>

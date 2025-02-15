@@ -1,8 +1,23 @@
+import { Eye, EyeClosed } from "lucide-react";
 import { stringify } from "postcss";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import validator from 'validator'
 
 function LoginPage() {
+
+
+  const [isShowPassword, setIsShowPassword] = useState(false)
+  const [isShowPasswordConfirmation, setIsShowPasswordConfirmation] = useState(false)
+
+  const handlePassword = () => {
+    setIsShowPassword(!isShowPassword)
+  }
+
+  const handlePasswordConfirmation = () => {
+    setIsShowPasswordConfirmation(!isShowPasswordConfirmation)
+  }
+
   const {
     register,
     handleSubmit,
@@ -60,14 +75,17 @@ function LoginPage() {
               <input
                 {...register("password", { required: true, minLength: 7 })}
 
-                className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+                className={`mt-5 w-[320px] relative left-3 md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                   errors?.password
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
                 }`}
-                type="password"
+                type={isShowPassword ? "password" : "text"}
                 placeholder="Criar uma senha "
               />
+              <button 
+              onClick={handlePassword}
+              className="text-whiteMain relative  m-0 right-[50px] top-1 bottom-9 "> {isShowPassword && <EyeClosed />} {!isShowPassword && <Eye />}  </button>
               {errors?.password?.type === "required" && (
                 <p className="text-lightRed mx-4 mt-1">
                   {" "}
@@ -83,14 +101,19 @@ function LoginPage() {
             <div>
               <input
                 {...register("passwordConfirmation", { required: true, validate: (value) => value ===watchPassword })}
-                className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
-                  errors?.confirmPassword
+                className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain relative left-3 focus:outline-none focus:ring-3  ${
+                  errors?.passwordConfirmation
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
                 }`}
-                type="password"
+                type={isShowPasswordConfirmation ? "password" : "text"}
                 placeholder="Confirmar senha "
+                
               />
+              <button 
+              onClick={handlePasswordConfirmation}
+              className="text-whiteMain relative  m-0 right-[50px] top-1 bottom-9 "> {isShowPasswordConfirmation && <EyeClosed />} {!isShowPasswordConfirmation && <Eye />}  </button>
+              
               {errors?.passwordConfirmation?.type === "required" && (
                 <p className="text-lightRed mx-4 mt-1">
                   {" "}
