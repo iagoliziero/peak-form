@@ -8,6 +8,12 @@ import ActivityPage from "./pages/ActivityPage.jsx"
 import ProfileBodyPage from "./pages/ProfileBodyPage.jsx";
 import MainPage from "./pages/MainPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import Login from "./components/Login.jsx";
+import Thankspage from "./pages/ThanksPage.jsx";
+import InfoUserPage from "./pages/InfoUserPage.jsx";
+import SignInPage from "./pages/SignInPage.jsx";
+import ProfilePage from "./pages/ProfilePage.jsx";
 
 
 
@@ -58,17 +64,26 @@ function App() {
     }
   ]);
 
+  const clientId = "274780333869-3upraqeb95j68muct6t8t5nma280jqv2.apps.googleusercontent.com";
+
   return (
     <>
+    <GoogleOAuthProvider clientId={clientId}>
       <UserContext.Provider value={{ user, setUser }}>
-           {/* <Home /> 
-           <NamePage /> 
-          <GoalPage />  
+          <ProfilePage />  
+        {/* <SignInPage /> */}
+          {/* <Home />   */}
+            {/* <NamePage /> 
+           <Thankspage /> *
+           <InfoUserPage />
+           <GoalPage />  
            <ActivityPage /> 
           <ProfileBodyPage /> 
-          <MainPage exercise={exercise} />    */}
-         <LoginPage />
-      </UserContext.Provider>
+          <LoginPage />
+          */}
+         {/* <MainPage exercise={exercise} />        */}
+        </UserContext.Provider>
+      </GoogleOAuthProvider>
     </>
   );
 }

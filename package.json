@@ -10,8 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-oauth/google": "^0.12.1",
+    "axios": "^1.7.9",
+    "jwt-decode": "^4.0.0",
     "lucide-react": "^0.475.0",
     "react": "^18.3.1",
+    "react-datepicker": "^8.0.0",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.54.2",
     "validator": "^13.12.0"

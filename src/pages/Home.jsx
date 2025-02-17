@@ -1,13 +1,20 @@
+import { CircleUserRound } from "lucide-react";
+
 function Home() {
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center overflow-auto ">
-      <div className=" flex flex-col justify-center mt-10 gap-8">
-        <span>
+      <div className=" flex flex-col justify-center md:mt-0 gap-8">
+      <div>
+          <button className="w-10 h-10 top-[80px] md:left-[350px] lg:left-[550px] rounded-full items-center bg-yellowMain hover:bg-orange flex justify-center relative left-52 "> <CircleUserRound size={30} /> </button>
+          </div>
+        <span className="flex items-center justify-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-darker text-whiteMain font-semibold text-center">
             
             Bem vindo ao
           </h1>
+          
         </span>
+        
         <span className="flex flex-col items-center">
           <img className="w-[160px] md:w-[190px] lg:w-[220px]" src="src/public/logo.png" alt="logo" />
         </span>

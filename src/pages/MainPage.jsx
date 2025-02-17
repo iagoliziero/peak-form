@@ -32,6 +32,10 @@ function MainPage({ exercise }) {
           </li>
           <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
             {" "}
+            Criar exercício{" "}
+          </li>
+          <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
+            {" "}
             Tempo de Pausa{" "}
           </li>
           <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
@@ -50,7 +54,7 @@ function MainPage({ exercise }) {
         </ul>
       </nav>
 
-      <div className="w-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5">
+      <div className="w-full h-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5">
         <div className="mt-10 flex justify-center ">
           <button
             className="w-[300px] md:w-[360px] h-[60px] bg-yellowMain mb-8 mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"

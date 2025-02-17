@@ -1,22 +1,17 @@
 import { Eye, EyeClosed } from "lucide-react";
-import { stringify } from "postcss";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import validator from 'validator'
 import Login from "../components/Login";
 
-function LoginPage() {
+function SignIn() {
 
 
-  const [isShowPassword, setIsShowPassword] = useState(false)
-  const [isShowPasswordConfirmation, setIsShowPasswordConfirmation] = useState(false)
+  const [isShowPasswordSignIn, setIsShowPasswordSignIn] = useState(false)
+  useState(false)
 
-  const handlePassword = () => {
-    setIsShowPassword(!isShowPassword)
-  }
-
-  const handlePasswordConfirmation = () => {
-    setIsShowPasswordConfirmation(!isShowPasswordConfirmation)
+  const handlePasswordSignIn = () => {
+    setIsShowPasswordSignIn(!isShowPasswordSignIn)
   }
 
   const {
@@ -26,7 +21,6 @@ function LoginPage() {
     watch,
   } = useForm();
 
-  const watchPassword = watch('password')
 
   const onSubmit = (data) => {
     alert(JSON.stringify(data))
@@ -46,7 +40,7 @@ function LoginPage() {
         <div className="mt-5 flex flex-col gap-3">
           <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
             {" "}
-            Quase lá! Crie a sua conta
+            Entrar em sua conta
           </h1>
           <div className="flex flex-col items-center mt-10">
             <div>
@@ -74,62 +68,30 @@ function LoginPage() {
             </div>
             <div>
               <input
-                {...register("password", { required: true, minLength: 7 })}
+                {...register("passwordSignIn", { required: true, minLength: 7 })}
 
                 className={`mt-5 w-[320px] relative left-3 md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
-                  errors?.password
+                  errors?.passwordSignIn
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
                 }`}
-                type={isShowPassword ? "password" : "text"}
+                type={isShowPasswordSignIn ? "password" : "text"}
                 placeholder="Criar uma senha "
               />
               <button 
-              onClick={handlePassword}
-              className="text-whiteMain relative  m-0 right-[50px] top-1 bottom-9 "> {isShowPassword && <EyeClosed />} {!isShowPassword && <Eye />}  </button>
-              {errors?.password?.type === "required" && (
+              onClick={handlePasswordSignIn}
+              className="text-whiteMain relative  m-0 right-[50px] top-1 bottom-9 "> {isShowPasswordSignIn && <EyeClosed />} {!isShowPasswordSignIn && <Eye />}  </button>
+              {errors?.passwordSignIn?.type === "required" && (
                 <p className="text-lightRed mx-4 mt-1">
                   {" "}
                   A senha é obrigatória.{" "}
                 </p> )}
-                {errors?.password?.type === "minLength" && (
+                {errors?.passwordSignIn?.type === "minLength" && (
                 <p className="text-lightRed mx-4 mt-1">
                   {" "}
                   A senha deve ter pelo menos 7 caracteres.{" "}
                 </p> )}
                 
-            </div>
-            <div>
-              <input
-                {...register("passwordConfirmation", { required: true, validate: (value) => value ===watchPassword })}
-                className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain relative left-3 focus:outline-none focus:ring-3  ${
-                  errors?.passwordConfirmation
-                    ? "border-lightRed"
-                    : "focus:border-yellowMain"
-                }`}
-                type={isShowPasswordConfirmation ? "password" : "text"}
-                placeholder="Confirmar senha "
-                
-              />
-              <button 
-              onClick={handlePasswordConfirmation}
-              className="text-whiteMain relative  m-0 right-[50px] top-1 bottom-9 "> {isShowPasswordConfirmation && <EyeClosed />} {!isShowPasswordConfirmation && <Eye />}  </button>
-              
-              {errors?.passwordConfirmation?.type === "required" && (
-                <p className="text-lightRed mx-4 mt-1">
-                  {" "}
-                  A confirmação é obrigatória.{" "}
-                </p>
-              )}
-              {errors?.passwordConfirmation?.type === "validate" && (
-                <p className="text-lightRed mx-4 mt-1">
-                  {" "}
-                  As senhas não se coincidem.{" "}
-                </p>
-              )}
-            </div>
-            <div className="flex justify-start mt-3">
-                <p className="text-center text-xl  text-whiteMain">Deve ter pelo menos 7 caracteres, <br className="md:hidden" /> sem espaço. </p>
             </div>
           </div>
           <div className="mt-10 gap-3 flex flex-col items-center ">
@@ -146,8 +108,8 @@ function LoginPage() {
                 <Login />
             </div>
             <div className="flex gap-1 mt-2 text-xl font-darker text-whiteMain text-center">
-            <h2> Já tenho uma conta!</h2>
-            <button className="text-yellowMain hover:text-orange"> Entrar.</button>
+            <h2> Naõ tenho uma conta!</h2>
+            <button className="text-yellowMain hover:text-orange"> Criar agora.</button>
             </div>
           </div>
         </div>
@@ -156,4 +118,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default SignIn;

@@ -1,3 +1,57 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.react-datepicker {
+    background-color: #262626 !important; 
+    border: 1px solid #FFCB1F !important; 
+    color: white !important;
+  }
+  
+  
+  .react-datepicker__header {
+    background-color: #FFCB1F !important; 
+    border-bottom: 1px solid #FFCB1F !important; 
+  }
+  
+
+  .react-datepicker__current-month {
+    color: #FFCB1F !important; 
+    font-weight: bold;
+  }
+  
+
+  .react-datepicker__navigation {
+    filter: invert(1);
+    color: #262626; 
+  }
+  
+
+  .react-datepicker__day {
+    color: white !important;
+  }
+  
+
+  .react-datepicker__day--selected {
+    background-color: #FFCB1F !important; 
+    color: #262626 !important;
+  }
+  
+
+  .react-datepicker__day:hover {
+    background-color: #FFCB1F !important; 
+    color: #262626 !important;
+  }
+.react-datepicker__year-dropdown {
+    background-color: #262626;
+
+}
+
+
+  .react-datepicker__year-read-view--selected-year {
+    color: #262626 !important;
+  }
+  .react-datepicker__current-month {
+    color: #262626 !important; 
+    font-weight: bold;
+  }
