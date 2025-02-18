@@ -14,63 +14,22 @@ import Thankspage from "./pages/ThanksPage.jsx";
 import InfoUserPage from "./pages/InfoUserPage.jsx";
 import SignInPage from "./pages/SignInPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
-
-
+import ExerciseProvider from "./contexts/ExerciseContext.jsx";
+import BasalPage from "./pages/BasalPage.jsx";
 
 
 function App() {
-  const [user, setUser] = useState("");
+  const [nameUser, setNameUser] = useState("");
 
-  const [exercise, setExercise] = useState([
-    {
-      id: 1,
-      title: "Supino Reto",
-      qtdSeries: "4 séries",
-      reps: "10-10 Reps",
-      tecAvan: "Drop-set",
-      intensidade: "pesado",
-    },
-    {
-      id: 2,
-      title: "Agachamento",
-      qtdSeries: "4 séries",
-      reps: "12-12 Reps",
-      tecAvan: "Pausa Isométrica",
-      intensidade: "pesado",
-    },
-    {
-      id: 3,
-      title: "Puxada",
-      qtdSeries: "4 séries",
-      reps: "10-10 Reps",
-      tecAvan: "Superset",
-      intensidade: "moderado",
-    },
-    {
-      id: 4,
-      title: "Leg Press",
-      qtdSeries: "4 séries",
-      reps: "12-12 Reps",
-      tecAvan: "Pausa Descanso",
-      intensidade: "pesado",
-    },
-    {
-      id: 5,
-      title: "Abdutora",
-      qtdSeries: "4 séries",
-      reps: "15-15 Reps",
-      tecAvan: "Drop-set",
-      intensidade: "leve",
-    }
-  ]);
-
+  
   const clientId = "274780333869-3upraqeb95j68muct6t8t5nma280jqv2.apps.googleusercontent.com";
 
   return (
     <>
+    <ExerciseProvider> 
     <GoogleOAuthProvider clientId={clientId}>
-      <UserContext.Provider value={{ user, setUser }}>
-          <ProfilePage />  
+      <UserContext.Provider value={{ nameUser, setNameUser }}>
+          {/* <ProfilePage />   */}
         {/* <SignInPage /> */}
           {/* <Home />   */}
             {/* <NamePage /> 
@@ -81,9 +40,12 @@ function App() {
           <ProfileBodyPage /> 
           <LoginPage />
           */}
-         {/* <MainPage exercise={exercise} />        */}
+          {/* <MainPage />         */}
+          <BasalPage />
+    
         </UserContext.Provider>
       </GoogleOAuthProvider>
+      </ExerciseProvider>
     </>
   );
 }

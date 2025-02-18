@@ -4,10 +4,10 @@ import { useForm } from "react-hook-form";
 
 function NamePage() {
   const {register, handleSubmit, formState:  {errors}} = useForm()
-  const { user, setUser } = useContext(userContext);
+  const { nameUser, setNameUser } = useContext(userContext);
 
   const onSubmit = (data) => {
-    console.log(data.user)
+    console.log(data.nameUser)
   }
 
   return (
@@ -38,18 +38,18 @@ function NamePage() {
           <div className="flex flex-col justify-center">
             <div>
               <input
-              {...register('user', {required: true})}
+              {...register('nameUser', {required: true})}
                 maxLength={10}
-                value={user}
-                onChange={(e) => setUser(e.target.value)}
-                className={ `mt-10 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${errors?.user ? "border-lightRed" : "focus:border-yellowMain" }`  
+                value={nameUser}
+                onChange={(e) => setNameUser(e.target.value)}
+                className={ `mt-10 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${errors?.nameUser ? "border-lightRed" : "focus:border-yellowMain" }`  
                 
                 }
                 type="text"
                 placeholder="Nome"
               />
             </div>
-            {errors?.user && <p className="text-lightRed mx-4 mt-1"> Digite um nome válido. </p>}
+            {errors?.nameUser && <p className="text-lightRed mx-4 mt-1"> Digite um nome válido. </p>}
           </div>
         </div>
       </div>

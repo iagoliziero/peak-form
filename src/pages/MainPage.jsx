@@ -1,7 +1,11 @@
 import { Info, Pencil, Timer, Trash2 } from "lucide-react";
 import DropdownMenu from "../components/DropDownMenu";
+import { useContext } from "react";
+import { ExerciseContext } from "../contexts/ExerciseContext";
 
-function MainPage({ exercise }) {
+function MainPage() {
+
+  const {exercise} = useContext(ExerciseContext) // Obtém os exercícios globalmente
 
   const handleWheel = (event) => {
     if (event.deltaY === 0) {
@@ -21,8 +25,11 @@ function MainPage({ exercise }) {
             src="src/public/logo.png"
             alt="logo"
           />
+          <span className="relative left-28 md:left-72">
+          <DropdownMenu />
+          </span>
         </span>
-        <DropdownMenu />
+       
       </div>
       <nav className="hidden lg:block  ">
         <ul className="flex gap-8 text-center text-2xl xl:text-2xl text-whiteMain ">
@@ -43,7 +50,6 @@ function MainPage({ exercise }) {
             TMB{" "}
           </li>
           <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
-            {" "}
             {" "}
             Perfil
           </li>

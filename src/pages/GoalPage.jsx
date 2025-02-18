@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import userContext from "../contexts/userContexts";
 
 function GoalPage() {
-  const { user } = useContext(userContext);
+  const { nameUser } = useContext(userContext);
 
   const [selectedButtons, setSelectedButton] = useState([]);
 
@@ -40,7 +40,7 @@ function GoalPage() {
       <div>
         <div className="mt-5 flex flex-col gap-5">
           <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
-            Obrigado, {user} Agora, vamos <br /> falar sobre suas metas.
+            Obrigado, {nameUser} Agora, vamos <br /> falar sobre suas metas.
           </h1>
           <span className="text-center text-xl text-whiteMain">
             <p>
