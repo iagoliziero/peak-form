@@ -5,7 +5,7 @@ function DropdownMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="absolute right-2 md:right-[80px] lg:right-[150px] xl:right-[300px] lg:hidden">
+    <div className="absolute right-2 md:right-[80px] lg:right-[150px] xl:right-[300px] lg:hidden z-50">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center px-4 py-2 bg-transparent rounded-md"
