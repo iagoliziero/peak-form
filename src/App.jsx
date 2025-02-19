@@ -16,6 +16,9 @@ import SignInPage from "./pages/SignInPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import ExerciseProvider from "./contexts/ExerciseContext.jsx";
 import BasalPage from "./pages/BasalPage.jsx";
+import AboutUs from "./pages/AbotUs.jsx";
+import TimerPage from "./pages/TimerPage.jsx";
+import CreateExercisePage from "./pages/CreateExercisePage.jsx";
 
 
 function App() {
@@ -29,7 +32,7 @@ function App() {
     <ExerciseProvider> 
     <GoogleOAuthProvider clientId={clientId}>
       <UserContext.Provider value={{ nameUser, setNameUser }}>
-          {/* <ProfilePage />   */}
+           
         {/* <SignInPage /> */}
           {/* <Home />   */}
             {/* <NamePage /> 
@@ -41,8 +44,11 @@ function App() {
           <LoginPage />
           */}
           {/* <MainPage />         */}
-          <BasalPage />
-    
+          {/* <BasalPage /> */}
+           {/* <AboutUs />  */}
+               {/* <ProfilePage />  */}
+               {/* <TimerPage /> */}
+               <CreateExercisePage />
         </UserContext.Provider>
       </GoogleOAuthProvider>
       </ExerciseProvider>

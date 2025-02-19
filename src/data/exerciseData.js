@@ -6,6 +6,7 @@ const exerciseData = [
       reps: "10-10 Reps",
       tecAvan: "Drop-set",
       intensidade: "pesado",
+      desc: ""
     },
     {
       id: 2,
@@ -14,6 +15,7 @@ const exerciseData = [
       reps: "12-12 Reps",
       tecAvan: "Pausa Isométrica",
       intensidade: "pesado",
+      desc: ""
     },
     {
       id: 3,
@@ -22,6 +24,7 @@ const exerciseData = [
       reps: "10-10 Reps",
       tecAvan: "Superset",
       intensidade: "moderado",
+      desc: ""
     },
     {
       id: 4,
@@ -30,6 +33,7 @@ const exerciseData = [
       reps: "12-12 Reps",
       tecAvan: "Pausa Descanso",
       intensidade: "pesado",
+      desc: ""
     },
     {
       id: 5,
@@ -38,6 +42,7 @@ const exerciseData = [
       reps: "15-15 Reps",
       tecAvan: "Drop-set",
       intensidade: "leve",
+      desc: ""
     }
 ];
 

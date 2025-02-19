@@ -65,7 +65,7 @@ function BasalPage() {
             <input
               maxLength={10}
               className={`mt-10 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain`}
-              type="text"
+              type="number"
               placeholder="Altura"
             />
             <div></div>
@@ -74,7 +74,7 @@ function BasalPage() {
             <input
               maxLength={10}
               className={`mt-10 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain`}
-              type="text"
+              type="number"
               placeholder="Peso atual"
             />
           </div>
@@ -82,7 +82,7 @@ function BasalPage() {
             <input
               maxLength={10}
               className={`mt-10 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain`}
-              type="text"
+              type="number"
               placeholder="Idade"
             />
           </div>

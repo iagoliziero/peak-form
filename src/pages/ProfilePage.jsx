@@ -59,7 +59,7 @@ function ProfilePage() {
         </div>
         <div className="mt-10 mb-10 flex justify-center flex-col lg:flex-row gap-10 ">
         <div className="flex justify-center items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5">
-        <div className="flex ">
+        <div className="flex mt-10">
         <button className="relative left-56 lg:left-60 bottom-16"> <Pencil size={34} strokeWidth={2} /></button>
             <div className="w-44 h-44 rounded-full items-center bg-whiteMain flex justify-center relative right-4"><CircleUserRound size={150} /></div>
         </div>
@@ -75,7 +75,7 @@ function ProfilePage() {
           </div>
           </div>  
           </div>
-          <div className="flex items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-auto">
+          <div className="flex items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar ">
         <div className="flex ">
         <button className="relative left-56 lg:left-60 bottom-16"> <Pencil size={34} strokeWidth={2} /></button>
             <div className="w-44 h-44 rounded-full items-center bg-whiteMain flex justify-center relative right-4">
