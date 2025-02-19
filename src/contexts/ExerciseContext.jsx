@@ -1,7 +1,8 @@
 import { createContext, useState } from "react";
-import exerciseData from "../data/exerciseData";
+import exerciseData from "../data/exerciseData.js";
 
-export const ExerciseContext = createContext()
+
+export const ExerciseContext = createContext(exerciseData)
 
 function ExerciseProvider({children}) {
     const [exercise, setExercise] = useState(exerciseData)

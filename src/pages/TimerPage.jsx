@@ -163,8 +163,7 @@ function TimerPage() {
                 <div className="flex ">
                     <button
                     onClick={updateSessionTime}
-                    className="w-[220px]  h-[60px]
-        bg-yellowMain text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"> Adicionar </button>
+                    className="w-[300px] md:w-[360px] h-[60px] bg-yellowMain text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"> Adicionar </button>
                 </div>
             </div>
         </div>

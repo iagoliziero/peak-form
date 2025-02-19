@@ -3,6 +3,7 @@ import DropdownMenu from "../components/DropDownMenu";
 import { useContext } from "react";
 import { ExerciseContext } from "../contexts/ExerciseContext";
 
+
 function MainPage() {
 
   const {exercise} = useContext(ExerciseContext) // Obtém os exercícios globalmente
@@ -72,7 +73,7 @@ function MainPage() {
         {/* cards */}
         <div
 
-          className="w-full flex gap-6 px-8 py-4 snap-x snap-mandatory scrollbar-hide mb-10 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-hide xl:grid xl:grid-cols-3 xl:w-[90%] xl:gap-6 xl:px-4 xxl:grid-cols-4 3xl:grid-cols-5 items-center"
+          className="w-full flex gap-6 px-8 py-4 snap-x snap-mandatory scrollbar-hide mb-10 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-hide xl:grid xl:grid-cols-3 xl:w-[90%] xl:gap-6 xl:px-4 xxl:grid-cols-4 3xl:grid-cols-5 items-center lg:overflow-auto"
           onWheel={handleWheel}
         >
           {exercise.map((exer) => (
@@ -89,16 +90,16 @@ function MainPage() {
                     <div className="flex p-6">
                       <div className="flex flex-col gap-6">
                       <h2 className="text-xl text-darker font-bold">
-                        Quantidade de séries: {""} {exer.qtdSeries}
+                        Quantidade de séries: {""} {exer.numberSeries}
                       </h2>
                       <h2 className="text-xl text-darker font-bold">
-                        Repetições: {exer.reps}
+                        Repetições: {exer.repetitions}
                       </h2>
                       <h2 className="text-xl text-darker font-bold">
-                        Técnicas avançadas: <br /> {exer.tecAvan}
+                        Técnicas avançadas: <br /> {exer.advancedTechnique}
                       </h2>
                       <h2 className="text-xl text-darker font-bold">
-                        Intensidade: {exer.intensidade}
+                        Intensidade: {exer.intensity}
                       </h2>
                       </div>
                     </div>

@@ -40,15 +40,15 @@ function App() {
            <InfoUserPage />
            <GoalPage />  
            <ActivityPage /> 
-          <ProfileBodyPage /> 
-          <LoginPage />
-          */}
-          {/* <MainPage />         */}
-          {/* <BasalPage /> */}
+          <ProfileBodyPage /> */}
+          {/* <LoginPage /> */}
+          
+           {/* <MainPage />        */}
+            <BasalPage />  
            {/* <AboutUs />  */}
-               {/* <ProfilePage />  */}
-               {/* <TimerPage /> */}
-               <CreateExercisePage />
+               {/* <ProfilePage />  
+                {/* <TimerPage />  */}
+                {/* <CreateExercisePage /> */}
         </UserContext.Provider>
       </GoogleOAuthProvider>
       </ExerciseProvider>
