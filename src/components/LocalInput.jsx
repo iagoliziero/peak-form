@@ -61,6 +61,7 @@ const LocalInput = () => {
             {estado}
           </option>
         ))}
+        {/* LEMBRAR DE ARRUMAR O MD */}
       </select>
       {uf && (
         <>

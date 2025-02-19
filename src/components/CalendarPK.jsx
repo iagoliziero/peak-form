@@ -4,7 +4,14 @@ import "react-datepicker/dist/react-datepicker.css";
 
 function CalendarPK() {
   const [selectedDate, setSelectedDate] = useState("");
+  // const [error, setError] = useState("");
 
+  // const hoje = new Date();
+  // const minIdade = new Date(
+  //   today.getFullYear() - 13,
+  //   today.getMonth(),
+  //   today.getDate()
+  // );
   return (
     <DatePicker
       selected={selectedDate}
@@ -18,6 +25,7 @@ function CalendarPK() {
       showYearDropdown
       scrollableYearDropdown
       yearDropdownItemNumber={102}
+      maxDate={new Date()}
     />
   );
 }

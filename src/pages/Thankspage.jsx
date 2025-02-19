@@ -1,6 +1,6 @@
 function Thankspage() {
   return (
-    <div className="h-screen  bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-visible ">
+    <div className="h-screen  bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-hidden ">
       <div className=" flex flex-col  relative justify-center mt-44 gap-8">
         <span className="flex flex-col items-center">
           <img
