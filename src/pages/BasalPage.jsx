@@ -1,15 +1,37 @@
 import { useForm } from "react-hook-form";
 import DropdownMenu from "../components/DropDownMenu";
+import { useState } from "react";
 
 function BasalPage() {
+
+  const [result, setResult] = useState('')
+
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
 
   const onSubmit = (data) => {
-    alert(JSON.stringify(data));
+    const {height, currentWeight, age, gender} = data
+    let tmb = 0
+    switch(gender) {
+      case 'homem': 
+      tmb = 88.36 + (13.4 * currentWeight) + (4.8 * height) - (5.7 * age)
+      break;
+      case 'mulher': tmb = 447.6 + (9.2 * currentWeight) + (3.1 * height) - (4.3 * age)
+      break;
+      default: 'Inválido'
+    }
+
+    setResult(tmb.toFixed(2))
+    reset({
+      height: '',
+      currentWeight: '',
+      age: '',
+      gender: 'selecionar'
+    });
   };
 
   return (
@@ -74,6 +96,7 @@ function BasalPage() {
         <div className="flex flex-col mb-12 justify-center items-center ">
           <div className="flex flex-col">
             <input
+    
               {...register("height", { required: true })}
               maxLength={10}
               className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
@@ -92,6 +115,7 @@ function BasalPage() {
           </div>
           <div className="flex flex-col">
             <input
+            
               {...register("currentWeight", { required: true })}
               maxLength={10}
               className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
@@ -159,9 +183,11 @@ function BasalPage() {
               {" "}
               Resultado:{" "}
             </h2>
-            <h1 className="text-3xl md:text-4xl font-semibold text-yellowMain">
-              {" "}
-              1789.09
+            <h1 
+            
+            className="text-3xl md:text-4xl font-semibold text-yellowMain">
+              {result ? `${result } kcal/dia` : ''}
+              
             </h1>
           </div>
           <div className="flex justify-center mt-8">
