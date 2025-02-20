@@ -4,9 +4,10 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import validator from 'validator'
 import Login from "../components/Login";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
-
+  const navigate = useNavigate()
 
   const [isShowPassword, setIsShowPassword] = useState(false)
   const [isShowPasswordConfirmation, setIsShowPasswordConfirmation] = useState(false)
@@ -30,6 +31,7 @@ function LoginPage() {
 
   const onSubmit = (data) => {
     alert(JSON.stringify(data))
+    navigate(`/principal`)
   }
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto lg:justify-center">
@@ -134,6 +136,7 @@ function LoginPage() {
           </div>
           <div className="mt-10 gap-3 flex flex-col items-center ">
             <button
+            
             onClick={() => handleSubmit(onSubmit)()}
             className="w-[300px] md:w-[360px] h-[60px] bg-yellowMain mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold">
               Continuar
@@ -145,11 +148,13 @@ function LoginPage() {
             <div>
                 <Login />
             </div>
-            <div className="flex gap-1 mt-2 text-xl font-darker text-whiteMain text-center">
-            <h2> Já tenho uma conta!</h2>
-            <button className="text-yellowMain hover:text-orange"> Entrar.</button>
-            </div>
           </div>
+          <div className="flex gap-1 mt-2 text-xl font-darker text-whiteMain justify-center">
+            <h2> Já tenho uma conta!</h2>
+            <button 
+            onClick={() => navigate(`/signin`)}
+            className="text-yellowMain hover:text-orange"> Entrar.</button>
+            </div>
         </div>
       </div>
     </div>

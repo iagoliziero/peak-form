@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 function Thankspage() {
+  const navigate = useNavigate()
     return (
       <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center overflow-auto ">
         <div className=" flex flex-col  relative justify-center mt-44 gap-8">
@@ -32,10 +35,14 @@ function Thankspage() {
           </div>
         </div>
         <div className="mb-10 flex flex-row lg:relative mt-10 items-center md:items-center gap-6">
-          <button className="w-[170px] hidden md:block md:w-[220px] h-[60px] border border-yellowMain text-2xl rounded-lg text-yellowMain hover:scale-105 transition-all font-semibold">
+          <button 
+          onClick={() => navigate(-1)}
+          className="w-[170px] hidden md:block md:w-[220px] h-[60px] border border-yellowMain text-2xl rounded-lg text-yellowMain hover:scale-105 transition-all font-semibold">
             Voltar
           </button>
-          <button className="w-[300px] md:visible-false md:w-[220px] h-[60px] bg-yellowMain text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold">
+          <button 
+          onClick={() => navigate(`/atividade`)}
+          className="w-[300px] md:visible-false md:w-[220px] h-[60px] bg-yellowMain text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold">
             Continuar
           </button>
         </div>

@@ -1,7 +1,11 @@
 import { useContext, useState } from "react";
 import userContext from "../contexts/userContexts";
+import { useNavigate } from "react-router-dom";
 
 function GoalPage() {
+
+  const navigate = useNavigate()
+
   const { nameUser } = useContext(userContext);
 
   const [selectedButtons, setSelectedButton] = useState([]);
@@ -69,11 +73,13 @@ function GoalPage() {
         </div>
       </div>
       <div className="mb-10 flex flex-row lg:relative mt-6  items-center md:items-center gap-6">
-        <button className="w-[170px] hidden md:block md:w-[220px] h-[60px] border border-yellowMain text-2xl rounded-lg text-yellowMain hover:scale-105 transition-all font-semibold">
+        <button 
+        onClick={() => navigate(-1)}
+        className="w-[170px] hidden md:block md:w-[220px] h-[60px] border border-yellowMain text-2xl rounded-lg text-yellowMain hover:scale-105 transition-all font-semibold">
           Voltar
         </button>
         <button 
-        
+        onClick={() => navigate(`/agradecimento`)}
         className="w-[300px] md:visible-false md:w-[220px] h-[60px] bg-yellowMain text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold">
           Continuar
         </button>

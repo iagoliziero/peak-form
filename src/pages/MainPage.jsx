@@ -2,6 +2,7 @@ import { Info, Pencil, Timer, Trash2 } from "lucide-react";
 import DropdownMenu from "../components/DropDownMenu";
 import { useContext } from "react";
 import { ExerciseContext } from "../contexts/ExerciseContext";
+import { useNavigate } from "react-router-dom";
 
 
 function MainPage() {
@@ -15,6 +16,7 @@ function MainPage() {
     }
   }
 
+  const navigate = useNavigate()
 
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto">
@@ -34,27 +36,39 @@ function MainPage() {
       </div>
       <nav className="hidden lg:block  ">
         <ul className="flex gap-8 text-center text-2xl xl:text-2xl text-whiteMain ">
-          <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
+          <li 
+          onClick={() => navigate(`/principal`)}
+          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
             {" "}
             Seu treino{" "}
           </li>
-          <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
+          <li 
+          onClick={() => navigate(`/criarexercicio`)}
+          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
             {" "}
             Criar exercício{" "}
           </li>
-          <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
+          <li 
+          onClick={() => navigate(`/tempodepausa`)}
+          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
             {" "}
             Tempo de Pausa{" "}
           </li>
-          <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
+          <li 
+           onClick={() => navigate(`/tmb`)}
+          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
             {" "}
             TMB{" "}
           </li>
-          <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
+          <li 
+          onClick={() => navigate(`/perfil`)}
+          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
             {" "}
             Perfil
           </li>
-          <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
+          <li 
+          onClick={() => navigate(`/sobre`)}
+          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
             {" "}
             Sobre Nós{" "}
           </li>
@@ -108,7 +122,9 @@ function MainPage() {
                       <button className="w-20 h-16 bg-yellowMain rounded-md hover:scale-105 transition-all text-darker flex justify-center items-center">
                         <Pencil size={34} strokeWidth={2} />
                       </button>
-                      <button className="w-20 h-16 bg-orange rounded-md hover:scale-105 transition-all text-darker flex justify-center items-center">
+                      <button
+                      onClick={() => navigate(`/tempodepausa`)}
+                      className="w-20 h-16 bg-orange rounded-md hover:scale-105 transition-all text-darker flex justify-center items-center">
                         <Timer size={34} />
                       </button>
                       <button className="w-20 h-16 bg-red rounded-md hover:scale-105 transition-all text-darker flex justify-center items-center">

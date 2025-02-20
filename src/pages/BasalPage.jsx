@@ -1,8 +1,11 @@
 import { useForm } from "react-hook-form";
 import DropdownMenu from "../components/DropDownMenu";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function BasalPage() {
+
+  const navigate = useNavigate()
 
   const [result, setResult] = useState('')
 
@@ -17,10 +20,10 @@ function BasalPage() {
     const {height, currentWeight, age, gender} = data
     let tmb = 0
     switch(gender) {
-      case 'homem': 
+      case 'masculino': 
       tmb = 88.36 + (13.4 * currentWeight) + (4.8 * height) - (5.7 * age)
       break;
-      case 'mulher': tmb = 447.6 + (9.2 * currentWeight) + (3.1 * height) - (4.3 * age)
+      case 'feminino': tmb = 447.6 + (9.2 * currentWeight) + (3.1 * height) - (4.3 * age)
       break;
       default: 'Inválido'
     }
@@ -51,27 +54,39 @@ function BasalPage() {
       </div>
       <nav className="hidden lg:block  ">
         <ul className="flex gap-8 text-center text-2xl xl:text-2xl text-whiteMain ">
-          <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
+          <li 
+          onClick={() => navigate(`/principal`)}
+          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
             {" "}
             Seu treino{" "}
           </li>
-          <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
+          <li 
+          onClick={() => navigate(`/criarexercicio`)}
+          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
             {" "}
             Criar exercício{" "}
           </li>
-          <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
+          <li 
+          onClick={() => navigate(`/tempodepausa`)}
+          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
             {" "}
             Tempo de Pausa{" "}
           </li>
-          <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
+          <li 
+           onClick={() => navigate(`/tmb`)}
+          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
             {" "}
             TMB{" "}
           </li>
-          <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
+          <li 
+          onClick={() => navigate(`/perfil`)}
+          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
             {" "}
             Perfil
           </li>
-          <li className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
+          <li 
+          onClick={() => navigate(`/sobre`)}
+          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
             {" "}
             Sobre Nós{" "}
           </li>
@@ -164,8 +179,8 @@ function BasalPage() {
               className={`w-[300px] p-4 border border-gray rounded-md bg-darker text-white text-xl focus:outline-none focus:ring-2 focus:ring-yellowMain ${errors?.gender ?"border-lightRed" : "focus:border-yellowMain" }`}
             >
               <option value="selecionar"> Selecionar </option>
-              <option value="homem"> Homem </option>
-              <option value="mulher"> Mulher </option>
+              <option value="masculino"> Masculino </option>
+              <option value="feminino"> Feminino </option>
             </select>
             {errors?.gender?.type === "validate" && <p className="text-lightRed mx-4 mt-1"> O gênero está inválido. </p>}
           </div>

@@ -100,17 +100,17 @@ function SignIn() {
             className="w-[300px] md:w-[360px] h-[60px] bg-yellowMain mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold">
               Continuar
             </button>
-            <h2 className="text-2xl lg:text-3xl font-darker text-whiteMain font-semibold text-center">
+            {/* <h2 className="text-2xl lg:text-3xl font-darker text-whiteMain font-semibold text-center">
               {" "}
               Ou
-            </h2>
-            <div>
+            </h2> */}
+            {/* <div>
                 <Login />
-            </div>
-            <div className="flex gap-1 mt-2 text-xl font-darker text-whiteMain text-center">
+            </div> */}
+            {/* <div className="flex gap-1 mt-2 text-xl font-darker text-whiteMain text-center">
             <h2> Naõ tenho uma conta!</h2>
             <button className="text-yellowMain hover:text-orange"> Criar agora.</button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

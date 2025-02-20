@@ -1,7 +1,10 @@
 import { data } from "autoprefixer";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 function ProfileBodyPage() {
+
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -10,6 +13,7 @@ function ProfileBodyPage() {
 
   const onSubmit = (data) => {
     console.log(data);
+    navigate('/login')
   };
 
   return (
@@ -86,7 +90,7 @@ function ProfileBodyPage() {
         <div className="mt-5 flex flex-col gap-3">
           <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
             {" "}
-            Qual é a sua meta de peso?
+            Qual é a sua <br className="hidden lg:block" /> meta de peso?
           </h1>
           <div className="flex justify-center">
             <div>
@@ -111,6 +115,7 @@ function ProfileBodyPage() {
       </div>
       <div className="flex flex-row  lg:relative items-center md:items-center gap-6 ">
         <button
+        onClick={() => navigate(-1)}
           className="w-[170px] hidden md:block  md:w-[220px] h-[60px]
                         border border-yellowMain text-yel mb-12 text-2xl rounded-lg text-yellowMain hover:scale-105 transition-all font-semibold"
         >

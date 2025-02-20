@@ -9,16 +9,10 @@ import ProfileBodyPage from "./pages/ProfileBodyPage.jsx";
 import MainPage from "./pages/MainPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import { GoogleOAuthProvider } from "@react-oauth/google";
-import Login from "./components/Login.jsx";
-import Thankspage from "./pages/ThanksPage.jsx";
-import InfoUserPage from "./pages/InfoUserPage.jsx";
-import SignInPage from "./pages/SignInPage.jsx";
-import ProfilePage from "./pages/ProfilePage.jsx";
+
 import ExerciseProvider from "./contexts/ExerciseContext.jsx";
-import BasalPage from "./pages/BasalPage.jsx";
-import AboutUs from "./pages/AbotUs.jsx";
-import TimerPage from "./pages/TimerPage.jsx";
-import CreateExercisePage from "./pages/CreateExercisePage.jsx";
+import SignIn from "./pages/SignInPage.jsx";
+
 
 
 function App() {
@@ -29,29 +23,16 @@ function App() {
 
   return (
     <>
-    <ExerciseProvider> 
+     
     <GoogleOAuthProvider clientId={clientId}>
       <UserContext.Provider value={{ nameUser, setNameUser }}>
            
         {/* <SignInPage /> */}
-          {/* <Home />   */}
-            {/* <NamePage /> 
-           <Thankspage /> *
-           <InfoUserPage />
-           <GoalPage />  
-           <ActivityPage /> 
-          <ProfileBodyPage /> */}
-          {/* <LoginPage /> */}
-          
-           {/* <MainPage />        */}
-            <BasalPage />  
-           {/* <AboutUs />  */}
-               {/* <ProfilePage />  
-                {/* <TimerPage />  */}
-                {/* <CreateExercisePage /> */}
+           {/* <Home />    */}
+             <LoginPage /> 
         </UserContext.Provider>
       </GoogleOAuthProvider>
-      </ExerciseProvider>
+
     </>
   );
 }
