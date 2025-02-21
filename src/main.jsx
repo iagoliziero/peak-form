@@ -31,7 +31,7 @@ const UserContext = createContext();
 const clientId = "274780333869-3upraqeb95j68muct6t8t5nma280jqv2.apps.googleusercontent.com";
 
 const router = createBrowserRouter([
-  { path: '/', element: <Home /> },
+  { path: '/', element: <App /> },
   { path: '/nome', element: <NamePage /> },
   { path: '/metas', element: <GoalPage /> },
   { path: '/perfilusuario', element: <ProfileBodyPage /> },
