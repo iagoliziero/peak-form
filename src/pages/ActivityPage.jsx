@@ -20,7 +20,7 @@ function ActivityPage() {
     
 
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center overflow-auto">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center overflow-scroll no-scrollbar">
     <div className="flex flex-col justify-center mt-12 gap-8">
       <span className="flex flex-col items-center">
         <img

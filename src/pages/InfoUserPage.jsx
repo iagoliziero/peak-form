@@ -8,7 +8,7 @@ function InfoUserPage() {
 
   const navigate = useNavigate()
   return (
-    <div className="h-full bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar justify-center">
       <div className="flex flex-col justify-center mt-12 gap-8">
         <span className="flex flex-col items-center">
           <img

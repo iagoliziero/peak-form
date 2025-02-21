@@ -23,7 +23,7 @@ function SignIn() {
     alert(JSON.stringify(data));
   };
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto lg:justify-center">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar lg:justify-center">
       <div className=" flex flex-col justify-center mt-12 gap-8">
         <span className="flex flex-col items-center">
           <img

@@ -19,11 +19,12 @@ function MainPage() {
   const navigate = useNavigate()
 
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
       {/* Logo */}
       <div className="flex mt-16 gap-8">
         <span className="flex relative">
           <img
+          onClick={() => navigate(`/principal`)}
             className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"
             src="src/public/logo.png"
             alt="logo"
@@ -78,6 +79,7 @@ function MainPage() {
       <div className="w-full h-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5">
         <div className="mt-10 flex justify-center ">
           <button
+          onClick={() => navigate(`/criarexercicio`)}
             className="w-[300px] md:w-[360px] h-[60px] bg-yellowMain mb-8 mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"
           >
             Criar exercício

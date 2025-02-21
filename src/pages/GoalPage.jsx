@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
-import userContext from "../contexts/userContexts";
 import { useNavigate } from "react-router-dom";
-import { NameUserContext } from "../contexts/NameUserContexts";
+import { NameUserContext } from "../contexts/NameUserContexts.jsx";
 
 function GoalPage() {
 
@@ -32,7 +31,7 @@ function GoalPage() {
 
 
   return (
-    <div className="h-full bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
     <div className="flex flex-col justify-center mt-12 gap-8">
       <span className="flex flex-col items-center">
         <img
@@ -45,7 +44,7 @@ function GoalPage() {
       <div>
         <div className="mt-5 flex flex-col gap-5">
           <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
-            Obrigado, {nameUser} Agora, vamos <br /> falar sobre suas metas.
+            Obrigado, {nameUser}. Agora, vamos <br /> falar sobre suas metas.
           </h1>
           <span className="text-center text-xl text-whiteMain">
             <p>

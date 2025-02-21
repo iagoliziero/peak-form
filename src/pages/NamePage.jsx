@@ -1,8 +1,7 @@
 import { useContext } from "react";
-import userContext from "../contexts/userContexts";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { NameUserContext } from "../contexts/NameUserContexts";
+import { NameUserContext } from "../contexts/NameUserContexts.jsx";
 
 function NamePage() {
   const navigate = useNavigate()
@@ -17,7 +16,7 @@ function NamePage() {
   }
 
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center overflow-auto ">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center overflow-scroll no-scrollbar ">
       <div className=" flex flex-col justify-center mt-16 lg:mt-0 gap-8">
         <span className="flex flex-col items-center">
           <img

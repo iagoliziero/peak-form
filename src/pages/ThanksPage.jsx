@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 function Thankspage() {
   const navigate = useNavigate()
     return (
-      <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center gap-12 lg: overflow-auto ">
+      <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center gap-12 lg: overflow-scroll no-scrollbar ">
         <div className=" flex flex-col relative justify-center mt-12 gap-8">
           <span className="flex flex-col items-center">
             <img

@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 
  function DropdownMenu() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const navigate = useNavigate()
 
   return (
     <div className="absolute right-2 md:right-[80px] lg:right-[150px] xl:right-[300px] lg:hidden z-50">
@@ -19,34 +20,40 @@ import { Menu } from "lucide-react";
           <ul className="py-2">
           <li>
               <button
+              onClick={() => navigate(`/principal`)}
                 className="block p-5 text-xl md:text-2xl  " >
                 Seu treino
               </button>
             </li>
             <li>
               <button
+               onClick={() => navigate(`/criarexercicio`)}
                 className="block p-5 text-xl md:text-2xl  " >
                 Criar exercício
               </button>
             </li>
             <li>
               <button
-                className="block p-5 text-xl md:text-2xl  " >
-                TMB
-              </button>
-            </li>
-            <li>
-              <button
+               onClick={() => navigate(`/tempodepausa`)}
                 className="block p-5 text-xl md:text-2xl  " >
                 Tempo de pausa
               </button>
             </li>
+            <li>
               <button
+               onClick={() => navigate(`/tmb`)}
+                className="block p-5 text-xl md:text-2xl  " >
+                TMB
+              </button>
+            </li>
+              <button
+               onClick={() => navigate(`/perfil`)}
                 className="block p-5 text-xl md:text-2xl  " >
                 Perfil
               </button>
             <li>
               <button
+               onClick={() => navigate(`/sobre`)}
                 className="block p-5 text-xl md:text-2xl  " >
                 Sobre nós
               </button>

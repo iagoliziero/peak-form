@@ -8,12 +8,13 @@ function ProfilePage() {
   const navigate = useNavigate()
      
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
       {/* Logo */}
       <div className="flex mt-16 gap-8">
         <span className="flex relative">
-          <img
-            className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"
+        <img
+          onClick={() => navigate(`/principal`)}
+            className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px] cursor-pointer"
             src="src/public/logo.png"
             alt="logo"
           />
@@ -63,7 +64,7 @@ function ProfilePage() {
           </li>
         </ul>
       </nav>
-      <div className="w-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5 ">
+      <div className="w-full xxl:h-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5 ">
         <div className="flex mt-10 ">
           <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
             {" "}

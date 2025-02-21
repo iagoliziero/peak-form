@@ -16,15 +16,16 @@ function CreateExercisePage() {
 
   return (
     <>
-      <div className="h-full bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-y-scroll overflow-x-hidden no-scrollbar">
+      <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-y-scroll overflow-x-hidden no-scrollbar">
         {/* Logo */}
         <div className="flex mt-16 gap-8">
           <span className="flex relative">
-            <img
-              className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"
-              src="src/public/logo.png"
-              alt="logo"
-            />
+          <img
+          onClick={() => navigate(`/principal`)}
+            className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px] cursor-pointer"
+            src="src/public/logo.png"
+            alt="logo"
+          />
             <span className="relative left-28 md:left-72">
               <DropdownMenu />
             </span>

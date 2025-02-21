@@ -1,10 +1,16 @@
-import { StrictMode, createContext, useState } from 'react';
+{/* IMPORTS LIBRARY */}
+
+import { StrictMode, createContext} from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
+{/* IMPORTS CSS */}
+
 import App from './App.jsx';
 import './index.css';
+
+{/* IMPORTS PAGES */}
 
 import NamePage from './pages/NamePage.jsx';
 import GoalPage from './pages/GoalPage.jsx';
