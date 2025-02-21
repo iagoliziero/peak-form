@@ -17,8 +17,8 @@ function ProfileBodyPage() {
   };
 
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto lg:justify-center">
-      <div className=" flex flex-col justify-center mt-10 gap-8">
+    <div className="h-full bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto">
+      <div className="flex flex-col justify-center mt-16 gap-8">
         <span className="flex flex-col items-center">
           <img
             className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"

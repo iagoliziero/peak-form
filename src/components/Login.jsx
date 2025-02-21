@@ -19,7 +19,7 @@ export default function Login() {
           }}
           onError={() => console.log("Erro ao fazer login")}
           useOneTap
-          width={370}
+          width={310}
           shape="square"
         theme="outline"
         />

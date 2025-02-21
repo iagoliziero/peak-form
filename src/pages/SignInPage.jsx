@@ -27,7 +27,7 @@ function SignIn() {
   }
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto lg:justify-center">
-      <div className=" flex flex-col justify-center mt-10 gap-8">
+      <div className=" flex flex-col justify-center mt-12 gap-8">
         <span className="flex flex-col items-center">
           <img
             className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"
@@ -94,7 +94,7 @@ function SignIn() {
                 
             </div>
           </div>
-          <div className="mt-10 gap-3 flex flex-col items-center ">
+          <div className="mt-8 mb-12 gap-3 flex flex-col items-center ">
             <button
             onClick={() => handleSubmit(onSubmit)()}
             className="w-[300px] md:w-[360px] h-[60px] bg-yellowMain mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold">

@@ -16,23 +16,9 @@ import SignIn from "./pages/SignInPage.jsx";
 
 
 function App() {
-  const [nameUser, setNameUser] = useState("");
-
-  
-  const clientId = "274780333869-3upraqeb95j68muct6t8t5nma280jqv2.apps.googleusercontent.com";
-
   return (
     <>
-     
-    <GoogleOAuthProvider clientId={clientId}>
-      <UserContext.Provider value={{ nameUser, setNameUser }}>
-           
-        {/* <SignInPage /> */}
-           {/* <Home />    */}
-             <LoginPage /> 
-        </UserContext.Provider>
-      </GoogleOAuthProvider>
-
+      <Home />
     </>
   );
 }

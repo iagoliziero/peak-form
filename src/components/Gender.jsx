@@ -11,7 +11,7 @@ function Gender({setValue, register, errors}) {
       {["Masculino", "Feminino"].map((gender) => (
         <label
           key={gender}
-          className="flex-row flex items-center font-bolder  text-xl m-1  gap-5 cursor-pointer"
+          className="flex-row flex items-center font-bolder  text-xl m-2  gap-5 cursor-pointer"
         >
           <div
             className={`w-[20px] h-[20px] rounded-full  items-center justify-center transition-all duration-400 border-4

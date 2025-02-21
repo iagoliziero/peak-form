@@ -21,7 +21,7 @@ function ActivityPage() {
 
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center overflow-auto">
-    <div className="flex flex-col justify-center mt-10 gap-8">
+    <div className="flex flex-col justify-center mt-12 gap-8">
       <span className="flex flex-col items-center">
         <img
           className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"
@@ -57,18 +57,18 @@ function ActivityPage() {
         </div>
       </div>
     </div>
-    <div className="flex flex-row lg:relative mt-6 mb-10 items-center md:items-center gap-6">
-      <button 
-       onClick={() => navigate(-1)}
-      className="w-[170px] hidden md:block md:w-[220px] h-[60px] border border-yellowMain text-2xl rounded-lg text-yellowMain hover:scale-105 transition-all font-semibold">
-        Voltar
-      </button>
-      <button 
-      onClick={() => navigate(`/infos`)}
-      className="w-[300px] md:visible-false md:w-[220px] h-[60px] bg-yellowMain text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold">
-        Continuar
-      </button>
-    </div>
+    <div className="mb-12 flex flex-row lg:relative mt-8  items-center md:items-center gap-6">
+        <button 
+        onClick={() => navigate(-1)}
+        className="w-[170px] hidden md:block md:w-[220px] h-[60px] border border-yellowMain text-2xl rounded-lg text-yellowMain hover:scale-105 transition-all font-semibold">
+          Voltar
+        </button>
+        <button 
+        onClick={() => navigate(`/infos`)}
+        className="w-[300px] md:visible-false md:w-[220px] h-[60px] bg-yellowMain text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold">
+          Continuar
+        </button>
+      </div>
   </div>
   );
 }

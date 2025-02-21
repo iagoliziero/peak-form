@@ -35,7 +35,7 @@ function LoginPage() {
   }
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto lg:justify-center">
-      <div className=" flex flex-col justify-center mt-10 gap-8">
+      <div className=" flex flex-col justify-center mt-12 gap-8">
         <span className="flex flex-col items-center">
           <img
             className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"
@@ -134,7 +134,7 @@ function LoginPage() {
                 <p className="text-center text-xl  text-whiteMain">Deve ter pelo menos 7 caracteres, <br className="md:hidden" /> sem espaço. </p>
             </div>
           </div>
-          <div className="mt-10 gap-3 flex flex-col items-center ">
+          <div className="mt-8 gap-3 flex flex-col items-center ">
             <button
             
             onClick={() => handleSubmit(onSubmit)()}
@@ -149,7 +149,7 @@ function LoginPage() {
                 <Login />
             </div>
           </div>
-          <div className="flex gap-1 mt-2 text-xl font-darker text-whiteMain justify-center">
+          <div className="flex gap-1 mt-2 mb-12 text-xl font-darker text-whiteMain justify-center">
             <h2> Já tenho uma conta!</h2>
             <button 
             onClick={() => navigate(`/signin`)}

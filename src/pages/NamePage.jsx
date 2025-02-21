@@ -2,16 +2,18 @@ import { useContext } from "react";
 import userContext from "../contexts/userContexts";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { NameUserContext } from "../contexts/NameUserContexts";
 
 function NamePage() {
   const navigate = useNavigate()
 
   const {register, handleSubmit, formState:  {errors}} = useForm()
-  const { nameUser, setNameUser } = useContext(userContext);
+  const { nameUser, setNameUser } = useContext(NameUserContext);
 
   const onSubmit = (data) => {
     console.log(data.nameUser)
     navigate(`/metas`)
+    console.log(nameUser)
   }
 
   return (
@@ -57,7 +59,7 @@ function NamePage() {
           </div>
         </div>
       </div>
-      <div className="flex flex-row relative top-64 lg:top-40 lg:relative mt-6 items-center md:items-center gap-6 ">
+      <div className="flex flex-row relative top-64 lg:top-40 lg:relative mt-8 items-center md:items-center gap-6 ">
         <button
         onClick={() => navigate(-1)}
           className="w-[170px] hidden md:block  md:w-[220px] h-[60px]

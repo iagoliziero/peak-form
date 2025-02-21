@@ -18,7 +18,7 @@ const LocalInput = () => {
   }, [uf]);
 
   return (
-    <div className="flex  justify-center items-center flex-col  gap-5 p-6 bg-darker rounded-md w-[320px] md:w-[350px] text-whiteMain">
+    <div className="flex  justify-center items-center flex-col  gap-5  bg-darker rounded-md w-[320px] md:w-[350px] text-whiteMain">
       <label className="text-whiteMain text-2xl  md:text-3xl font-semibold">
         Estado (UF)
       </label>
