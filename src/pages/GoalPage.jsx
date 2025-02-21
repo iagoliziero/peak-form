@@ -1,12 +1,11 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { NameUserContext } from "../contexts/NameUserContexts.jsx";
+import { NameContext } from "../contexts/NameContexts.jsx";
 
 function GoalPage() {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
-
-  const { nameUser } = useContext(NameUserContext);
+  const { name } = useContext(NameContext);
 
   const [selectedButtons, setSelectedButton] = useState([]);
 
@@ -20,31 +19,30 @@ function GoalPage() {
 
   const toggleSelection = (id) => {
     setSelectedButton((prevSelected) => {
-        if(prevSelected.includes(id)) {
-            return prevSelected.filter((btnId) => btnId !== id)
-        } else if(prevSelected.length < 2) {
-           return [...prevSelected, id]
-        }
-        return prevSelected
-    })
-  }
-
+      if (prevSelected.includes(id)) {
+        return prevSelected.filter((btnId) => btnId !== id);
+      } else if (prevSelected.length < 2) {
+        return [...prevSelected, id];
+      }
+      return prevSelected;
+    });
+  };
 
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
-    <div className="flex flex-col justify-center mt-12 gap-8">
-      <span className="flex flex-col items-center">
-        <img
-          className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"
-          src="src/public/logo.png"
-          alt="logo"
-        />
-      </span>
-    </div>
+      <div className="flex flex-col justify-center mt-12 gap-8">
+        <span className="flex flex-col items-center">
+          <img
+            className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"
+            src="src/public/logo.png"
+            alt="logo"
+          />
+        </span>
+      </div>
       <div>
         <div className="mt-5 flex flex-col gap-5">
           <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
-            Obrigado, {nameUser}. Agora, vamos <br /> falar sobre suas metas.
+            Obrigado, {name}. Agora, vamos <br /> falar sobre suas metas.
           </h1>
           <span className="text-center text-xl text-whiteMain">
             <p>
@@ -56,7 +54,6 @@ function GoalPage() {
           <div className="flex flex-col items-center mt-8 gap-8">
             {buttons.map((button) => (
               <button
-        
                 key={button.id}
                 onClick={() => toggleSelection(button.id)}
                 className={`text-center w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl text-whiteMain 
@@ -73,14 +70,16 @@ function GoalPage() {
         </div>
       </div>
       <div className="mb-12 flex flex-row lg:relative mt-8  items-center md:items-center gap-6">
-        <button 
-        onClick={() => navigate(-1)}
-        className="w-[170px] hidden md:block md:w-[220px] h-[60px] border border-yellowMain text-2xl rounded-lg text-yellowMain hover:scale-105 transition-all font-semibold">
+        <button
+          onClick={() => navigate(-1)}
+          className="w-[170px] hidden md:block md:w-[220px] h-[60px] border border-yellowMain text-2xl rounded-lg text-yellowMain hover:scale-105 transition-all font-semibold"
+        >
           Voltar
         </button>
-        <button 
-        onClick={() => navigate(`/agradecimento`)}
-        className="w-[300px] md:visible-false md:w-[220px] h-[60px] bg-yellowMain text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold">
+        <button
+          onClick={() => navigate(`/agradecimento`)}
+          className="w-[300px] md:visible-false md:w-[220px] h-[60px] bg-yellowMain text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"
+        >
           Continuar
         </button>
       </div>
