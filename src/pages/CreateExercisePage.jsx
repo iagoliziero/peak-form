@@ -141,6 +141,7 @@ function CreateExercisePage() {
               />
             </div>
           </div>
+
           <button
           onClick={() => handleSubmit(onSubmit)()}
             className="w-[300px] md:w-[360px] h-[60px] bg-yellowMain mb-8 mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"
