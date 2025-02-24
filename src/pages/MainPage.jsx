@@ -3,6 +3,7 @@ import DropdownMenu from "../components/DropDownMenu";
 import { useContext } from "react";
 import { ExerciseContext } from "../contexts/ExerciseContext";
 import { useNavigate } from "react-router-dom";
+import InfoCard from "../components/InfoCard";
 
 
 function MainPage() {
@@ -99,7 +100,7 @@ function MainPage() {
                   <h1 className="text-start text-2xl text-darker font-semibold">
                     {exer.title}
                   </h1>
-                  <button><Info size={32} /></button>
+                  <InfoCard />
                 </div>
                 <div className="flex flex-col justify-center items-center">
                   <div className="w-[305px] h-[345px] bg-whiteMain rounded-md flex-col">

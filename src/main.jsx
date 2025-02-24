@@ -37,6 +37,7 @@ import AboutUs from "./pages/AboutUs.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import NameProvider from "./contexts/NameContexts.jsx";
 import ProfileBodyProvider from "./contexts/ProfileBodyContexts.jsx";
+import ProfileProvider from "./contexts/ProfileContexts.jsx";
 
 
 // Criando contexto para compartilhar nome do usuário
@@ -64,15 +65,17 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <ProfileBodyProvider> 
-    <NameProvider>
-      <ExerciseProvider>
-        <GoogleOAuthProvider clientId={clientId}>
-          <StrictMode>
-            <RouterProvider router={router} />
-          </StrictMode>
-        </GoogleOAuthProvider>
-      </ExerciseProvider>
-    </NameProvider>
-  </ProfileBodyProvider>
+  <ProfileProvider>
+    <ProfileBodyProvider> 
+      <NameProvider>
+        <ExerciseProvider>
+          <GoogleOAuthProvider clientId={clientId}>
+            <StrictMode>
+              <RouterProvider router={router} />
+            </StrictMode>
+          </GoogleOAuthProvider>
+        </ExerciseProvider>
+      </NameProvider>
+    </ProfileBodyProvider>
+  </ProfileProvider>
 );
