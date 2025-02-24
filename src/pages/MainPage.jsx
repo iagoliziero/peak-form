@@ -90,7 +90,7 @@ function MainPage() {
         {/* cards */}
         <div
 
-          className="w-full flex gap-6 px-8 py-4 snap-x snap-mandatory scrollbar-hide mb-10 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-hide xl:grid xl:grid-cols-3 xl:w-[90%] xl:gap-6 xl:px-4 xxl:grid-cols-4 3xl:grid-cols-5 items-center lg:overflow-auto 4xl:grid-cols-6"
+          className="w-full flex gap-6 px-8 py-4 snap-x snap-mandatory scrollbar-hide mb-10 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-hide xl:grid xl:grid-cols-3 xl:w-[90%] xl:gap-6 xl:px-4 xxl:grid-cols-4 3xl:grid-cols-5 items-center lg:overflow-auto"
           onWheel={handleWheel}
         >
           {exercise.map((exer) => (

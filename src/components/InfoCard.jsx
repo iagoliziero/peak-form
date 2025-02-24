@@ -19,8 +19,8 @@ function InfoCard({exercise}) {
           <div className="bg-white w-[600px]  h-[400px] m-10 md:h-[600px] items-center justify-center  rounded-lg shadow-lg overflow-y-scroll overflow-x-hidden no-scrollbar">
                 <div key={exercise.id}>
                 <div className="bg-yellowMain w-full rounded-b-none h-[75px] rounded-lg md:h-[100px] ">
-              <div className="flex justify-center text-center items-center">
-                <h1 className="text-3xl p-4 md:text-4xl  lg:text-5xl text-darker text-center font-bold">
+              <div className="flex justify-center text-center ">
+                <h1 className="fetext-3xl p-4 md:text-4xl  lg:text-5xl items-center  text-darker text-center font-bold">
                     {exercise.title}
                 </h1>
               </div>
