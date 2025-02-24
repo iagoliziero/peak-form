@@ -44,6 +44,15 @@ const exerciseData = [
       intensity: "leve",
       description: "Inicie com um peso leve para a primeira série, buscando ativar os músculos das pernas e glúteos de forma gradual. Nas próximas séries, mantenha a carga constante, mas ao final da última, use a técnica Drop-set: diminua o peso e continue até a falha, garantindo que seus glúteos sejam bem trabalhados até o limite!"
     },
+    {
+      id: 5,
+      title: "Abdutora",
+      numberSeries: "4 séries",
+      repetitions: "15-15 Reps",
+      advancedTechnique: "Drop-set",
+      intensity: "leve",
+      description: "Inicie com um peso leve para a primeira série, buscando ativar os músculos das pernas e glúteos de forma gradual. Nas próximas séries, mantenha a carga constante, mas ao final da última, use a técnica Drop-set: diminua o peso e continue até a falha, garantindo que seus glúteos sejam bem trabalhados até o limite!"
+    },
 ];
 
 export default exerciseData;

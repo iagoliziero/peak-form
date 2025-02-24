@@ -100,7 +100,7 @@ function MainPage() {
                   <h1 className="text-start text-2xl text-darker font-semibold">
                     {exer.title}
                   </h1>
-                  <InfoCard />
+                  <InfoCard exercise={exer}/>
                 </div>
                 <div className="flex flex-col justify-center items-center">
                   <div className="w-[305px] h-[345px] bg-whiteMain rounded-md flex-col">
