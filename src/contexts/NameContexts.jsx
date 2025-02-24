@@ -1,6 +1,4 @@
 import { createContext, useState } from "react";
-import exerciseData from "../data/exerciseData.js";
-
 
 export const NameContext = createContext()
 

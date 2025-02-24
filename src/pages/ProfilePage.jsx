@@ -1,10 +1,13 @@
 import { CircleUserRound, Pencil } from "lucide-react";
 import DropdownMenu from "../components/DropDownMenu";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { ProfileBodyContexts } from "../contexts/ProfileBodyContexts";
 
 
 function ProfilePage() {
 
+  const {profileBody} = useContext(ProfileBodyContexts)
   const navigate = useNavigate()
      
   return (
@@ -90,39 +93,33 @@ function ProfilePage() {
           </div>  
           </div>
           <div className="flex items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar ">
-        <div className="flex ">
-        <button className="relative left-56 lg:left-60 bottom-16"> <Pencil size={34} strokeWidth={2} /></button>
-            <div className="w-44 h-44 rounded-full items-center bg-whiteMain flex justify-center relative right-4">
-              <div className="flex flex-col items-center"> <h2 className="text-2xl "> IMC</h2>
-              <h1 className="text-3xl font-semibold "> 28.06</h1></div>
-            </div>
-        </div>
-        <div className="flex flex-col items-center gap-3">
-          <div>
-            <h1 className="text-2xl lg:text-3xl font-semibold"> Sobre Peso</h1>
-          </div>
-          <div>
-            <h2 className="text-xl lg:text-2xl"> Obesidade grau 1</h2>
-          </div>
-          <div>
-            <h2 className="text-xl lg:text-2xl font-semibold"> Altura: </h2>
-          </div>
-          <div>
-            <h2 className="text-xl lg:text-2xl"> 173 cm </h2>
-          </div>
-          <div>
-            <h2 className="text-xl lg:text-2xl font-semibold"> Peso: </h2>
-          </div>
-          <div>
-            <h2 className="text-xl lg:text-2xl"> 84 kg </h2>
-          </div>
-          <div>
-            <h2 className="text-xl lg:text-2xl font-semibold"> Meta de peso: </h2>
-          </div>
-          <div>
-            <h2 className="text-xl lg:text-2xl"> 90 kg </h2>
-          </div>
-          </div>  
+          {profileBody?.map((body, index) => (
+              <div key={index} className="flex flex-col items-center gap-3">
+                <div className="flex">
+                  <button className="relative left-56 lg:left-60 bottom-16">
+                    <Pencil size={34} strokeWidth={2} />
+                  </button>
+                  <div className="w-44 h-44 rounded-full items-center bg-whiteMain flex justify-center relative right-4">
+                    <div className="flex flex-col items-center">
+                      <h2 className="text-2xl">IMC</h2>
+                      <h1 className="text-3xl font-semibold">{body.fatCalc}</h1>
+                    </div>
+                  </div>
+                </div>
+                <h1 className="text-2xl lg:text-3xl font-semibold">
+                  {body.weightStatus}
+                </h1>
+                <h2 className="text-xl lg:text-2xl">{body.obesityLevel}</h2>
+                <h2 className="text-xl lg:text-2xl font-semibold">Altura:</h2>
+                <h2 className="text-xl lg:text-2xl">{body.height} cm</h2>
+                <h2 className="text-xl lg:text-2xl font-semibold">Peso:</h2>
+                <h2 className="text-xl lg:text-2xl">{body.weight} kg</h2>
+                <h2 className="text-xl lg:text-2xl font-semibold">
+                  Meta de peso:
+                </h2>
+                <h2 className="text-xl lg:text-2xl">{body.goalWeight} kg</h2>
+              </div>
+          ))}
         </div>
         </div>
       </div>
