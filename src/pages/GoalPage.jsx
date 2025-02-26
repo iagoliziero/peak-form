@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { NameContext } from "../contexts/NameContexts.jsx";
+import { ProfileContexts } from "../contexts/ProfileContexts.jsx";
 
 function GoalPage() {
   const navigate = useNavigate();
 
-  const { name } = useContext(NameContext);
+  const { profile } = useContext(ProfileContexts);
 
   const [selectedButtons, setSelectedButton] = useState([]);
 
@@ -42,7 +43,7 @@ function GoalPage() {
       <div>
         <div className="mt-5 flex flex-col gap-5">
           <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
-            Obrigado, {name}. Agora, vamos <br /> falar sobre suas metas.
+            Obrigado, {profile.name} Agora, vamos <br /> falar sobre suas metas.
           </h1>
           <span className="text-center text-xl text-whiteMain">
             <p>

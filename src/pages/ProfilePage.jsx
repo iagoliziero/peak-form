@@ -5,11 +5,11 @@ import { useContext, useState } from "react";
 import { ProfileBodyContexts } from "../contexts/ProfileBodyContexts";
 import { ProfileContexts } from "../contexts/ProfileContexts";
 
+
 function ProfilePage() {
   const { profileBody } = useContext(ProfileBodyContexts);
-  const { profile } = useContext(ProfileContexts);
   const navigate = useNavigate();
-
+  const { profile } = useContext(ProfileContexts)
 
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
@@ -82,8 +82,8 @@ function ProfilePage() {
         </div>
         <div className="mt-10 mb-10 flex justify-center flex-col lg:flex-row gap-10 ">
           <div className="flex justify-center items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5">
-            {profile.map((user, index) => (
-              <div key={index} className="flex flex-col items-center gap-3">
+            
+              <div className="flex flex-col items-center gap-3">
                 <div className="flex mt-10">
                   <button className="relative left-56 lg:left-60 bottom-16">
                     <Pencil size={34} strokeWidth={2} />
@@ -93,12 +93,11 @@ function ProfilePage() {
                   </div>
                 </div>
                 <h1 className="text-2xl lg:text-3xl font-semibold">
-                  {user.name}
+                  {profile.name}
                 </h1>
-                <h2 className="text-xl lg:text-2xl">{user.email}</h2>
-                <h2 className="text-xl lg:text-2xl">{user.date}</h2>
+                <h2 className="text-xl lg:text-2xl">{profile.email}</h2>
+                <h2 className="text-xl lg:text-2xl">f</h2>
               </div>
-            ))}
           </div>
           <div className="flex items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar ">
           {profileBody.length > 0 && (

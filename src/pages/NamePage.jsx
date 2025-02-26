@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { NameContext } from "../contexts/NameContexts.jsx";
+import { ProfileContexts } from "../contexts/ProfileContexts.jsx";
 
 function NamePage() {
   const navigate = useNavigate();
@@ -11,12 +11,18 @@ function NamePage() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { name, setName } = useContext(NameContext);
+
+  const {setProfile } = useContext(ProfileContexts);
 
   const onSubmit = (data) => {
-    console.log(data.name);
+    console.log(data);
+    setProfile((prev) => ({
+      ...prev,
+      name: data.name,
+    })),
     navigate(`/metas`);
-    console.log(name);
+    
+    
   };
 
   return (
@@ -47,12 +53,11 @@ function NamePage() {
           <div className="flex flex-col justify-center">
             <div>
               <input
-                {...register("nameUser", { required: true })}
+                {...register("name", { required: true })}
                 maxLength={10}
-                value={name}
                 onChange={(e) => setName(e.target.value)}
                 className={`mt-10 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
-                  errors?.nameUser
+                  errors?.name
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
                 }`}
@@ -60,7 +65,7 @@ function NamePage() {
                 placeholder="Nome"
               />
             </div>
-            {errors?.nameUser && (
+            {errors?.name && (
               <p className="text-lightRed mx-4 mt-1">
                 {" "}
                 Digite um nome válido.{" "}

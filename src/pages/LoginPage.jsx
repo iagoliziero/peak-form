@@ -1,13 +1,16 @@
 import { Eye, EyeClosed } from "lucide-react";
 import { stringify } from "postcss";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useContext, useState } from "react";
+import { set, useForm } from "react-hook-form";
 import validator from 'validator'
 import Login from "../components/Login";
 import { useNavigate } from "react-router-dom";
+import { ProfileContexts } from "../contexts/ProfileContexts";
 
 function LoginPage() {
   const navigate = useNavigate()
+
+  const {setProfile} = useContext(ProfileContexts)
 
   const [isShowPassword, setIsShowPassword] = useState(false)
   const [isShowPasswordConfirmation, setIsShowPasswordConfirmation] = useState(false)
@@ -31,6 +34,10 @@ function LoginPage() {
 
   const onSubmit = (data) => {
     alert(JSON.stringify(data))
+    setProfile((prev) => ({
+      ...prev, 
+      email: data.email,
+    }))
     navigate(`/principal`)
   }
   return (
@@ -54,7 +61,6 @@ function LoginPage() {
             <div>
               <input
                 {...register("email", { required: true, validate: (value) => validator.isEmail(value)})}
-                
                 className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                   errors?.email ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
