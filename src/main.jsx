@@ -65,6 +65,7 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
+
   <ProfileProvider>
     <ProfileBodyProvider> 
       <NameProvider>
@@ -78,4 +79,5 @@ createRoot(document.getElementById("root")).render(
       </NameProvider>
     </ProfileBodyProvider>
   </ProfileProvider>
+
 );

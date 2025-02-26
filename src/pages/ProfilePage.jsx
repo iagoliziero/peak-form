@@ -1,7 +1,7 @@
 import { CircleUserRound, Pencil } from "lucide-react";
 import DropdownMenu from "../components/DropDownMenu";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ProfileBodyContexts } from "../contexts/ProfileBodyContexts";
 import { ProfileContexts } from "../contexts/ProfileContexts";
 
@@ -9,6 +9,7 @@ function ProfilePage() {
   const { profileBody } = useContext(ProfileBodyContexts);
   const { profile } = useContext(ProfileContexts);
   const navigate = useNavigate();
+
 
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
@@ -100,8 +101,8 @@ function ProfilePage() {
             ))}
           </div>
           <div className="flex items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar ">
-            {profileBody?.map((profile, index) => (
-              <div key={index} className="flex flex-col items-center gap-3">
+          {profileBody.length > 0 && (
+              <div className="flex flex-col items-center gap-3">
                 <div className="flex">
                   <button className="relative left-56 lg:left-60 bottom-16">
                     <Pencil size={34} strokeWidth={2} />
@@ -109,24 +110,24 @@ function ProfilePage() {
                   <div className="w-44 h-44 rounded-full items-center bg-whiteMain flex justify-center relative right-4">
                     <div className="flex flex-col items-center">
                       <h2 className="text-2xl">IMC</h2>
-                      <h1 className="text-3xl font-semibold">{profile.fatCalc}</h1>
+                      <h1 className="text-3xl font-semibold">{profileBody[0].imc}</h1>
                     </div>
                   </div>
                 </div>
                 <h1 className="text-2xl lg:text-3xl font-semibold">
-                  {profile.weightStatus}
+                {profileBody[0].weightStatus}
                 </h1>
-                <h2 className="text-xl lg:text-2xl">{profile.obesityLevel}</h2>
+                <h2 className="text-xl lg:text-2xl">{profileBody[0].obesityLevel}</h2>
                 <h2 className="text-xl lg:text-2xl font-semibold">Altura:</h2>
-                <h2 className="text-xl lg:text-2xl">{profile.height} cm</h2>
+                <h2 className="text-xl lg:text-2xl">{profileBody[0].height} cm</h2>
                 <h2 className="text-xl lg:text-2xl font-semibold">Peso:</h2>
-                <h2 className="text-xl lg:text-2xl">{profile.weight} kg</h2>
+                <h2 className="text-xl lg:text-2xl">{profileBody[0].weight} kg</h2>
                 <h2 className="text-xl lg:text-2xl font-semibold">
                   Meta de peso:
                 </h2>
-                <h2 className="text-xl lg:text-2xl">{profile.goalWeight} kg</h2>
+                <h2 className="text-xl lg:text-2xl">{profileBody[0].goalWeight} kg</h2>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </div>

@@ -1,6 +1,5 @@
 import { jwtDecode } from "jwt-decode";
 
-
 const handleGoogleLogin = (response) => {
   try {
     const user = jwtDecode(response.credential);

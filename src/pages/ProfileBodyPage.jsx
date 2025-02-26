@@ -1,8 +1,12 @@
 import { data } from "autoprefixer";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { ProfileBodyContexts } from "../contexts/ProfileBodyContexts";
 
 function ProfileBodyPage() {
+
+  const { setProfileBody } = useContext(ProfileBodyContexts);
 
   const navigate = useNavigate()
   const {
@@ -12,12 +16,46 @@ function ProfileBodyPage() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
-    navigate('/login')
+    const heightInMeters = data.height / 100;
+    const imc = (data.weight / (heightInMeters * heightInMeters)).toFixed(2);
+
+    let weightStatus = "";
+    let obesityLevel = "";
+
+    if (imc < 18.5) {
+      weightStatus = "Abaixo do peso";
+      obesityLevel = "Normal";
+    } else if (imc < 24.9) {
+      weightStatus = "Peso normal";
+      obesityLevel = "Normal";
+    } else if (imc < 29.9) {
+      weightStatus = "Sobrepeso";
+      obesityLevel = "Obesidade grau 1";
+    } else if (imc < 34.9) {
+      weightStatus = "Obesidade";
+      obesityLevel = "Obesidade grau 2";
+    } else {
+      weightStatus = "Obesidade grave";
+      obesityLevel = "Obesidade grau 3";
+    }
+
+    setProfileBody([
+      {
+        imc,
+        weightStatus,
+        obesityLevel,
+        height: data.height,
+        weight: data.weight,
+        goalWeight: data.goalWeight,
+      },
+    ]);
+
+    navigate("/login");
   };
 
+
   return (
-    <div className="h-full bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-auto">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
       <div className="flex flex-col justify-center mt-16 gap-8">
         <span className="flex flex-col items-center">
           <img

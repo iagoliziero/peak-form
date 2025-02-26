@@ -64,7 +64,7 @@ function ActivityPage() {
           Voltar
         </button>
         <button 
-        onClick={() => navigate(`/infos`)}
+        onClick={() => navigate(`/perfilusuario`)}
         className="w-[300px] md:visible-false md:w-[220px] h-[60px] bg-yellowMain text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold">
           Continuar
         </button>

@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 function Home() {
   const navigate = useNavigate()
 
-
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center overflow-scroll no-scrollbar">
       <div className=" flex flex-col justify-center md:mt-0 gap-8">
