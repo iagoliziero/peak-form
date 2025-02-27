@@ -1,11 +1,14 @@
-import { useState } from "react";
+
 import { GoogleLogin } from "@react-oauth/google";
 import handleGoogleLogin from "../services/googleAuthService";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 
 
 export default function Login() {
   const [user, setUser] = useState(null);
+
   const navigate = useNavigate()
 
   return (
@@ -24,7 +27,7 @@ export default function Login() {
         theme="outline"
         />
       ) : (
-        alert(JSON.stringify(user))
+       alert(user)
       
       )}
     </div>
