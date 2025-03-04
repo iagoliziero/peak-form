@@ -1,5 +1,6 @@
 import { CircleUserRound } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import H1 from "../components/H1";
 
 function Home() {
   const navigate = useNavigate()
@@ -13,10 +14,10 @@ function Home() {
           className="w-10 h-10 top-[80px] md:left-[350px] lg:left-[550px] rounded-full items-center bg-yellowMain hover:bg-orange flex justify-center relative left-52 "> <CircleUserRound size={30} /> </button>
           </div>
         <span className="flex items-center justify-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-darker text-whiteMain font-semibold text-center">
+          <H1>
             
             Bem vindo ao
-          </h1>
+          </H1>
           
         </span>
         

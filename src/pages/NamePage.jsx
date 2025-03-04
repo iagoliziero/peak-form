@@ -2,6 +2,11 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { ProfileContexts } from "../contexts/ProfileContexts.jsx";
+import H1 from "../components/H1.jsx";
+import Paragraph from "../components/Paragraph.jsx";
+import ButtonBack from "../components/ButtonBack.jsx";
+import Logo from "../components/Logo.jsx";
+import ButtonNext from "../components/ButtonNext.jsx";
 
 function NamePage() {
   const navigate = useNavigate();
@@ -27,29 +32,17 @@ function NamePage() {
 
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center overflow-scroll no-scrollbar ">
-      <div className=" flex flex-col justify-center mt-16 lg:mt-0 gap-8">
-        <span className="flex flex-col items-center">
-          <img
-            className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"
-            src="src/public/logo.png"
-            alt="logo"
-          />
-        </span>
-      </div>
+      <Logo />
       <div>
         <div className="mt-5 flex flex-col gap-5">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
+          <H1>
             {" "}
             Qual é o seu nome?
-          </h1>
-          <span className="text-center text-xl  text-whiteMain">
-            {" "}
-            <p>
-              {" "}
-              Estamos contentes com a sua presença aqui. <br />
-              Vamos saber um pouco sobre você.
-            </p>{" "}
-          </span>
+          </H1>
+          <Paragraph> 
+          Estamos contentes com a sua presença aqui. <br />
+          Vamos saber um pouco sobre você.
+          </Paragraph>
           <div className="flex flex-col justify-center">
             <div>
               <input
@@ -74,21 +67,15 @@ function NamePage() {
           </div>
         </div>
       </div>
-      <div className="flex flex-row relative top-64 lg:top-40 lg:relative mt-8 items-center md:items-center gap-6 ">
-        <button
-          onClick={() => navigate(-1)}
-          className="w-[170px] hidden md:block  md:w-[220px] h-[60px]
-                    border border-yellowMain text-yel mb-12 text-2xl rounded-lg text-yellowMain hover:scale-105 transition-all font-semibold"
-        >
+      <div className="flex flex-row fixed bottom-6 lg:top-40 lg:relative mt-8 items-center md:items-center gap-6 ">
+        <ButtonBack onClick={() => navigate(-1)}> 
           Voltar
-        </button>
-        <button
+        </ButtonBack>
+        <ButtonNext
           onClick={() => handleSubmit(onSubmit)()}
-          className="w-[300px] md:visible-false md:w-[220px] h-[60px]
-        bg-yellowMain mb-12 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"
         >
           Continuar
-        </button>
+        </ButtonNext>
       </div>
     </div>
   );

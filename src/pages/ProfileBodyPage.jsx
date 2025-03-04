@@ -50,7 +50,7 @@ function ProfileBodyPage() {
       },
     ]);
 
-    navigate("/login");
+    navigate("/infos");
   };
 
 
