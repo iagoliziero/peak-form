@@ -32,7 +32,15 @@ function NamePage() {
 
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center overflow-scroll no-scrollbar ">
-      <Logo />
+      <div className=" flex flex-col justify-center mt-16 lg:mt-0 gap-8">
+        <span className="flex flex-col items-center">
+          <img
+            className="w-[11rem] md:w-[13rem] xl:w-[14rem]"
+            src="src/public/logo.png"
+            alt="logo"
+          />
+        </span>
+      </div>
       <div>
         <div className="mt-5 flex flex-col gap-5">
           <H1>
@@ -67,7 +75,7 @@ function NamePage() {
           </div>
         </div>
       </div>
-      <div className="flex flex-row fixed bottom-6 lg:top-40 lg:relative mt-8 items-center md:items-center gap-6 ">
+      <div className="mb-12 flex flex-row lg:relative mt-8 items-center md:items-center gap-6">
         <ButtonBack onClick={() => navigate(-1)}> 
           Voltar
         </ButtonBack>

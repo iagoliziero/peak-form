@@ -2,6 +2,11 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { NameContext } from "../contexts/NameContexts.jsx";
 import { ProfileContexts } from "../contexts/ProfileContexts.jsx";
+import Logo from "../components/Logo.jsx";
+import H1 from "../components/H1.jsx";
+import Paragraph from "../components/Paragraph.jsx";
+import ButtonBack from "../components/ButtonBack.jsx";
+import ButtonNext from "../components/ButtonNext.jsx";
 
 function GoalPage() {
   const navigate = useNavigate();
@@ -31,26 +36,16 @@ function GoalPage() {
 
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
-      <div className="flex flex-col justify-center mt-12 gap-8">
-        <span className="flex flex-col items-center">
-          <img
-            className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"
-            src="src/public/logo.png"
-            alt="logo"
-          />
-        </span>
-      </div>
+      <Logo /> 
       <div>
         <div className="mt-5 flex flex-col gap-5">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
-            Obrigado, {profile.name} Agora, vamos <br /> falar sobre suas metas.
-          </h1>
-          <span className="text-center text-xl text-whiteMain">
-            <p>
-              Escolha até 2 aspectos importantes para você, <br /> incluindo um
+          <H1>
+            Obrigado, {profile.name}. Agora, <br /> vamos falar sobre suas metas.
+          </H1>
+          <Paragraph>
+            Escolha até 2 aspectos importantes para você, <br /> incluindo um
               objetivo relacionado ao seu peso.
-            </p>
-          </span>
+          </Paragraph>
 
           <div className="flex flex-col items-center mt-8 gap-8">
             {buttons.map((button) => (
@@ -70,19 +65,17 @@ function GoalPage() {
           </div>
         </div>
       </div>
-      <div className="mb-12 flex flex-row lg:relative mt-8  items-center md:items-center gap-6">
-        <button
+      <div className="mb-5 flex flex-row lg:relative mt-8  items-center md:items-center gap-6">
+        <ButtonBack
           onClick={() => navigate(-1)}
-          className="w-[170px] hidden md:block md:w-[220px] h-[60px] border border-yellowMain text-2xl rounded-lg text-yellowMain hover:scale-105 transition-all font-semibold"
         >
           Voltar
-        </button>
-        <button
+        </ButtonBack>
+        <ButtonNext
           onClick={() => navigate(`/agradecimento`)}
-          className="w-[300px] md:visible-false md:w-[220px] h-[60px] bg-yellowMain text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"
         >
           Continuar
-        </button>
+        </ButtonNext>
       </div>
     </div>
   );

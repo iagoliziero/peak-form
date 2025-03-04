@@ -3,6 +3,11 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { ProfileBodyContexts } from "../contexts/ProfileBodyContexts";
+import Logo from "../components/Logo";
+import H1 from "../components/H1";
+import Paragraph from "../components/Paragraph";
+import ButtonBack from "../components/ButtonBack";
+import ButtonNext from "../components/ButtonNext";
 
 function ProfileBodyPage() {
 
@@ -56,21 +61,13 @@ function ProfileBodyPage() {
 
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
-      <div className="flex flex-col justify-center mt-16 gap-8">
-        <span className="flex flex-col items-center">
-          <img
-            className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"
-            src="src/public/logo.png"
-            alt="logo"
-          />
-        </span>
-      </div>
+      <Logo />
       <div className="flex flex-col ">
         <div className="mt-5 flex flex-col gap-3">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
+          <H1>
             {" "}
             Qual é a sua altura?
-          </h1>
+          </H1 >
           <div className="flex justify-center">
             <div>
               <input
@@ -94,16 +91,14 @@ function ProfileBodyPage() {
         </div>
 
         <div className="mt-5 flex flex-col gap-3">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
+          <H1>
             {" "}
             Qual é o seu peso?
-          </h1>
-          <span className="mt-2 text-center text-xl  text-whiteMain">
-            <p>
-              Não tem problema inserir uma estimativa. <br />
-              você pode atualizar posteriormente.
-            </p>
-          </span>
+          </H1>
+          <Paragraph> 
+          Não tem problema inserir uma estimativa. <br />
+          você pode atualizar posteriormente.
+          </Paragraph>
           <div className="flex justify-center">
             <div>
               <input
@@ -126,10 +121,10 @@ function ProfileBodyPage() {
         </div>
 
         <div className="mt-5 flex flex-col gap-3">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
+          <H1>
             {" "}
             Qual é a sua <br className="hidden lg:block" /> meta de peso?
-          </h1>
+          </H1>
           <div className="flex justify-center">
             <div>
               <input
@@ -151,21 +146,18 @@ function ProfileBodyPage() {
           </div>
         </div>
       </div>
-      <div className="flex flex-row  lg:relative items-center md:items-center gap-6 ">
-        <button
+      <div className="mb-5 flex flex-row lg:relative mt-8  items-center md:items-center gap-6">
+        <ButtonBack
         onClick={() => navigate(-1)}
-          className="w-[170px] hidden md:block  md:w-[220px] h-[60px]
-                        border border-yellowMain text-yel mb-12 text-2xl rounded-lg text-yellowMain hover:scale-105 transition-all font-semibold"
+
         >
           Voltar
-        </button>
-        <button
+        </ButtonBack>
+        <ButtonNext
           onClick={() => handleSubmit(onSubmit)()}
-          className="w-[300px] md:visible-false md:w-[220px] h-[60px]
-                        bg-yellowMain mb-12 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"
         >
           Continuar
-        </button>
+        </ButtonNext>
       </div>
     </div>
   );
