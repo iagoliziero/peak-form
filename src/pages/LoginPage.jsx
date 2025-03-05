@@ -1,4 +1,4 @@
-import { Eye, EyeClosed } from "lucide-react";
+import { Eye, EyeClosed, Parentheses } from "lucide-react";
 import { stringify } from "postcss";
 import { useContext, useState } from "react";
 import { set, useForm } from "react-hook-form";
@@ -6,6 +6,9 @@ import validator from 'validator'
 import Login from "../components/Login";
 import { useNavigate } from "react-router-dom";
 import { ProfileContexts } from "../contexts/ProfileContexts";
+import Logo from "../components/Logo";
+import H1 from "../components/H1";
+import Paragraph from "../components/Paragraph";
 
 function LoginPage() {
   const navigate = useNavigate()
@@ -41,22 +44,11 @@ function LoginPage() {
     navigate(`/principal`)
   }
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar lg:justify-center">
-      <div className=" flex flex-col justify-center mt-12 gap-8">
-        <span className="flex flex-col items-center">
-          <img
-            className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"
-            src="src/public/logo.png"
-            alt="logo"
-          />
-        </span>
-      </div>
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar md:justify-center lg:justify-start">
+      <Logo />
       <div className="flex flex-col ">
         <div className="mt-5 flex flex-col gap-3">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
-            {" "}
-            Quase lá! Crie a sua conta
-          </h1>
+          <H1> Quase lá! Crie a sua conta</H1>
           <div className="flex flex-col items-center mt-10">
             <div>
               <input
@@ -137,10 +129,12 @@ function LoginPage() {
               )}
             </div>
             <div className="flex justify-start mt-3">
-                <p className="text-center text-xl  text-whiteMain">Deve ter pelo menos 7 caracteres, <br className="md:hidden" /> sem espaço. </p>
+              <Paragraph> 
+              Deve ter pelo menos 7 caracteres, <br className="md:hidden" /> sem espaço.
+              </Paragraph>
             </div>
           </div>
-          <div className="mt-8 gap-3 flex flex-col items-center ">
+          <div className="mt-5 gap-3 flex flex-col items-center ">
             <button
             
             onClick={() => handleSubmit(onSubmit)()}
@@ -156,7 +150,9 @@ function LoginPage() {
             </div>
           </div>
           <div className="flex gap-1 mt-2 mb-12 text-xl font-darker text-whiteMain justify-center">
-            <h2> Já tenho uma conta!</h2>
+            <Paragraph> 
+             Já tenho uma conta!
+            </Paragraph>
             <button 
             onClick={() => navigate(`/signin`)}
             className="text-yellowMain hover:text-orange"> Entrar.</button>

@@ -1,6 +1,7 @@
 import { CircleUserRound } from "lucide-react";
 import DropdownMenu from "../components/DropDownMenu";
 import { useNavigate } from "react-router-dom";
+import Nav from "../components/Nav";
 
 function AboutUs() {
   const navigate = useNavigate()
@@ -25,46 +26,7 @@ function AboutUs() {
         </span>
        
       </div>
-      <nav className="hidden lg:block  ">
-        <ul className="flex gap-8 text-center text-2xl xl:text-2xl text-whiteMain ">
-          <li 
-          onClick={() => navigate(`/principal`)}
-          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
-            {" "}
-            Seu treino{" "}
-          </li>
-          <li 
-          onClick={() => navigate(`/criarexercicio`)}
-          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
-            {" "}
-            Criar exercício{" "}
-          </li>
-          <li 
-          onClick={() => navigate(`/tempodepausa`)}
-          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
-            {" "}
-            Tempo de Pausa{" "}
-          </li>
-          <li 
-           onClick={() => navigate(`/tmb`)}
-          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
-            {" "}
-            TMB{" "}
-          </li>
-          <li 
-          onClick={() => navigate(`/perfil`)}
-          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
-            {" "}
-            Perfil
-          </li>
-          <li 
-          onClick={() => navigate(`/sobre`)}
-          className="hover:text-yellowMain cursor-pointer transition-all hover:scale-105 ">
-            {" "}
-            Sobre Nós{" "}
-          </li>
-        </ul>
-      </nav>
+      <Nav />
       {/* HEADER */}
         <div className="w-full xxl:h-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5 ">
           <div className="flex mt-10 ">

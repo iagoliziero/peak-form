@@ -31,16 +31,8 @@ function NamePage() {
   };
 
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center overflow-scroll no-scrollbar ">
-      <div className=" flex flex-col justify-center mt-16 lg:mt-0 gap-8">
-        <span className="flex flex-col items-center">
-          <img
-            className="w-[11rem] md:w-[13rem] xl:w-[14rem]"
-            src="src/public/logo.png"
-            alt="logo"
-          />
-        </span>
-      </div>
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 md:justify-center overflow-scroll no-scrollbar ">
+      <Logo />
       <div>
         <div className="mt-5 flex flex-col gap-5">
           <H1>
