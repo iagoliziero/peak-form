@@ -2,13 +2,14 @@
 import { GoogleLogin } from "@react-oauth/google";
 import handleGoogleLogin from "../services/googleAuthService";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ProfileContexts } from "../contexts/ProfileContexts";
 
 
 
 export default function Login() {
   const [user, setUser] = useState(null);
-
+  const {setProfile} = useContext(ProfileContexts)
   const navigate = useNavigate()
 
   return (
@@ -18,6 +19,10 @@ export default function Login() {
           onSuccess={(response) => {
             const userData = handleGoogleLogin(response);
             setUser(userData);
+            setProfile((prev) => ({
+              ...prev,
+              email: userData.email
+            }))
             navigate(`/principal`)
           }}
           onError={() => console.log("Erro ao fazer login")}
@@ -27,7 +32,7 @@ export default function Login() {
         theme="outline"
         />
       ) : (
-       alert(user)
+       alert(user.email)
       
       )}
     </div>

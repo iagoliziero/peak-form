@@ -20,14 +20,11 @@ function NamePage() {
   const {setProfile } = useContext(ProfileContexts);
 
   const onSubmit = (data) => {
-    console.log(data);
     setProfile((prev) => ({
       ...prev,
       name: data.name,
     })),
     navigate(`/metas`);
-    
-    
   };
 
   return (

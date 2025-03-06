@@ -53,7 +53,7 @@ function ProfilePage() {
                   {profile.name}
                 </h1>
                 <h2 className="text-xl lg:text-2xl">{profile.email}</h2>
-                <h2 className="text-xl lg:text-2xl">f</h2>
+                <h2 className="text-xl lg:text-2xl">10/04/2007</h2>
               </div>
           </div>
           <div className="flex items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar ">
