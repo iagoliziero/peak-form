@@ -12,7 +12,6 @@ function ProfilePage() {
   const navigate = useNavigate();
   const { profile } = useContext(ProfileContexts)
 
-
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
       {/* Logo */}

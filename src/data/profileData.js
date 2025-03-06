@@ -2,7 +2,6 @@ const profileData = [
     {
         name:'',
         email: '',
-        google: '',
         date: ''
     },
 ]
