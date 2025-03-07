@@ -3,6 +3,9 @@ import DropdownMenu from "../components/DropDownMenu";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Nav from "../components/Nav";
+import Button from "../components/Button";
+import Paragraph from "../components/Paragraph";
+import H1 from "../components/H1";
 
 function BasalPage() {
 
@@ -45,7 +48,7 @@ function BasalPage() {
         <span className="flex relative">
         <img
           onClick={() => navigate(`/principal`)}
-            className="w-[11rem] md:w-[13rem] xl:w-[14rem]"
+            className="w-[176px] md:w-[208px] xl:w-[224px]"
             src="src/public/logo.png"
             alt="logo"
           />
@@ -57,11 +60,11 @@ function BasalPage() {
       <Nav />
       <div className="w-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5 ">
         <div className="flex mt-10 flex-col gap-3 ">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
+          <H1>
             {" "}
             Taxa metabólica basal
-          </h1>
-          <p className="text-center text-xl text-whiteMain">
+          </H1>
+          <Paragraph>
             {" "}
             A Taxa Metabólica Basal (TMB) representa{" "}
             <br className="block md:hidden" /> o total de calorias que o corpo
@@ -69,7 +72,7 @@ function BasalPage() {
             <br className="block md:hidden" /> cardíacos, respiração, pressão
             arterial <br className="" /> e temperatura corporal, mesmo estando
             em <br className="block md:hidden" /> repouso absoluto.{" "}
-          </p>
+          </Paragraph>
         </div>
         <div className="flex flex-col mb-12 justify-center items-center ">
           <div className="flex flex-col">
@@ -77,7 +80,7 @@ function BasalPage() {
     
               {...register("height", { required: true })}
               maxLength={10}
-              className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+              className={`mt-5 w-[20rem] md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                 errors?.height ? "border-lightRed" : "focus:border-yellowMain"
               }`}
               type="number"
@@ -96,7 +99,7 @@ function BasalPage() {
             
               {...register("currentWeight", { required: true })}
               maxLength={10}
-              className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+              className={`mt-5 w-[20rem] md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                 errors?.currentWeight
                   ? "border-lightRed"
                   : "focus:border-yellowMain"
@@ -115,7 +118,7 @@ function BasalPage() {
             <input
               {...register("age", { required: true })}
               maxLength={10}
-              className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+              className={`mt-5 w-[20rem] md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                 errors?.age ? "border-lightRed" : "focus:border-yellowMain"
               }`}
               type="number"
@@ -129,17 +132,17 @@ function BasalPage() {
             )}
           </div>
           <div className="flex mt-10 flex-col gap-3">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
+            <H1>
               {" "}
               Qual é o seu gênero?{" "}
-            </h1>
+            </H1>
           </div>
           <div className="mt-8">
             <select
               {...register('gender', {validate: (value) => {
                 return value !== 'selecionar'
               }})}
-              className={`w-[300px] p-4 border border-gray rounded-md bg-darker text-white text-xl focus:outline-none focus:ring-2 focus:ring-yellowMain ${errors?.gender ?"border-lightRed" : "focus:border-yellowMain" }`}
+              className={`w-[18.75rem] p-4 border border-gray rounded-md bg-darker text-white text-xl focus:outline-none focus:ring-2 focus:ring-yellowMain ${errors?.gender ?"border-lightRed" : "focus:border-yellowMain" }`}
             >
               <option value="selecionar"> Selecionar </option>
               <option value="masculino"> Masculino </option>
@@ -148,16 +151,16 @@ function BasalPage() {
             {errors?.gender?.type === "validate" && <p className="text-lightRed mx-4 mt-1"> O gênero está inválido. </p>}
           </div>
           <div className="flex flex-col items-center gap-3">
-            <div>
-              <button
+            <div className="mt-5">
+              <Button
                 onClick={() => handleSubmit(onSubmit)()}
-                className="w-[300px] md:w-[360px] h-[60px] bg-yellowMain mt-12 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"
               >
                 {" "}
                 Calcular{" "}
-              </button>
+              </Button>
+
             </div>
-            <h2 className="text-2xl mt-8 text-whiteMain font-semibold">
+            <h2 className="text-2xl text-whiteMain font-semibold">
               {" "}
               Resultado:{" "}
             </h2>
@@ -169,7 +172,7 @@ function BasalPage() {
             </h1>
           </div>
           <div className="flex justify-center mt-8">
-            <p className="text-center text-xl text-whiteMain">
+            <Paragraph>
               {" "}
               É importante entender que a TMB não é{" "}
               <br className="block md:hidden" /> um número exato. Ela é apenas
@@ -177,7 +180,7 @@ function BasalPage() {
               pois fatores como genética, hormônios e rotina{" "}
               <br className="block md:hidden" /> influenciam o gasto real de
               calorias.
-            </p>
+            </Paragraph>
           </div>
         </div>
       </div>

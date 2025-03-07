@@ -3,6 +3,7 @@ import DropdownMenu from "../components/DropDownMenu";
 import { data } from "autoprefixer";
 import { useNavigate } from "react-router-dom";
 import Nav from "../components/Nav";
+import Button from "../components/Button";
 
 function CreateExercisePage() {
   const navigate = useNavigate();
@@ -135,12 +136,11 @@ function CreateExercisePage() {
             </div>
           </div>
 
-          <button
+          <Button
             onClick={() => handleSubmit(onSubmit)()}
-            className="w-[300px] md:w-[360px] h-[60px] bg-yellowMain mb-8 mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"
           >
             Criar Exercício
-          </button>
+          </Button>
         </div>
       </div>
     </>

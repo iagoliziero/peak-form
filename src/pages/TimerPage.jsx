@@ -3,6 +3,7 @@ import DropdownMenu from "../components/DropDownMenu";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Nav from "../components/Nav";
+import Button from "../components/Button";
 
 function TimerPage() {
 
@@ -79,7 +80,7 @@ function TimerPage() {
         <span className="flex relative">
           <img
           onClick={() => navigate(`/principal`)}
-            className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px] cursor-pointer"
+            className="w-[176px] md:w-[208px] xl:w-[224px]"
             src="src/public/logo.png"
             alt="logo"
           />
@@ -98,7 +99,7 @@ function TimerPage() {
           </h1>
         </div>
         <div className="mt-10 flex justify-center items-center flex-col w gap-10 ">
-            <div className="flex items-center justify-center flex-col w-[350px] lg:w-[400px] h-[300px] lg:h-[300px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5"> 
+            <div className="flex items-center justify-center flex-col w-[21.875rem] lg:w-[25rem] h-[18.75rem] lg:h-[18.75rem] xl:w-[25rem] bg-yellowMain rounded-lg p-6 gap-5"> 
                 <div className="flex flex-col items-center justify-center space-y-1 gap-10 " >
                     <div>
                         <h2 className="text-xl lg:text-2xl"> Sessão</h2>
@@ -122,7 +123,7 @@ function TimerPage() {
                 </div>
 
             </div>
-            <div className="flex items-center flex-col w-[350px] lg:w-[400px] h-[170px] relative bottom-12 lg:h-[200px] xl:w-[400px] bg-whiteMain rounded-lg p-6 gap-10 rounded-t-none justify-center">
+            <div className="flex items-center flex-col w-[21.875rem] lg:w-[25rem] h-[10.625rem] relative bottom-12 lg:h-[12.5rem] xl:w-[25rem] bg-whiteMain rounded-lg p-6 gap-10 rounded-t-none justify-center">
                 <div className="flex gap-10">
                     <button
                     onClick={decreasePauseTime} >
@@ -137,9 +138,9 @@ function TimerPage() {
                     </button>
                 </div>
                 <div className="flex ">
-                    <button
+                    <Button
                     onClick={updateSessionTime}
-                    className="w-[300px] md:w-[360px] h-[60px] bg-yellowMain text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"> Adicionar </button>
+                    > Adicionar </Button>
                 </div>
             </div>
         </div>
