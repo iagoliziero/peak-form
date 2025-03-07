@@ -3,6 +3,9 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import validator from "validator";
 import Login from "../components/Login";
+import { useNavigate } from "react-router-dom";
+import H1 from "../components/H1";
+import Logo from "../components/Logo";
 
 function SignIn() {
   const [isShowPasswordSignIn, setIsShowPasswordSignIn] = useState(false);
@@ -11,6 +14,8 @@ function SignIn() {
   const handlePasswordSignIn = () => {
     setIsShowPasswordSignIn(!isShowPasswordSignIn);
   };
+
+  const navigate = useNavigate()
 
   const {
     register,
@@ -24,21 +29,13 @@ function SignIn() {
   };
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar lg:justify-center">
-      <div className=" flex flex-col justify-center mt-12 gap-8">
-        <span className="flex flex-col items-center">
-          <img
-            className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px]"
-            src="src/public/logo.png"
-            alt="logo"
-          />
-        </span>
-      </div>
+      <Logo />
       <div className="flex flex-col ">
         <div className="mt-5 flex flex-col gap-3">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
+          <H1>
             {" "}
             Entrar em sua conta
-          </h1>
+          </H1>
           <div className="flex flex-col items-center mt-10">
             <div>
               <input
@@ -46,7 +43,7 @@ function SignIn() {
                   required: true,
                   validate: (value) => validator.isEmail(value),
                 })}
-                className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+                className={`mt-5 w-[20rem] md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                   errors?.email ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
                 type="text"
@@ -71,7 +68,7 @@ function SignIn() {
                   required: true,
                   minLength: 7,
                 })}
-                className={`mt-5 w-[320px] relative left-3 md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+                className={`mt-5 w-[20rem] relative left-3 md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                   errors?.passwordSignIn
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
@@ -81,7 +78,7 @@ function SignIn() {
               />
               <button
                 onClick={handlePasswordSignIn}
-                className="text-whiteMain relative  m-0 right-[50px] top-1 bottom-9 "
+                className="text-whiteMain relative  m-0 right-[3.125rem] top-1 bottom-9 "
               >
                 {" "}
                 {isShowPasswordSignIn && <EyeClosed />}{" "}
@@ -104,7 +101,7 @@ function SignIn() {
           <div className="mt-8 gap-3 flex flex-col items-center ">
             <button
               onClick={() => handleSubmit(onSubmit)()}
-              className="w-[300px] md:w-[360px] h-[60px] bg-yellowMain mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"
+              className="w-[18.75rem] md:w-[22.5rem] h-[3.75rem] bg-yellowMain mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 duration-[400ms] transition-all font-semibold"
             >
               Entrar
             </button>
