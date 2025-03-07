@@ -124,7 +124,7 @@ function TimerPage() {
 
             </div>
             <div className="flex items-center flex-col w-[21.875rem] lg:w-[25rem] h-[10.625rem] relative bottom-12 lg:h-[12.5rem] xl:w-[25rem] bg-whiteMain rounded-lg p-6 gap-10 rounded-t-none justify-center">
-                <div className="flex gap-10">
+                <div className="flex gap-10 relative top-10">
                     <button
                     onClick={decreasePauseTime} >
                         <CircleArrowDown size={30} />
