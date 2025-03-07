@@ -14,7 +14,7 @@ function Gender({setValue, register, errors}) {
           className="flex-row flex items-center font-bolder  text-xl m-2  gap-5 cursor-pointer"
         >
           <div
-            className={`w-[20px] h-[20px] rounded-full  items-center justify-center transition-all duration-400 border-4
+            className={`w-[1.25rem] h-[1.25rem] rounded-full  items-center justify-center transition-all duration-400 border-4
                    ${
                      selectedGender === gender
                        ? "bg-yellowMain border-yellowMain"

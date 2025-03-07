@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
   const navigate = useNavigate()
 
   return (
-    <div className="absolute right-2 md:right-[80px] lg:right-[150px] xl:right-[300px] lg:hidden z-50">
+    <div className="absolute right-2 md:right-[5rem] lg:right-[9.375rem] xl:right-[18.75rem] lg:hidden z-50">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center px-4 py-2 bg-transparent rounded-md"

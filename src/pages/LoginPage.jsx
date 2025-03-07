@@ -53,7 +53,7 @@ function LoginPage() {
             <div>
               <input
                 {...register("email", { required: true, validate: (value) => validator.isEmail(value)})}
-                className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+                className={`mt-5 w-[20rem] md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                   errors?.email ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
                 type="text"
@@ -76,7 +76,7 @@ function LoginPage() {
               <input
                 {...register("password", { required: true, minLength: 7 })}
 
-                className={`mt-5 w-[320px] relative left-3 md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+                className={`mt-5 w-[20rem] relative left-3 md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                   errors?.password
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
@@ -86,7 +86,7 @@ function LoginPage() {
               />
               <button 
               onClick={handlePassword}
-              className="text-whiteMain relative  m-0 right-[50px] top-1 bottom-9 "> {isShowPassword && <EyeClosed />} {!isShowPassword && <Eye />}  </button>
+              className="text-whiteMain relative  m-0 right-[3.125rem] top-1 bottom-9 "> {isShowPassword && <EyeClosed />} {!isShowPassword && <Eye />}  </button>
               {errors?.password?.type === "required" && (
                 <p className="text-lightRed mx-4 mt-1">
                   {" "}
@@ -102,7 +102,7 @@ function LoginPage() {
             <div>
               <input
                 {...register("passwordConfirmation", { required: true, validate: (value) => value ===watchPassword })}
-                className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain relative left-3 focus:outline-none focus:ring-3  ${
+                className={`mt-5 w-[20rem] md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain relative left-3 focus:outline-none focus:ring-3  ${
                   errors?.passwordConfirmation
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
@@ -113,7 +113,7 @@ function LoginPage() {
               />
               <button 
               onClick={handlePasswordConfirmation}
-              className="text-whiteMain relative  m-0 right-[50px] top-1 bottom-9 "> {isShowPasswordConfirmation && <EyeClosed />} {!isShowPasswordConfirmation && <Eye />}  </button>
+              className="text-whiteMain relative  m-0 right-[3.125rem] top-1 bottom-9 "> {isShowPasswordConfirmation && <EyeClosed />} {!isShowPasswordConfirmation && <Eye />}  </button>
               
               {errors?.passwordConfirmation?.type === "required" && (
                 <p className="text-lightRed mx-4 mt-1">
@@ -134,11 +134,11 @@ function LoginPage() {
               </Paragraph>
             </div>
           </div>
-          <div className="mt-5 gap-3 flex flex-col items-center ">
+          <div className="mt-5 gap-3 flex flex-col items-center "> 
             <button
             
             onClick={() => handleSubmit(onSubmit)()}
-            className="w-[300px] md:w-[360px] h-[60px] bg-yellowMain mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold">
+            className="w-[18.75rem] md:w-[22.5rem] h-[3.75rem] bg-yellowMain mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold duration-[400ms]">
               Continuar
             </button>
             <h2 className="text-2xl lg:text-3xl font-darker text-whiteMain font-semibold text-center">

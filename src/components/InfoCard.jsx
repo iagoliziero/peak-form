@@ -16,9 +16,9 @@ function InfoCard({exercise}) {
       </button>
       {isOpen && (
         <div className="fixed inset-0 flex items-center p-4 rounded-lg justify-center bg-darker bg-opacity-50">
-          <div className="bg-white w-[600px]  h-[400px] m-10 md:h-[600px] items-center justify-center  rounded-lg shadow-lg overflow-y-scroll overflow-x-hidden no-scrollbar">
+          <div className="bg-white w-[37.5rem]  h-[25rem] m-10 md:h-[37.5rem] items-center justify-center  rounded-lg shadow-lg overflow-y-scroll overflow-x-hidden no-scrollbar">
                 <div key={exercise.id}>
-                <div className="bg-yellowMain w-full rounded-b-none h-[75px] rounded-lg md:h-[100px] ">
+                <div className="bg-yellowMain w-full rounded-b-none h-[4.6875rem] rounded-lg md:h-[6.25rem] ">
               <div className="flex justify-center text-center ">
                 <h1 className="fetext-3xl p-4 md:text-4xl  lg:text-5xl items-center  text-darker text-center font-bold">
                     {exercise.title}
@@ -45,7 +45,7 @@ function InfoCard({exercise}) {
                       </div>
               <div className="justify-center items-center mb-10 flex flex-col ">
                 <button
-                  className=" bg-red md:w-[360px] h-[50px] w-[250px] text-white  text-2xl rounded-lg  hover:scale-105 transition "
+                  className=" bg-red md:w-[22.5rem] h-[3.125rem] w-[15.625rem] text-white  text-2xl rounded-lg  hover:scale-105 transition "
                   onClick={() => setIsOpen(false)}
                 >
                   Fechar

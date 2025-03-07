@@ -23,12 +23,12 @@ function CreateExercisePage() {
         {/* Logo */}
         <div className="flex mt-16 gap-8">
           <span className="flex relative">
-            <img
-              onClick={() => navigate(`/principal`)}
-              className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px] cursor-pointer"
-              src="src/public/logo.png"
-              alt="logo"
-            />
+          <img
+          onClick={() => navigate(`/principal`)}
+            className="w-[11rem] md:w-[13rem] xl:w-[14rem]"
+            src="src/public/logo.png"
+            alt="logo"
+          />
             <span className="relative left-28 md:left-72">
               <DropdownMenu />
             </span>

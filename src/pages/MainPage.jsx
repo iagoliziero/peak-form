@@ -5,6 +5,7 @@ import { ExerciseContext } from "../contexts/ExerciseContext";
 import { useNavigate } from "react-router-dom";
 import InfoCard from "../components/InfoCard";
 import Nav from "../components/Nav";
+import Button from "../components/Button";
 
 
 function MainPage() {
@@ -42,23 +43,22 @@ function MainPage() {
       <div className="w-full h-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5">
 
       <div className="mt-10 flex justify-center ">
-          <button
+          <Button
           onClick={() => navigate(`/criarexercicio`)}
-            className="w-[300px] md:w-[360px] h-[60px] bg-yellowMain mb-8 mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold"
           >
             Criar exercício
-          </button>
+          </Button>
         </div>
         
         {/* cards */}
         <div
 
-          className="w-full flex gap-6 px-8 py-4 snap-x snap-mandatory scrollbar-hide mb-10 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-hide xl:grid xl:grid-cols-3 xl:w-[90%] xl:gap-6 xl:px-4 xxl:grid-cols-4 3xl:grid-cols-5 items-center lg:overflow-auto "
+          className="w-full flex gap-8 px-8 py-4 snap-x snap-mandatory scrollbar-hide mb-10 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-hide xl:grid xl:grid-cols-3 xl:w-[80%] xxl:w-[90%] xl:gap-6 xl:px-4 xxl:grid-cols-4 3xl:grid-cols-5 items-center lg:overflow-auto "
           onWheel={handleWheel}
         >
           {exercise.map((exer) => (
             <div key={exer.id} className="snap-center flex-shrink-0">
-              <div className="w-[320px] h-[420px] bg-yellowMain rounded-lg flex-col">
+              <div className="w-[20rem] h-[26rem] bg-yellowMain rounded-lg flex-col">
                 <div className="flex items-center justify-between p-4">
                   <h1 className="text-start text-2xl text-darker font-semibold">
                     {exer.title}
@@ -66,7 +66,7 @@ function MainPage() {
                   <InfoCard exercise={exer}/>
                 </div>
                 <div className="flex flex-col justify-center items-center">
-                  <div className="w-[305px] h-[345px] bg-whiteMain rounded-md flex-col">
+                  <div className="w-[19rem] h-[21.5rem] bg-whiteMain rounded-md flex-col">
                     <div className="flex p-6">
                       <div className="flex flex-col gap-6">
                       <h2 className="text-xl text-darker font-bold">

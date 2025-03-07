@@ -45,7 +45,7 @@ function BasalPage() {
         <span className="flex relative">
         <img
           onClick={() => navigate(`/principal`)}
-            className="w-[160px] md:w-[190px] lg:w-[220px] xl:w-[250px] cursor-pointer"
+            className="w-[11rem] md:w-[13rem] xl:w-[14rem]"
             src="src/public/logo.png"
             alt="logo"
           />
