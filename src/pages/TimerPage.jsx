@@ -78,9 +78,9 @@ function TimerPage() {
       {/* Logo */}
       <div className="flex mt-16 gap-8">
         <span className="flex relative">
-          <img
+        <img
           onClick={() => navigate(`/principal`)}
-            className="w-[176px] md:w-[208px] xl:w-[224px]"
+            className="w-[9rem] md:w-[11rem] xl:w-[12rem]"
             src="src/public/logo.png"
             alt="logo"
           />

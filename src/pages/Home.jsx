@@ -7,7 +7,7 @@ function Home() {
 
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center overflow-scroll no-scrollbar">
-      <div className=" flex flex-col justify-center md:mt-0 gap-8">
+      <div className=" flex flex-col justify-center xxl:mt-20 3xl:mt-0 gap-8">
       <div>
           <button 
           onClick={() => navigate(`/signin`)}
@@ -22,7 +22,11 @@ function Home() {
         </span>
         
         <span className="flex flex-col items-center">
-          <img className="w-[10rem] md:w-[11.875rem] lg:w-[13.75rem]" src="src/public/logo.png" alt="logo" />
+          <img
+            className="w-[9rem] md:w-[11rem] xl:w-[12rem]"
+            src="src/public/logo.png"
+            alt="logo"
+          />
         </span>
       </div>
       <div className="flex flex-col gap-8 lg:flex-row">

@@ -15,7 +15,7 @@ function AboutUs() {
         <span className="flex relative">
         <img
           onClick={() => navigate(`/principal`)}
-            className="w-[11rem] md:w-[13rem] xl:w-[14rem]"
+            className="w-[9rem] md:w-[11rem] xl:w-[12rem]"
             src="src/public/logo.png"
             alt="logo"
           />
