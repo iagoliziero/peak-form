@@ -28,7 +28,7 @@ function InfoCard({exercise}) {
 
             <div className="flex flex-col gap-6 p-8">
                       <h2 className="text-xl text-darker font-bold">
-                        Quantidade de séries: {""} {exercise.numberSeries}
+                        Quantidade de séries: {""} <br className="xl:hidden" /> {exercise.numberSeries}
                       </h2>
                       <h2 className="text-xl text-darker font-bold">
                         Repetições: {exercise.repetitions}
