@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Info, Key } from "lucide-react";
 import { ExerciseContext } from "../contexts/ExerciseContext";
+import H2InfoCards from "./H2InfoCards";
 
 function InfoCard({exercise}) {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,18 +28,18 @@ function InfoCard({exercise}) {
             </div>
 
             <div className="flex flex-col gap-6 p-8">
-                      <h2 className="text-xl text-darker font-bold">
+                      <H2InfoCards>
                         Quantidade de séries: {""} <br className="xl:hidden" /> {exercise.numberSeries}
-                      </h2>
-                      <h2 className="text-xl text-darker font-bold">
+                      </H2InfoCards>
+                      <H2InfoCards className="text-xl text-darker font-bold">
                         Repetições: {exercise.repetitions}
-                      </h2>
-                      <h2 className="text-xl text-darker font-bold">
+                      </H2InfoCards>
+                      <H2InfoCards className="text-xl text-darker font-bold">
                         Técnicas avançadas: <br /> {exercise.advancedTechnique}
-                      </h2>
-                      <h2 className="text-xl text-darker font-bold">
+                      </H2InfoCards>
+                      <H2InfoCards className="text-xl text-darker font-bold">
                         Intensidade: {exercise.intensity}
-                      </h2>
+                      </H2InfoCards>
                       <h2 className="text-xl text-darker font-bold max-w-[100%] whitespace-pre-wrap">
                        Descricao: <br /> {exercise.description}
                       </h2>
