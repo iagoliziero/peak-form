@@ -7,7 +7,6 @@ import InfoCard from "../components/InfoCard";
 import Nav from "../components/Nav";
 import Button from "../components/Button";
 
-
 function MainPage() {
 
   const {exercise} = useContext(ExerciseContext) // Obtém os exercícios globalmente

@@ -15,12 +15,12 @@ function InfoCard({exercise}) {
         </span>
       </button>
       {isOpen && (
-        <div className="fixed inset-0 flex items-center p-4 rounded-lg justify-center bg-darker bg-opacity-50">
-          <div className="bg-white w-[37.5rem]  h-[25rem] m-10 md:h-[37.5rem] items-center justify-center  rounded-lg shadow-lg overflow-y-scroll overflow-x-hidden no-scrollbar">
+        <div className="fixed inset-0 flex items-center p-4 rounded-lg justify-center bg-darker bg-opacity-50 z-50">
+          <div className="bg-white w-[37.5rem] h-[25rem] m-10 md:h-[37.5rem] items-center justify-center  rounded-lg shadow-lg overflow-y-scroll overflow-x-hidden no-scrollbar">
                 <div key={exercise.id}>
                 <div className="bg-yellowMain w-full rounded-b-none h-[4.6875rem] rounded-lg md:h-[6.25rem] ">
               <div className="flex justify-center text-center ">
-                <h1 className="fetext-3xl p-4 md:text-4xl  lg:text-5xl items-center  text-darker text-center font-bold">
+                <h1 className="text-3xl p-4 md:text-4xl  lg:text-5xl items-center  text-darker text-center font-bold">
                     {exercise.title}
                 </h1>
               </div>
