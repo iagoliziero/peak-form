@@ -3,6 +3,7 @@ import { Info, Key } from "lucide-react";
 import { ExerciseContext } from "../contexts/ExerciseContext";
 import H2InfoCards from "./H2InfoCards";
 
+
 function InfoCard({exercise}) {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -17,7 +18,7 @@ function InfoCard({exercise}) {
       </button>
       {isOpen && (
         <div className="fixed inset-0 flex items-center p-4 rounded-lg justify-center bg-darker bg-opacity-50 z-50">
-          <div className="bg-white w-[37.5rem] h-[25rem] m-10 md:h-[37.5rem] items-center justify-center  rounded-lg shadow-lg overflow-y-scroll overflow-x-hidden no-scrollbar">
+          <div className="bg-white w-[37.5rem] h-[25rem] m-10 md:h-[30rem] md:w-[30rem] items-center justify-center  rounded-lg shadow-lg overflow-y-scroll overflow-x-hidden no-scrollbar">
                 <div key={exercise.id}>
                 <div className="bg-yellowMain w-full rounded-b-none h-[4.6875rem] rounded-lg md:h-[6.25rem] ">
               <div className="flex justify-center text-center ">
@@ -26,6 +27,7 @@ function InfoCard({exercise}) {
                 </h1>
               </div>
             </div>
+
 
             <div className="flex flex-col gap-6 p-8">
                       <H2InfoCards>
@@ -59,5 +61,6 @@ function InfoCard({exercise}) {
     </>
   );
 }
+
 
 export default InfoCard;
