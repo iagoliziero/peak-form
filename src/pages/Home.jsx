@@ -72,7 +72,7 @@ function Home() {
       <div className="flex flex-col sticky bottom-0 lg:relative items-center md:items-center">
         <button
           onClick={() => navigate(`/nome`)}
-          className="w-[18rem] md:w-[16rem] xxl:h-[3rem] h-[3.75rem]
+          className="w-[18rem] md:w-[19rem] xxl:h-[3.5rem] h-[3.75rem]
                     bg-yellowMain mb-12 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all duration-[400ms] font-semibold"
         >
           Continuar
