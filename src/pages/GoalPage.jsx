@@ -8,12 +8,16 @@ import Paragraph from "../components/Paragraph.jsx";
 import ButtonBack from "../components/ButtonBack.jsx";
 import ButtonNext from "../components/ButtonNext.jsx";
 
+
 function GoalPage() {
   const navigate = useNavigate();
 
+
   const { profile } = useContext(ProfileContexts);
 
+
   const [selectedButtons, setSelectedButton] = useState([]);
+
 
   const buttons = [
     { id: 1, label: "Perder peso" },
@@ -22,6 +26,7 @@ function GoalPage() {
     { id: 4, label: "Ganhar massa muscular" },
     { id: 5, label: "Melhorar a saúde" },
   ];
+
 
   const toggleSelection = (id) => {
     setSelectedButton((prevSelected) => {
@@ -34,9 +39,10 @@ function GoalPage() {
     });
   };
 
+
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar md:justify-center lg:justify-start">
-      <Logo /> 
+      <Logo />
       <div>
         <div className="mt-5 flex flex-col gap-5">
           <H1>
@@ -47,12 +53,13 @@ function GoalPage() {
               objetivo relacionado ao seu peso.
           </Paragraph>
 
-          <div className="flex flex-col items-center mt-8 gap-8">
+
+          <div className="flex flex-col items-center mt-5 gap-5">
             {buttons.map((button) => (
               <button
                 key={button.id}
                 onClick={() => toggleSelection(button.id)}
-                className={`text-center w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl text-whiteMain 
+                className={`text-center w-[25rem] md:w-[20rem] md:h-[3.5rem] h-[3rem] rounded-md bg-darker border border-gray text-3xl text-whiteMain
                 ${
                   selectedButtons.includes(button.id)
                     ? "border-yellowMain text-yellowMain"
@@ -80,5 +87,6 @@ function GoalPage() {
     </div>
   );
 }
+
 
 export default GoalPage;
