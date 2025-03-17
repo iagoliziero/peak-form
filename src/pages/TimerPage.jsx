@@ -4,13 +4,19 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Nav from "../components/Nav";
 import Button from "../components/Button";
+import H1 from "../components/H1";
+import ButtonTimer from "../components/ButtonTimer";
+
 
 function TimerPage() {
 
+
   const navigate = useNavigate()
+
 
    const initialTotalTime = 0;
     const oneMinute = 60;
+
 
  // states
  const [totalTime, setTotalTime] = useState(initialTotalTime);
@@ -19,19 +25,23 @@ function TimerPage() {
  const intervalRef = useRef(null); // Referência para o intervalo do cronômetro
  // states, FIM
 
+
  // Funções
  const increasePauseTime = () => {
     setTotalTime((prev) => prev + oneMinute);
  };
 
+
  const decreasePauseTime = () => {
     setTotalTime((prev) => (prev - oneMinute >= 1 ? prev - oneMinute : 0));
  };
+
 
  const updateSessionTime = () => {
    setRemainingTime(totalTime);
    setIsRunning(false);
  };
+
 
  // Iniciar o cronômetro
  const startTimer = () => {
@@ -50,11 +60,13 @@ function TimerPage() {
    }
  };
 
+
  // Pausar o cronômetro
  const pauseTimer = () => {
    clearInterval(intervalRef.current);
    setIsRunning(false);
  };
+
 
  // Resetar o cronômetro
  const resetTimer = () => {
@@ -62,6 +74,7 @@ function TimerPage() {
    setRemainingTime(totalTime);
    setIsRunning(false);
  };
+
 
  // Formatar o tempo para mm:ss
  const formatTime = (time) => {
@@ -72,6 +85,7 @@ function TimerPage() {
     }
     return `${minutes}:${seconds}`;
   };
+
 
     return (
         <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
@@ -91,15 +105,15 @@ function TimerPage() {
        
       </div>
       <Nav />
-      <div className="w-full h-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5 ">
+      <div className="w-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5 ">
         <div className="flex mt-10 ">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
+          <H1>
             {" "}
             Qual é o seu tempo de descanso?
-          </h1>
+          </H1>
         </div>
         <div className="mt-10 flex justify-center items-center flex-col w gap-10 ">
-            <div className="flex items-center justify-center flex-col w-[21.875rem] lg:w-[25rem] h-[18.75rem] lg:h-[18.75rem] xl:w-[25rem] bg-yellowMain rounded-lg p-6 gap-5"> 
+            <div className="flex items-center justify-center flex-col w-[21.875rem] lg:w-[22.5rem] h-[18.75rem] lg:h-[18.75rem] 3xl:w-[25rem] bg-yellowMain rounded-lg p-6 gap-5">
                 <div className="flex flex-col items-center justify-center space-y-1 gap-10 " >
                     <div>
                         <h2 className="text-xl lg:text-2xl"> Sessão</h2>
@@ -108,22 +122,23 @@ function TimerPage() {
                         <h1 className="text-4xl lg:text-5xl font-semibold"> {formatTime(remainingTime)} </h1>
                     </div>
                     <div
-                    
+                   
                      className="flex gap-10">
-                    <button 
+                    <ButtonTimer
                     onClick={pauseTimer} disabled={!isRunning}
-                    className="w-14 h-14 md:w-16 md:h-16 rounded-full items-center bg-darker flex justify-center text-whiteMain hover:scale-105 transition-all"> <Pause /></button>
-                    <button
-                    onClick={startTimer} disabled={isRunning} className="w-14 h-14 md:w-16 md:h-16 rounded-full items-center bg-darker flex justify-center text-whiteMain text-3xl hover:scale-105 transition-all"> <Play /></button>
-                    <button
+                    className="w-14 h-14 md:w-16 md:h-16 rounded-full items-center bg-darker flex justify-center text-whiteMain hover:scale-105 transition-all"> <Pause /></ButtonTimer >
+                    <ButtonTimer
+                    onClick={startTimer} disabled={isRunning} className="w-14 h-14 md:w-16 md:h-16 rounded-full items-center bg-darker flex justify-center text-whiteMain text-3xl hover:scale-105 transition-all"> <Play /></ButtonTimer >
+                    <ButtonTimer
                      onClick={resetTimer}
                      
-                     className="w-14 h-14 md:w-16 md:h-16 rounded-full items-center bg-darker flex justify-center text-whiteMain text-3xl hover:scale-105 transition-all "> <RefreshCw /> </button>
+                     className="w-14 h-14 md:w-16 md:h-16 rounded-full items-center bg-darker flex justify-center text-whiteMain text-3xl hover:scale-105 transition-all "> <RefreshCw /> </ButtonTimer >
                 </div>
                 </div>
 
+
             </div>
-            <div className="flex items-center flex-col w-[21.875rem] lg:w-[25rem] h-[10.625rem] relative bottom-12 lg:h-[12.5rem] xl:w-[25rem] bg-whiteMain rounded-lg p-6 gap-10 rounded-t-none justify-center">
+            <div className="flex items-center flex-col w-[21.875rem] lg:w-[22.5rem] h-[10.625rem] relative bottom-12 lg:h-[12.5rem] 3xl:w-[25rem] bg-whiteMain rounded-lg p-6 gap-10 rounded-t-none justify-center">
                 <div className="flex gap-10 relative top-10">
                     <button
                     onClick={decreasePauseTime} >
@@ -148,5 +163,6 @@ function TimerPage() {
     </div>
     )
 }
+
 
 export default TimerPage;
