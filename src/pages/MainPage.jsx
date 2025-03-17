@@ -7,9 +7,12 @@ import InfoCard from "../components/InfoCard";
 import Nav from "../components/Nav";
 import Button from "../components/Button";
 
+
 function MainPage() {
 
+
   const {exercise} = useContext(ExerciseContext) // Obtém os exercícios globalmente
+
 
   const handleWheel = (event) => {
     if (event.deltaY === 0) {
@@ -18,7 +21,9 @@ function MainPage() {
     }
   }
 
+
   const navigate = useNavigate()
+
 
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
@@ -39,7 +44,9 @@ function MainPage() {
       </div>
       <Nav />
 
+
       <div className="w-full h-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5">
+
 
       <div className="mt-10 flex justify-center ">
           <Button
@@ -48,11 +55,12 @@ function MainPage() {
             Criar exercício
           </Button>
         </div>
-        
+       
         {/* cards */}
         <div
 
-          className="w-full flex gap-8 px-8 py-4 snap-x snap-mandatory scrollbar-hide mb-10 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-hide xl:grid xl:grid-cols-3 xl:w-[80%] xxl:w-[90%] xl:gap-6 xl:px-4 xxl:grid-cols-5 3xl:grid-cols-5 items-center lg:overflow-auto "
+
+          className="w-full flex gap-8 px-8 py-4 snap-x snap-mandatory scrollbar-hide mb-10 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-hide xl:grid xl:grid-cols-4 xl:w-[90%] xxl:w-[90%] xl:gap-6 xl:px-4 xxl:grid-cols-5 3xl:grid-cols-5 items-center lg:overflow-auto "
           onWheel={handleWheel}
         >
           {exercise.map((exer) => (
@@ -105,6 +113,7 @@ function MainPage() {
         {/* Fim do container dos cards */}
       </div>
 
+
       <style>
         {`
           .scrollbar-hide::-webkit-scrollbar {
@@ -120,4 +129,7 @@ function MainPage() {
   );
 }
 
+
 export default MainPage;
+
+
