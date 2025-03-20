@@ -42,7 +42,7 @@ function ProfilePage() {
           </h1>
         </div>
         <div className="mt-10 mb-10 flex justify-center flex-col lg:flex-row gap-10 ">
-          <div className="flex justify-center items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5">
+          <div className="flex justify-center items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar">
             
               <div className="flex flex-col items-center gap-3">
                 <div className="flex mt-10">
@@ -59,7 +59,13 @@ function ProfilePage() {
                 <h2 className="text-xl lg:text-2xl">{profile.email}</h2>
                 <h2 className="text-xl lg:text-2xl">{profile.date}</h2>
               </div>
+              <div>
+              <button className="w-[18rem] md:w-[19rem] xxl:h-[3.5rem] h-[3.75rem] bg-lightRed text-2xl rounded-lg hover:scale-105 transition-all font-semibold duration-[400ms]">
+                  Sair
+              </button>
+              </div>
           </div>
+          
           <div className="flex items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar ">
           {profileBody.length > 0 && (
               <div className="flex flex-col items-center gap-3">
