@@ -8,9 +8,13 @@ import ButtonNext from "../components/ButtonNext";
 import ButtonBack from "../components/ButtonBack";
 
 import ReactInputMask from "react-input-mask";
+import { useContext } from "react";
+import { ProfileContexts } from "../contexts/ProfileContexts";
 
 function InfoUserPage() {
-  
+
+  const {setProfile} = useContext(ProfileContexts)
+
   const {
     register,
     handleSubmit,
@@ -19,7 +23,10 @@ function InfoUserPage() {
 
   const onSubmit = (data) => {
     alert(JSON.stringify(data));
-  
+    setProfile((prev) => ({
+      ...prev,
+      date: data.date,
+    }))
     navigate(`/login`);
   };
 
