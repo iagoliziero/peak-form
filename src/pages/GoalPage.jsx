@@ -55,7 +55,7 @@ function GoalPage() {
               <button
                 key={button.id}
                 onClick={() => toggleSelection(button.id)}
-                className={`text-center w-[25rem] md:w-[20rem] md:h-[3.5rem] h-[3rem] rounded-md bg-darker border border-gray text-3xl text-whiteMain
+                className={`text-center w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl text-whiteMain
                 ${
                   selectedButtons.includes(button.id)
                     ? "border-yellowMain text-yellowMain"
