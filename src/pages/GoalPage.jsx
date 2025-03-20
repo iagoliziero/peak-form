@@ -11,11 +11,7 @@ import ButtonNext from "../components/ButtonNext.jsx";
 
 function GoalPage() {
   const navigate = useNavigate();
-
-
-  const { profile } = useContext(ProfileContexts);
-
-
+  const { name } = useContext(NameContext);
   const [selectedButtons, setSelectedButton] = useState([]);
 
 
@@ -46,7 +42,7 @@ function GoalPage() {
       <div>
         <div className="mt-5 flex flex-col gap-5">
           <H1>
-            Obrigado, {profile.name}. Agora, <br /> vamos falar sobre suas metas.
+            Obrigado, {name.name}. Agora, <br /> vamos falar sobre suas metas.
           </H1>
           <Paragraph>
             Escolha até 2 aspectos importantes para você, <br /> incluindo um

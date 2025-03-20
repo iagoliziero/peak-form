@@ -1,18 +1,23 @@
 import { CircleUserRound, Pencil } from "lucide-react";
 import DropdownMenu from "../components/DropDownMenu";
 import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ProfileBodyContexts } from "../contexts/ProfileBodyContexts";
 import { ProfileContexts } from "../contexts/ProfileContexts";
 import Nav from "../components/Nav";
+import { NameContext } from "../contexts/NameContexts";
 
 
 function ProfilePage() {
   const { profileBody } = useContext(ProfileBodyContexts);
   const navigate = useNavigate();
   const { profile } = useContext(ProfileContexts)
-
+  const { name } = useContext(NameContext)
+  useEffect(() => {
+    console.log("Profile Data:", profile); // Verifique se name está atualizado
+  }, [profile]);
   return (
+    
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
       {/* Logo */}
       <div className="flex mt-16 gap-8">
@@ -49,7 +54,7 @@ function ProfilePage() {
                   </div>
                 </div>
                 <h1 className="text-2xl lg:text-3xl font-semibold">
-                 {profile.name}
+                {name.name}
                 </h1>
                 <h2 className="text-xl lg:text-2xl">{profile.email}</h2>
                 <h2 className="text-xl lg:text-2xl">{profile.date}</h2>

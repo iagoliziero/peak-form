@@ -7,6 +7,7 @@ import Paragraph from "../components/Paragraph.jsx";
 import ButtonBack from "../components/ButtonBack.jsx";
 import Logo from "../components/Logo.jsx";
 import ButtonNext from "../components/ButtonNext.jsx";
+import { NameContext } from "../contexts/NameContexts.jsx";
 
 function NamePage() {
   const navigate = useNavigate();
@@ -17,10 +18,10 @@ function NamePage() {
     formState: { errors },
   } = useForm();
 
-  const {setProfile } = useContext(ProfileContexts);
+  const {setName } = useContext(NameContext);
 
   const onSubmit = (data) => {
-    setProfile((prev) => ({
+    setName((prev) => ({
       ...prev,
       name: data.name,
     })),
