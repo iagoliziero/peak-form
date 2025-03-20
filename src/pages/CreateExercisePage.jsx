@@ -4,6 +4,7 @@ import { data } from "autoprefixer";
 import { useNavigate } from "react-router-dom";
 import Nav from "../components/Nav";
 import Button from "../components/Button";
+import H1 from "../components/H1";
 
 function CreateExercisePage() {
   const navigate = useNavigate();
@@ -38,16 +39,16 @@ function CreateExercisePage() {
        <Nav />
         <div className="w-full h-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5">
           <div className="mt-10 gap-5">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
+            <H1>
               Adicionar Exercício
-            </h1>
+            </H1>
           </div>
           <div className="flex flex-col gap-3  justify-center">
             <div>
               <input
                 {...register("title", { required: true })}
                 maxLength={16}
-                className={`mt-5 w-[300px] gap-3 md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
+                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
                   errors?.title ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
                 type="text"
@@ -63,7 +64,7 @@ function CreateExercisePage() {
             <div>
               <input
                 {...register("numberSeries", { required: true })}
-                className={`mt-5 w-[300px] gap-3 md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
+                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
                   errors?.numberSeries
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
@@ -82,7 +83,7 @@ function CreateExercisePage() {
               <input
                 maxLength={23}
                 {...register("repetitions", { required: true })}
-                className={`mt-5 w-[300px] gap-3 md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
+                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
                   errors?.repetitions
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
@@ -101,7 +102,7 @@ function CreateExercisePage() {
               <input
                 {...register("advancedTechnique", { required: false })}
                 maxLength={23}
-                className=" mt-5 w-[300px] gap-3  md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
+                className=" mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
                 type="text"
                 placeholder="Técnicas (Opcional)"
               />
@@ -110,7 +111,7 @@ function CreateExercisePage() {
               <input
                 {...register("intensity", { required: true })}
                 maxLength={23}
-                className={`mt-5 w-[300px] gap-3 md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
+                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
                   errors?.intensity
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
@@ -129,7 +130,7 @@ function CreateExercisePage() {
               <input
                 {...register("description", { required: false })}
                 maxLength={200}
-                className=" mt-5 w-[300px] gap-3  md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
+                className="mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
                 type="text"
                 placeholder="Descrição (Opcional)"
               />

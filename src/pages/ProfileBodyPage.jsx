@@ -73,7 +73,7 @@ function ProfileBodyPage() {
               <input
                 {...register("height", { required: true })}
                 maxLength={3}
-                className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                   errors?.height ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
                 type="number"
@@ -104,7 +104,7 @@ function ProfileBodyPage() {
               <input
                 {...register("weight", { required: true })}
                 maxLength={3}
-                className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
+                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
                   errors?.weight ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
                 type="number"
@@ -130,7 +130,7 @@ function ProfileBodyPage() {
               <input
                 {...register("goalWeight", { required: true })}
                 maxLength={3}
-                className={`mt-5 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
+                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
                   errors?.weight ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
                 type="number"

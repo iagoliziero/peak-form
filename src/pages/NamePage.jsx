@@ -46,7 +46,7 @@ function NamePage() {
                 {...register("name", { required: true })}
                 maxLength={10}
                 onChange={(e) => setName(e.target.value)}
-                className={`mt-10 w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
+                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
                   errors?.name
                     ? "border-lightRed"
                     : "focus:border-yellowMain"

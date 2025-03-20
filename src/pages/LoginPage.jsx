@@ -53,7 +53,7 @@ function LoginPage() {
             <div>
               <input
                 {...register("email", { required: true, validate: (value) => validator.isEmail(value)})}
-                className={`mt-5 w-[20rem] md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                   errors?.email ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
                 type="text"
@@ -76,7 +76,7 @@ function LoginPage() {
               <input
                 {...register("password", { required: true, minLength: 7 })}
 
-                className={`mt-5 w-[20rem] relative left-3 md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  relative left-3 md:h-[3.4375rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                   errors?.password
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
@@ -102,7 +102,7 @@ function LoginPage() {
             <div>
               <input
                 {...register("passwordConfirmation", { required: true, validate: (value) => value ===watchPassword })}
-                className={`mt-5 w-[20rem] md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain relative left-3 focus:outline-none focus:ring-3  ${
+                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain relative left-3 focus:outline-none focus:ring-3  ${
                   errors?.passwordConfirmation
                     ? "border-lightRed"
                     : "focus:border-yellowMain"

@@ -80,7 +80,7 @@ function BasalPage() {
     
               {...register("height", { required: true })}
               maxLength={10}
-              className={`mt-5 w-[20rem] md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+              className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                 errors?.height ? "border-lightRed" : "focus:border-yellowMain"
               }`}
               type="number"
@@ -99,7 +99,7 @@ function BasalPage() {
             
               {...register("currentWeight", { required: true })}
               maxLength={10}
-              className={`mt-5 w-[20rem] md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+              className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                 errors?.currentWeight
                   ? "border-lightRed"
                   : "focus:border-yellowMain"
@@ -118,7 +118,7 @@ function BasalPage() {
             <input
               {...register("age", { required: true })}
               maxLength={10}
-              className={`mt-5 w-[20rem] md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+              className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                 errors?.age ? "border-lightRed" : "focus:border-yellowMain"
               }`}
               type="number"
@@ -142,7 +142,7 @@ function BasalPage() {
               {...register('gender', {validate: (value) => {
                 return value !== 'selecionar'
               }})}
-              className={`w-[18.75rem] p-4 border border-gray rounded-md bg-darker text-white text-xl focus:outline-none focus:ring-2 focus:ring-yellowMain ${errors?.gender ?"border-lightRed" : "focus:border-yellowMain" }`}
+              className={`mt-5 w-[21.5rem] md:w-[20rem] p-4 border border-gray rounded-md bg-darker text-white text-xl focus:outline-none focus:ring-2 focus:ring-yellowMain ${errors?.gender ?"border-lightRed" : "focus:border-yellowMain" }`}
             >
               <option value="selecionar"> Selecionar </option>
               <option value="masculino"> Masculino </option>

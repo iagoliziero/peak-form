@@ -9,20 +9,16 @@ function Home() {
 
   return (
     <div className="h-screen xl:h-full xxl:h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center overflow-scroll no-scrollbar">
-      <div className=" flex flex-col justify-center  3xl:mt-0 gap-8">
-        <div className="mt-">
+      <div className=" flex flex-col justify-center 3xl:mt-0 gap-8">
+        <div>
           <button
             onClick={() => navigate(`/signin`)}
             className="w-10 h-10 top-[5rem] md:left-[21.875rem] lg:left-[34.375rem] rounded-full items-center bg-yellowMain hover:bg-orange flex justify-center relative left-52 "> <CircleUserRound size={30} /> </button>
         </div>
         <span className="flex items-center justify-center">
           <H1>
-
-
             Bem vindo ao
           </H1>
-
-
         </span>
 
 
