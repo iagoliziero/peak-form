@@ -72,7 +72,7 @@ function GoalPage() {
           </div>
         </div>
       </div>
-      <div className="mb-5 flex flex-row lg:relative mt-8  items-center md:items-center gap-6">
+      <div className="mb-5 flex flex-row lg:relative mt-8 items-center md:items-center gap-6">
         <ButtonBack
           onClick={() => navigate(-1)}
         >

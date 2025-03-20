@@ -36,12 +36,12 @@ function ActivityPage() {
        Seu nível de atividade física incluindo exercício físico.
        </Paragraph>
 
-        <div className="flex flex-col items-center mt-8 gap-8">
+        <div className="flex flex-col items-center mt-5 gap-5">
           {buttons.map((button) => (
             <button
               key={button.id}
               onClick={() => handleSelection(button.id)}
-              className={`text-center w-[320px] md:w-[350px] md:h-[55px] h-[50px] rounded-md bg-darker border border-gray text-3xl text-whiteMain 
+              className={`text-center w-[25rem] md:w-[20rem] md:h-[3.5rem] h-[3rem] rounded-md bg-darker border border-gray text-3xl text-whiteMain
                 ${
                   selectedButton === button.id
                     ? "border-yellowMain text-yellowMain"
