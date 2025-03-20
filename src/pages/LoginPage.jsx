@@ -138,7 +138,8 @@ function LoginPage() {
             <button
             
             onClick={() => handleSubmit(onSubmit)()}
-            className="w-[18.75rem] md:w-[22.5rem] h-[3.75rem] bg-yellowMain mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold duration-[400ms]">
+            className="w-[18rem] md:w-[19rem] xxl:h-[3.5rem] h-[3.75rem] bg-yellowMain mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold duration-[400ms]"
+          >
               Continuar
             </button>
             <h2 className="text-2xl lg:text-3xl font-darker text-whiteMain font-semibold text-center">
