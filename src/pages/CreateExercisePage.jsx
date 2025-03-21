@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Nav from "../components/Nav";
 import Button from "../components/Button";
 import H1 from "../components/H1";
+import Paragraph from "../components/Paragraph";
 
 function CreateExercisePage() {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ function CreateExercisePage() {
 
   return (
     <>
-      <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-y-scroll overflow-x-hidden no-scrollbar">
+      <div className="h-full bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-y-scroll overflow-x-hidden no-scrollbar">
         {/* Logo */}
         <div className="flex mt-16 gap-8">
           <span className="flex relative">
@@ -44,15 +45,18 @@ function CreateExercisePage() {
             </H1>
           </div>
           <div className="flex flex-col gap-3  justify-center">
-            <div>
+            <div className="flex flex-col">
+            <span className="flex items-start mb-1 relative left-2">
+                <Paragraph> Nome do exercício: </Paragraph>
+                </span>
               <input
                 {...register("title", { required: true })}
                 maxLength={16}
-                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
+                className={` w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
                   errors?.title ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
                 type="text"
-                placeholder="Nome do Exercício"
+                placeholder="ex: supino reto"
               />
               {errors?.title?.type === "required" && (
                 <p className="text-lightRed mx-4 mt-1">
@@ -61,10 +65,13 @@ function CreateExercisePage() {
                 </p>
               )}
             </div>
-            <div>
+            <div  className="flex flex-col">
+            <span className="flex items-start mb-1 relative left-2">
+                <Paragraph> Quantidade de séries: </Paragraph>
+                </span>
               <input
                 {...register("numberSeries", { required: true })}
-                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
+                className={`w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
                   errors?.numberSeries
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
@@ -79,17 +86,20 @@ function CreateExercisePage() {
                 </p>
               )}
             </div>
-            <div>
+            <div  className="flex flex-col">
+            <span className="flex items-start mb-1 relative left-2">
+                <Paragraph> Quantidade de repetições: </Paragraph>
+                </span>
               <input
                 maxLength={23}
                 {...register("repetitions", { required: true })}
-                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
+                className={` w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
                   errors?.repetitions
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
                 }`}
                 type="text"
-                placeholder="Repetições"
+                placeholder="ex: 4 séries"
               />
               {errors?.repetitions?.type === "required" && (
                 <p className="text-lightRed mx-4 mt-1">
@@ -98,26 +108,32 @@ function CreateExercisePage() {
                 </p>
               )}
             </div>
-            <div>
+            <div  className="flex flex-col">
+            <span className="flex items-start mb-1 relative left-2">
+                <Paragraph> Técnicas avançadas: </Paragraph>
+                </span>
               <input
                 {...register("advancedTechnique", { required: false })}
                 maxLength={23}
-                className=" mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
+                className=" w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
                 type="text"
-                placeholder="Técnicas (Opcional)"
+                placeholder="ex: drop-set (opcional)"
               />
             </div>
-            <div>
+            <div className="flex flex-col">
+            <span className="flex items-start mb-1 relative left-2">
+                <Paragraph> Intensidade: </Paragraph>
+                </span>
               <input
                 {...register("intensity", { required: true })}
                 maxLength={23}
-                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
+                className={`w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
                   errors?.intensity
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
                 }`}
                 type="text"
-                placeholder="Intensidade"
+                placeholder="Pesado"
               />
               {errors?.intensity?.type === "required" && (
                 <p className="text-lightRed mx-4 mt-1">
@@ -126,11 +142,14 @@ function CreateExercisePage() {
                 </p>
               )}
             </div>
-            <div>
+            <div  className="flex flex-col">
+            <span className="flex items-start mb-1 relative left-2">
+                <Paragraph> Descrição do exercício: </Paragraph>
+                </span>
               <input
                 {...register("description", { required: false })}
                 maxLength={200}
-                className="mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
+                className="w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
                 type="text"
                 placeholder="Descrição (Opcional)"
               />

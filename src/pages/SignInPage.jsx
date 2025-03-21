@@ -6,6 +6,7 @@ import Login from "../components/Login";
 import { useNavigate } from "react-router-dom";
 import H1 from "../components/H1";
 import Logo from "../components/Logo";
+import Paragraph from "../components/Paragraph";
 
 function SignIn() {
   const [isShowPasswordSignIn, setIsShowPasswordSignIn] = useState(false);
@@ -36,18 +37,21 @@ function SignIn() {
             {" "}
             Entrar em sua conta
           </H1>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center gap-3">
             <div>
+            <span className="flex items-start mb-1 ">
+                <Paragraph> Seu email: </Paragraph>
+                </span>
               <input
                 {...register("email", {
                   required: true,
                   validate: (value) => validator.isEmail(value),
                 })}
-                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 ${
+                className={` w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 ${
                   errors?.email ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
                 type={isShowPasswordSignIn ? "password" : "text"}
-                placeholder="Endereço de e-mail "
+                placeholder="seuemail@exemplo.com"
               />
               {errors?.email?.type === "required" && (
                 <p className="text-lightRed mx-4 mt-1">
@@ -62,19 +66,24 @@ function SignIn() {
                 </p>
               )}
             </div>
-            <div>
+            <div className="flex flex-col items-center">
+              
+              <div>
+              <span className="flex items-start mb-1 relative left-3">
+                <Paragraph> Sua senha: </Paragraph>
+                </span>
               <input
                 {...register("passwordSignIn", {
                   required: true,
                   minLength: 7,
                 })}
-                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain relative left-3 focus:outline-none focus:ring-3  ${
+                className={`w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain relative left-3 focus:outline-none focus:ring-3  ${
                   errors?.passwordSignIn
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
                 }`}
                 type={isShowPasswordSignIn ? "password" : "text"}
-                placeholder="Digite sue senha "
+                placeholder="Digite sua senha "
               />
               <button
                 onClick={handlePasswordSignIn}
@@ -96,6 +105,8 @@ function SignIn() {
                   A senha deve ter pelo menos 7 caracteres.{" "}
                 </p>
               )}
+              </div>
+              
             </div>
           </div>
           <div className="mt-8 gap-3 flex flex-col items-center ">

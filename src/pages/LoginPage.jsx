@@ -51,13 +51,18 @@ function LoginPage() {
           <H1> Quase lá! Crie a sua conta</H1>
           <div className="flex flex-col items-center">
             <div>
+            
+                <span className="flex items-start mb-1">
+                <Paragraph> Seu email: </Paragraph>
+                </span>
+             
               <input
                 {...register("email", { required: true, validate: (value) => validator.isEmail(value)})}
-                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+                className={`mt- w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                   errors?.email ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
                 type={isShowPassword ? "password" : "text"}
-                placeholder="Endereço de e-mail "
+                placeholder="seuemail@exemplo.com "
               />
               {errors?.email?.type === "required" && (
                 <p className="text-lightRed mx-4 mt-1">
@@ -72,11 +77,16 @@ function LoginPage() {
                 </p>
               )}
             </div>
-            <div>
+            <div className="flex flex-col items-center">
+           
+              <div>
+              <span className="flex items-start mb-1 relative left-2">
+                <Paragraph> Sua senha: </Paragraph>
+                </span>
               <input
                 {...register("password", { required: true, minLength: 7 })}
 
-                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  relative left-3 md:h-[3.4375rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+                className={` w-[21.5rem] md:w-[20rem] h-[3.3rem]  relative left-3 md:h-[3.4375rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                   errors?.password
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
@@ -98,6 +108,10 @@ function LoginPage() {
                   A senha deve ter pelo menos 7 caracteres.{" "}
                 </p> )}
                 
+              </div>
+               
+               
+              
             </div>
             <div>
               <input
