@@ -42,7 +42,7 @@ function GoalPage() {
       <div>
         <div className="mt-5 flex flex-col gap-5">
           <H1>
-            Obrigado, {name.name}. Agora, <br /> vamos falar sobre suas metas.
+            Obrigado, {name.name}! Agora, <br /> vamos falar sobre suas metas.
           </H1>
           <Paragraph>
             Escolha até 2 aspectos importantes para você, <br /> incluindo um
