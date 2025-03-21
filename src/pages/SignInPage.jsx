@@ -28,7 +28,7 @@ function SignIn() {
     alert(JSON.stringify(data));
   };
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar lg:justify-center">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar md:justify-center lg:justify-start">
       <Logo />
       <div className="flex flex-col ">
         <div className="mt-5 flex flex-col gap-3">
@@ -36,7 +36,7 @@ function SignIn() {
             {" "}
             Entrar em sua conta
           </H1>
-          <div className="flex flex-col items-center mt-10">
+          <div className="flex flex-col items-center">
             <div>
               <input
                 {...register("email", {
@@ -46,7 +46,7 @@ function SignIn() {
                 className={`mt-5 w-[20rem] md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                   errors?.email ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
-                type="text"
+                type={isShowPasswordSignIn ? "password" : "text"}
                 placeholder="Endereço de e-mail "
               />
               {errors?.email?.type === "required" && (
@@ -78,7 +78,7 @@ function SignIn() {
               />
               <button
                 onClick={handlePasswordSignIn}
-                className="text-whiteMain relative  m-0 right-[3.125rem] top-1 bottom-9 "
+                className="text-whiteMain relative  m-0 right-[2rem] top-1 bottom-9 "
               >
                 {" "}
                 {isShowPasswordSignIn && <EyeClosed />}{" "}

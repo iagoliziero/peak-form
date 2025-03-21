@@ -49,14 +49,14 @@ function LoginPage() {
       <div className="flex flex-col ">
         <div className="mt-5 flex flex-col gap-3">
           <H1> Quase lá! Crie a sua conta</H1>
-          <div className="flex flex-col items-center mt-10">
+          <div className="flex flex-col items-center">
             <div>
               <input
                 {...register("email", { required: true, validate: (value) => validator.isEmail(value)})}
                 className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                   errors?.email ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
-                type="text"
+                type={isShowPassword ? "password" : "text"}
                 placeholder="Endereço de e-mail "
               />
               {errors?.email?.type === "required" && (
@@ -86,7 +86,7 @@ function LoginPage() {
               />
               <button 
               onClick={handlePassword}
-              className="text-whiteMain relative  m-0 right-[3.125rem] top-1 bottom-9 "> {isShowPassword && <EyeClosed />} {!isShowPassword && <Eye />}  </button>
+              className="text-whiteMain relative  m-0 right-[2rem] top-1 bottom-9 "> {isShowPassword && <EyeClosed />} {!isShowPassword && <Eye />}  </button>
               {errors?.password?.type === "required" && (
                 <p className="text-lightRed mx-4 mt-1">
                   {" "}
@@ -113,7 +113,7 @@ function LoginPage() {
               />
               <button 
               onClick={handlePasswordConfirmation}
-              className="text-whiteMain relative  m-0 right-[3.125rem] top-1 bottom-9 "> {isShowPasswordConfirmation && <EyeClosed />} {!isShowPasswordConfirmation && <Eye />}  </button>
+              className="text-whiteMain relative  m-0 right-[2rem] top-1 bottom-9 "> {isShowPasswordConfirmation && <EyeClosed />} {!isShowPasswordConfirmation && <Eye />}  </button>
               
               {errors?.passwordConfirmation?.type === "required" && (
                 <p className="text-lightRed mx-4 mt-1">
