@@ -43,7 +43,7 @@ function SignIn() {
                   required: true,
                   validate: (value) => validator.isEmail(value),
                 })}
-                className={`mt-5 w-[20rem] md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 ${
                   errors?.email ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
                 type={isShowPasswordSignIn ? "password" : "text"}
@@ -68,7 +68,7 @@ function SignIn() {
                   required: true,
                   minLength: 7,
                 })}
-                className={`mt-5 w-[20rem] relative left-3 md:w-[21.875rem] md:h-[3.4375rem] h-[3.125rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
+                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain relative left-3 focus:outline-none focus:ring-3  ${
                   errors?.passwordSignIn
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
@@ -101,7 +101,7 @@ function SignIn() {
           <div className="mt-8 gap-3 flex flex-col items-center ">
             <button
               onClick={() => handleSubmit(onSubmit)()}
-              className="w-[18.75rem] md:w-[22.5rem] h-[3.75rem] bg-yellowMain mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 duration-[400ms] transition-all font-semibold"
+              className="w-[18rem] md:w-[19rem] xxl:h-[3.5rem] h-[3.75rem] bg-yellowMain mt-8 text-2xl rounded-lg hover:bg-orange hover:scale-105 transition-all font-semibold duration-[400ms]"
             >
               Entrar
             </button>
