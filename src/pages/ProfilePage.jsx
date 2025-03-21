@@ -60,7 +60,7 @@ function ProfilePage() {
                 <h2 className="text-xl lg:text-2xl">{profile.date}</h2>
               </div>
               <div>
-              <button className="w-[18rem] md:w-[19rem] xxl:h-[3.5rem] h-[3.75rem] bg-lightRed text-2xl rounded-lg hover:scale-105 transition-all font-semibold duration-[400ms]">
+              <button className="w-[18rem] md:w-[19rem] xxl:h-[3.5rem] h-[3.75rem] bg-red text-2xl rounded-lg hover:scale-105 transition-all font-semibold duration-[400ms]">
                   Sair
               </button>
               </div>
