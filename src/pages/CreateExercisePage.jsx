@@ -113,12 +113,18 @@ function CreateExercisePage() {
                 <Paragraph> Técnicas avançadas: </Paragraph>
                 </span>
               <input
-                {...register("advancedTechnique", { required: false })}
+                {...register("advancedTechnique", { required: true })}
                 maxLength={23}
-                className=" w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
+                className={` w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
+                  errors?.repetitions
+                    ? "border-lightRed"
+                    : "focus:border-yellowMain"
+                }`}
                 type="text"
-                placeholder="ex: drop-set (opcional)"
+                placeholder="ex: drop-set"
               />
+              {errors?.advancedTechnique?.type === "required" && <p className="text-lightRed mx-4 mt-1">
+               Técnicas avançadas é obrigatório. </p>}
             </div>
             <div className="flex flex-col">
             <span className="flex items-start mb-1 relative left-2">
