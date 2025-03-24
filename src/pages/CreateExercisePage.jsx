@@ -126,28 +126,23 @@ function CreateExercisePage() {
               {errors?.advancedTechnique?.type === "required" && <p className="text-lightRed mx-4 mt-1">
                Técnicas avançadas é obrigatório. </p>}
             </div>
-            <div className="flex flex-col">
-            <span className="flex items-start mb-1 relative left-2">
-                <Paragraph> Intensidade: </Paragraph>
-                </span>
-              <input
-                {...register("intensity", { required: true })}
-                maxLength={23}
-                className={`w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
-                  errors?.intensity
-                    ? "border-lightRed"
-                    : "focus:border-yellowMain"
-                }`}
-                type="text"
-                placeholder="Pesado"
-              />
-              {errors?.intensity?.type === "required" && (
-                <p className="text-lightRed mx-4 mt-1">
-                  {" "}
-                  A intesidade é obrigatória.{" "}
-                </p>
-              )}
-            </div>
+            <div>
+            <span className="flex items-start mb-1">
+                            <Paragraph> Intensidade: </Paragraph>
+                            </span>
+            <select
+              {...register('intesity', {validate: (value) => {
+                return value !== '0'
+              }})}
+              className={`w-[21.5rem] md:w-[20rem] p-4 border border-gray rounded-md bg-darker text-white text-xl focus:outline-none focus:ring-2 focus:ring-yellowMain ${errors?.intesity ?"border-lightRed" : "focus:border-yellowMain" }`}
+            >
+              <option value="0"> Selecionar </option>
+              <option value="1"> Pesado </option>
+              <option value="2"> Moderado </option>
+              <option value="3"> Leve </option>
+            </select>
+            {errors?.intesity?.type === "validate" && <p className="text-lightRed mx-4 mt-1"> A intensidade é obrigatória. </p>}
+          </div>
             <div  className="flex flex-col">
             <span className="flex items-start mb-1 relative left-2">
                 <Paragraph> Descrição do exercício: </Paragraph>
