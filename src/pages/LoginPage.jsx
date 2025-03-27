@@ -49,7 +49,7 @@ function LoginPage() {
       <div className="flex flex-col ">
         <div className="mt-5 flex flex-col gap-3">
           <H1> Quase lá! Crie a sua conta</H1>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center gap-3">
             <div>
             
                 <span className="flex items-start mb-1">
@@ -94,6 +94,7 @@ function LoginPage() {
                 type={isShowPassword ? "password" : "text"}
                 placeholder="Criar uma senha "
               />
+              
               <button 
               onClick={handlePassword}
               className="text-whiteMain relative  m-0 right-[2rem] top-1 bottom-9 "> {isShowPassword && <EyeClosed />} {!isShowPassword && <Eye />}  </button>
@@ -114,9 +115,12 @@ function LoginPage() {
               
             </div>
             <div>
+            <span className="flex items-start mb-1 mt-2 relative left-2">
+                <Paragraph> Confirmar senha: </Paragraph>
+                </span>
               <input
                 {...register("passwordConfirmation", { required: true, validate: (value) => value ===watchPassword })}
-                className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain relative left-3 focus:outline-none focus:ring-3  ${
+                className={`w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain relative left-3 focus:outline-none focus:ring-3  ${
                   errors?.passwordConfirmation
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
@@ -142,12 +146,13 @@ function LoginPage() {
                 </p>
               )}
             </div>
-            <div className="flex justify-start mt-3">
+           
+          </div>
+          <div className="flex justify-start mt-2">
               <Paragraph> 
               Deve ter pelo menos 7 caracteres, <br className="md:hidden" /> sem espaço.
               </Paragraph>
             </div>
-          </div>
           <div className="mt-5 gap-3 flex flex-col items-center "> 
             <button
             
