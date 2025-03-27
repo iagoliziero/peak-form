@@ -80,7 +80,7 @@ function MainPage() {
                      <span className="text-xl text-orange font-bold">
                       <ListOrdered />
                       </span>
-                      <h2 className="text-xl text-darker font-bold">
+                      <h2 className="text-xl text-darker ">
                       {exer.numberSeries}
                       </h2>
                      </div>
@@ -88,23 +88,23 @@ function MainPage() {
                      <span className="text-xl text-orange font-bold">
                      <Repeat />
                       </span>
-                      <h2 className="text-xl text-darker font-bold">
+                      <h2 className="text-xl text-darker ">
                       {exer.repetitions}
                       </h2>
                      </div>
                      <div className="flex gap-3 items-center">
-                     <span className="text-xl text-orange font-bold">
+                     <span className="text-xl text-orange ">
                       <Dumbbell />
                       </span>
-                      <h2 className="text-xl text-darker font-bold">
+                      <h2 className="text-xl text-darker">
                       {exer.advancedTechnique}
                       </h2>
                      </div>
                      <div className="flex gap-3 items-center">
-                     <span className="text-xl text-orange font-bold">
+                     <span className="text-xl text-orange ">
                       <BicepsFlexed />
                       </span>
-                      <h2 className="text-xl text-darker font-bold">
+                      <h2 className="text-xl text-darker ">
                       {exer.intensity}
                       </h2>
                      </div>
