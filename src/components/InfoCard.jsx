@@ -1,10 +1,9 @@
 import { useContext, useState } from "react";
-import { Info, Key } from "lucide-react";
+import { BicepsFlexed, Dumbbell, Info, Key, ListOrdered, Repeat, Text } from "lucide-react";
 import { ExerciseContext } from "../contexts/ExerciseContext";
 import H2InfoCards from "./H2InfoCards";
 
-
-function InfoCard({exercise}) {
+function InfoCard({ exercise }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -17,35 +16,83 @@ function InfoCard({exercise}) {
         </span>
       </button>
       {isOpen && (
-        <div className="fixed inset-0 flex items-center p-4 rounded-lg justify-center bg-darker bg-opacity-50 z-50">
-          <div className="bg-white w-[37.5rem] h-[25rem] m-10 md:h-[30rem] md:w-[30rem] items-center justify-center  rounded-lg shadow-lg overflow-y-scroll overflow-x-hidden no-scrollbar">
-                <div key={exercise.id}>
-                <div className="bg-yellowMain w-full rounded-b-none h-[4.6875rem] rounded-lg md:h-[6.25rem] ">
-              <div className="flex justify-center text-center ">
-                <h1 className="text-3xl p-4 md:text-4xl  lg:text-5xl items-center  text-darker text-center font-bold">
+        <div className="fixed inset-0  flex items-center rounded-lg justify-center bg-darker bg-opacity-50 z-50">
+          <div className="bg-white w-[40rem] h-[25rem] m-10 md:h-[30rem] md:w-[30rem] items-center justify-center  rounded-lg shadow-lg overflow-y-scroll overflow-x-hidden no-scrollbar">
+            <div key={exercise.id}>
+              <div className="bg-yellowMain rounded-b-none h-[4.6875rem] rounded-lg md:h-[6.25rem] ">
+                <div className="flex justify-center text-center ">
+                  <h1 className="text-3xl p-6 md:text-4xl  lg:text-5xl items-center   text-darker text-center font-bold">
                     {exercise.title}
-                </h1>
+                  </h1>
+                </div>
               </div>
-            </div>
 
+              <div className="flex  flex-col gap-6 p-5 xl:p-8">
 
-            <div className="flex flex-col gap-6 p-8">
-                      <H2InfoCards>
-                        Quantidade de séries: {""} <br className="xl:hidden" /> {exercise.numberSeries}
-                      </H2InfoCards>
-                      <H2InfoCards className="text-xl text-darker font-bold">
-                        Repetições: {exercise.repetitions}
-                      </H2InfoCards>
-                      <H2InfoCards className="text-xl text-darker font-bold">
-                        Técnicas avançadas: <br /> {exercise.advancedTechnique}
-                      </H2InfoCards>
-                      <H2InfoCards className="text-xl text-darker font-bold">
-                        Intensidade: {exercise.intensity}
-                      </H2InfoCards>
-                      <h2 className="text-xl text-darker font-bold max-w-[100%] whitespace-pre-wrap">
-                       Descricao: <br /> {exercise.description}
-                      </h2>
-                      </div>
+                <div className="flex items-center">
+                  <div className="xxl:flex">
+                    <div className="flex items-center">
+                      <span className="text-xl text-orange ">
+                        <ListOrdered />
+                      </span>
+                      <H2InfoCards> Quantidade de séries: </H2InfoCards>
+                    </div>
+                    <h2 className="text-xl text-darker xl:relative xxl:left-3">
+                      {exercise.numberSeries}
+                    </h2>
+                  </div>
+                </div>
+
+                <div className="flex items-center">
+                  <span className="text-xl text-orange ">
+                    <Repeat />
+                  </span>
+                  <H2InfoCards> Repetições: </H2InfoCards>
+                  <h2 className="text-xl text-darker  relative left-3">
+                    {exercise.repetitions}
+                  </h2>
+                </div>
+
+                <div className="flex items-center">
+                  <div className="xxl:flex ">
+                    <div className="flex  items-center">
+                      <span className="text-xl text-orange ">
+                        <Dumbbell />
+                      </span>
+                      <H2InfoCards> Técnicas avançadas: </H2InfoCards>
+                    </div>
+                    <h2 className="text-xl text-darker xxl:relative xxl:left-3">
+                      {exercise.advancedTechnique}
+                    </h2>
+                  </div>
+                </div>
+
+                <div className="flex items-center">
+                  <span className="text-xl text-orange ">
+                    <BicepsFlexed />
+                  </span>
+                  <H2InfoCards> Intensidade: </H2InfoCards>
+                  <h2 className="text-xl text-darker  relative left-3">
+                    {exercise.intensity}
+                  </h2>
+                </div>
+                
+                <div className="flex items-center">
+                  <div className=" ">
+                    <div className="flex  items-center">
+                      <span className="text-xl text-orange ">
+                      <Text />
+                      </span>
+                      <H2InfoCards> Descrição: </H2InfoCards>
+                    </div>
+                    <h2 className="text-xl  xxl:relative  text-darker  max-w-[100%] whitespace-pre-wrap">
+                      {exercise.description}
+                    </h2>
+                  </div>
+                </div>
+              </div>
+
+              
               <div className="justify-center items-center mb-10 flex flex-col ">
                 <button
                   className=" bg-red md:w-[22.5rem] h-[3.125rem] w-[15.625rem] text-white  text-2xl rounded-lg  hover:scale-105 transition "
@@ -61,6 +108,5 @@ function InfoCard({exercise}) {
     </>
   );
 }
-
 
 export default InfoCard;

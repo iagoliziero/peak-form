@@ -1,6 +1,6 @@
 const H2InfoCards = ({children}) => {
     return ( 
-        <h2 className="text-xl text-darker font-bold">
+        <h2 className="text-xl text-orange  relative left-1 font-bold ">
            {children}
         </h2>
      );
