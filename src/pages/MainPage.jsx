@@ -101,7 +101,7 @@ function MainPage() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex justify-center items-center flex-grow gap-3 3xl:gap-5 relative top-3 3xl:bottom-0">
+                    <div className="flex justify-center items-center flex-grow gap-3 3xl:gap-5 relative top-3 xxl:top-0 3xl:bottom-0">
                       {/* Container dos botões */}
                       <button className="w-16 h-12 3xl:w-18 3xl:h-14 bg-yellowMain rounded-md hover:scale-105 transition-all text-darker flex justify-center items-center">
                         <Pencil size={34} strokeWidth={2} />

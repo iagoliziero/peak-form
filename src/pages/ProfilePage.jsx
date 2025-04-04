@@ -6,6 +6,8 @@ import { ProfileBodyContexts } from "../contexts/ProfileBodyContexts";
 import { ProfileContexts } from "../contexts/ProfileContexts";
 import Nav from "../components/Nav";
 import { NameContext } from "../contexts/NameContexts";
+import H2 from "../components/H2";
+import H2Bold from "./H2Bold";
 
 
 function ProfilePage() {
@@ -56,8 +58,8 @@ function ProfilePage() {
                 <h1 className="text-2xl lg:text-3xl font-semibold">
                 {name.name}
                 </h1>
-                <h2 className="text-xl lg:text-2xl">{profile.email}</h2>
-                <h2 className="text-xl lg:text-2xl">{profile.date}</h2>
+                <H2>{profile.email}</H2>
+                <H2>{profile.date}</H2>
               </div>
               <div>
               <button className="w-[18rem] md:w-[19rem] xxl:h-[3.5rem] h-[3.75rem] bg-red text-2xl rounded-lg hover:scale-105 transition-all font-semibold duration-[400ms]">
@@ -83,15 +85,15 @@ function ProfilePage() {
                 <h1 className="text-2xl lg:text-3xl font-semibold">
                 {profileBody[0].weightStatus}
                 </h1>
-                <h2 className="text-xl lg:text-2xl">{profileBody[0].obesityLevel}</h2>
-                <h2 className="text-xl lg:text-2xl font-semibold">Altura:</h2>
-                <h2 className="text-xl lg:text-2xl">{profileBody[0].height} cm</h2>
-                <h2 className="text-xl lg:text-2xl font-semibold">Peso:</h2>
-                <h2 className="text-xl lg:text-2xl">{profileBody[0].weight} kg</h2>
-                <h2 className="text-xl lg:text-2xl font-semibold">
+                <H2>{profileBody[0].obesityLevel}</H2>
+                <H2Bold>Altura:</H2Bold>
+                <H2>{profileBody[0].height} cm</H2>
+                <H2Bold>Peso:</H2Bold>
+                <H2>{profileBody[0].weight} kg</H2>
+                <H2Bold className="text-xl lg:text-2xl font-semibold">
                   Meta de peso:
-                </h2>
-                <h2 className="text-xl lg:text-2xl">{profileBody[0].goalWeight} kg</h2>
+                </H2Bold>
+                <H2 className="text-xl lg:text-2xl">{profileBody[0].goalWeight} kg</H2>
               </div>
             )}
           </div>
