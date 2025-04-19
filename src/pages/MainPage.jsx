@@ -46,7 +46,7 @@ function MainPage() {
       </div>
       <Nav />
 
-      <div className="w-full h-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5">
+      <div className="w-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5">
         <div className="mt-10 flex justify-center xl:hidden ">
           <Button onClick={() => navigate(`/criarexercicio`)}>
             Criar exercício
@@ -55,7 +55,7 @@ function MainPage() {
 
         {/* cards */}
         <div
-          className="w-full flex gap-8 px-8 py-4 snap-x snap-mandatory scrollbar-hide mb-10 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-hide xl:grid xl:grid-cols-4 xl:w-[90%] xxl:w-[90%] xl:gap-6 xl:px-4 xxl:grid-cols-5 3xl:grid-cols-5 items-center lg:overflow-auto xl:mt-10  "
+          className="w-full flex gap-8 px-8 py-4 snap-x snap-mandatory scrollbar-hide mb-10 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-hide xl:grid xl:grid-cols-4 xl:w-[90%] xxl:w-[95%] xl:gap-6 xl:px-4 xxl:grid-cols-5 3xl:grid-cols-5 items-center lg:overflow-auto xl:mt-10  "
           onWheel={handleWheel}
         >
           {exercise.map((exer) => (

@@ -22,7 +22,7 @@ function CreateExercisePage() {
 
   return (
     <>
-      <div className="h-full bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-y-scroll overflow-x-hidden no-scrollbar">
+      <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-y-scroll overflow-x-hidden no-scrollbar">
         {/* Logo */}
         <div className="flex mt-16 gap-8">
           <span className="flex relative">
@@ -38,7 +38,7 @@ function CreateExercisePage() {
           </span>
         </div>
        <Nav />
-        <div className="w-full h-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5">
+        <div className="w-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5">
           <div className="mt-10 gap-5">
             <H1>
               Adicionar Exercício

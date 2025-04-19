@@ -2,7 +2,6 @@ import { CircleUserRound } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import H1 from "../components/H1";
 
-
 function Home() {
   const navigate = useNavigate()
 
