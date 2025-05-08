@@ -23,11 +23,9 @@ import GoalPage from "./pages/GoalPage.jsx";
 import ActivityPage from "./pages/ActivityPage.jsx";
 import Thankspage from "./pages/ThanksPage.jsx";
 import InfoUserPage from "./pages/InfoUserPage.jsx";
-import Login from "./components/Login.jsx";
 import MainPage from "./pages/MainPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import ProfileBodyPage from "./pages/ProfileBodyPage.jsx";
-import Home from "./pages/Home.jsx";
 import ExerciseProvider from "./contexts/ExerciseContext.jsx";
 import SignInPage from "./pages/SignInPage.jsx";
 import CreateExercise from "./pages/CreateExercisePage.jsx";
@@ -43,8 +41,7 @@ import ProfileProvider from "./contexts/ProfileContexts.jsx";
 // Criando contexto para compartilhar nome do usuário
 const UserContext = createContext();
 
-const clientId =
-  "274780333869-3upraqeb95j68muct6t8t5nma280jqv2.apps.googleusercontent.com";
+const clientId ="274780333869-3upraqeb95j68muct6t8t5nma280jqv2.apps.googleusercontent.com";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
