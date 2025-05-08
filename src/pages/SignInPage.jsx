@@ -22,11 +22,11 @@ function SignIn() {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
   } = useForm();
 
   const onSubmit = (data) => {
     alert(JSON.stringify(data));
+    navigate('/principal')
   };
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar md:justify-center lg:justify-start">

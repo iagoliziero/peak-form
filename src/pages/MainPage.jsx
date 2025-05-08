@@ -35,7 +35,7 @@ function MainPage() {
         <span className="flex relative">
           <img
             onClick={() => navigate(`/principal`)}
-            className="w-[9rem] md:w-[11rem] xl:w-[12rem]"
+            className="w-[9rem] md:w-[11rem] xl:w-[12rem] cursor-pointer"
             src="src/public/logo.png"
             alt="logo"
           />
@@ -55,7 +55,7 @@ function MainPage() {
 
         {/* cards */}
         <div
-          className="w-full flex gap-8 px-8 py-4 snap-x snap-mandatory scrollbar-hide mb-10 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-hide xl:grid xl:grid-cols-4 xl:w-[90%] xxl:w-[95%] xl:gap-6 xl:px-4 xxl:grid-cols-5 3xl:grid-cols-5 items-center lg:overflow-auto xl:mt-10  "
+          className="w-full flex gap-8 px-8 py-4 snap-x snap-mandatory scrollbar-hide mb-10 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-hide xl:grid xl:grid-cols-4 xl:max-w-[72rem] 3xl:max-w-[85rem] xl:gap-6 xl:px-4 xxl:grid-cols-4 3xl:grid-cols-4 items-center lg:overflow-auto xl:mt-10"
           onWheel={handleWheel}
         >
           {exercise.map((exer) => (

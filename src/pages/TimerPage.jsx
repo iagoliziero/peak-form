@@ -94,7 +94,7 @@ function TimerPage() {
         <span className="flex relative">
         <img
           onClick={() => navigate(`/principal`)}
-            className="w-[9rem] md:w-[11rem] xl:w-[12rem]"
+            className="w-[9rem] md:w-[11rem] xl:w-[12rem] cursor-pointer"
             src="src/public/logo.png"
             alt="logo"
           />

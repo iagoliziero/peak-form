@@ -7,7 +7,7 @@ function Home() {
 
 
   return (
-    <div className="h-screen xl:h-full xxl:h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center overflow-scroll no-scrollbar">
+    <div className="h-screen xl:h-screen xxl:h-screen  bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center overflow-scroll no-scrollbar">
       <div className=" flex flex-col justify-center 3xl:mt-0 gap-8">
         <div>
           <button

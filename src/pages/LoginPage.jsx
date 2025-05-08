@@ -41,7 +41,7 @@ function LoginPage() {
       ...prev, 
       email: data.email,
     }))
-    navigate(`/principal`)
+    navigate(`/signin`)
   }
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar md:justify-center lg:justify-start">
@@ -110,9 +110,7 @@ function LoginPage() {
                 </p> )}
                 
               </div>
-               
-               
-              
+
             </div>
             <div>
             <span className="flex items-start mb-1 mt-2 relative left-2">
