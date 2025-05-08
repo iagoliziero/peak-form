@@ -2,7 +2,8 @@ const profileData = [
     {
         name:'',
         email: '',
-        date: ''
+        date: '',
+        password:'',
     },
 ]
 

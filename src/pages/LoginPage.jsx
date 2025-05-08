@@ -1,6 +1,6 @@
 import { Eye, EyeClosed, Parentheses } from "lucide-react";
 import { stringify } from "postcss";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { set, useForm } from "react-hook-form";
 import validator from 'validator'
 import Login from "../components/Login";
@@ -9,11 +9,13 @@ import { ProfileContexts } from "../contexts/ProfileContexts";
 import Logo from "../components/Logo";
 import H1 from "../components/H1";
 import Paragraph from "../components/Paragraph";
+import { api } from "../services/api.js";
 
 function LoginPage() {
   const navigate = useNavigate()
 
   const {setProfile} = useContext(ProfileContexts)
+  const {name, date} = useContext(ProfileContexts)
 
   const [isShowPassword, setIsShowPassword] = useState(false)
   const [isShowPasswordConfirmation, setIsShowPasswordConfirmation] = useState(false)
@@ -35,14 +37,33 @@ function LoginPage() {
 
   const watchPassword = watch('password')
 
-  const onSubmit = (data) => {
-    alert(JSON.stringify(data))
+  const onSubmit = async(data) => {
     setProfile((prev) => ({
       ...prev, 
       email: data.email,
+      password: data.password,
     }))
+
+    try {
+      const response = await api.post('/users', {
+        email: data.email,
+        password: data.password,
+        name, 
+        date
+      })
+  
+      const {token} = response.data;
+      console.log(token);
+      
+      localStorage.setItem('token', token)
+
+    } catch (error) {
+      console.log('Erro ao criar o user', error);
+      
+    }
     navigate(`/signin`)
   }
+
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar md:justify-center lg:justify-start">
       <Logo />
