@@ -1,7 +1,6 @@
-import { Eye, EyeClosed, Parentheses } from "lucide-react";
-import { stringify } from "postcss";
-import { useContext, useEffect, useState } from "react";
-import { set, useForm } from "react-hook-form";
+import { Eye, EyeClosed} from "lucide-react";
+import { useContext, useState } from "react";
+import { useForm } from "react-hook-form";
 import validator from 'validator'
 import Login from "../components/Login";
 import { useNavigate } from "react-router-dom";
@@ -11,12 +10,14 @@ import H1 from "../components/H1";
 import Paragraph from "../components/Paragraph";
 import { api } from "../services/api.js";
 import { NameContext } from "../contexts/NameContexts.jsx";
+import { ProfileBodyContexts } from "../contexts/ProfileBodyContexts.jsx";
 
 function LoginPage() {
   const navigate = useNavigate()
 
   const {setProfile, profile} = useContext(ProfileContexts);
   const {name} = useContext(NameContext);
+  const {setProfileBody, profileBody} = useContext(ProfileBodyContexts);
 
   const [isShowPassword, setIsShowPassword] = useState(false);
   const [isShowPasswordConfirmation, setIsShowPasswordConfirmation] = useState(false);
@@ -51,6 +52,13 @@ function LoginPage() {
         password: data.password,
         name: name.name,
         date: profile.date,
+        profileBodyData: {
+          height: profileBody.height,
+          weight: profileBody.weight,
+          imc: profileBody.imc,
+          goalWeight: profileBody.goalWeight,
+          weightStatus: profileBody.weightStatus,
+        }
       })
   
       const {token} = response.data;
