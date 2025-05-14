@@ -46,7 +46,6 @@ function InfoUserPage() {
             <H1>Quando você nasceu?</H1>
             <ReactInputMask
               {...register("date", { required: true })}
-              onChange={(e) => setProfile(e.target.value)}
               className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
                 errors?.date ? "border-lightRed" : "focus:border-yellowMain"
               }`}

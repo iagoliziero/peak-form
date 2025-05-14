@@ -10,22 +10,23 @@ import Logo from "../components/Logo";
 import H1 from "../components/H1";
 import Paragraph from "../components/Paragraph";
 import { api } from "../services/api.js";
+import { NameContext } from "../contexts/NameContexts.jsx";
 
 function LoginPage() {
   const navigate = useNavigate()
 
-  const {setProfile} = useContext(ProfileContexts)
-  const {name, date} = useContext(ProfileContexts)
+  const {setProfile, profile} = useContext(ProfileContexts);
+  const {name} = useContext(NameContext);
 
-  const [isShowPassword, setIsShowPassword] = useState(false)
-  const [isShowPasswordConfirmation, setIsShowPasswordConfirmation] = useState(false)
+  const [isShowPassword, setIsShowPassword] = useState(false);
+  const [isShowPasswordConfirmation, setIsShowPasswordConfirmation] = useState(false);
 
   const handlePassword = () => {
-    setIsShowPassword(!isShowPassword)
+    setIsShowPassword(!isShowPassword);
   }
 
   const handlePasswordConfirmation = () => {
-    setIsShowPasswordConfirmation(!isShowPasswordConfirmation)
+    setIsShowPasswordConfirmation(!isShowPasswordConfirmation);
   }
 
   const {
@@ -35,7 +36,7 @@ function LoginPage() {
     watch,
   } = useForm();
 
-  const watchPassword = watch('password')
+  const watchPassword = watch('password');
 
   const onSubmit = async(data) => {
     setProfile((prev) => ({
@@ -48,8 +49,8 @@ function LoginPage() {
       const response = await api.post('/users', {
         email: data.email,
         password: data.password,
-        name, 
-        date
+        name: name.name,
+        date: profile.date,
       })
   
       const {token} = response.data;
@@ -82,7 +83,7 @@ function LoginPage() {
                 className={`mt- w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                   errors?.email ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
-                type={isShowPassword ? "password" : "text"}
+                type="text"
                 placeholder="seuemail@exemplo.com "
               />
               {errors?.email?.type === "required" && (
@@ -167,7 +168,7 @@ function LoginPage() {
             </div>
            
           </div>
-          <div className="flex justify-start mt-2">
+          <div className="flex justify-center mt-2">
               <Paragraph> 
               Deve ter pelo menos 7 caracteres, <br className="md:hidden" /> sem espaço.
               </Paragraph>
