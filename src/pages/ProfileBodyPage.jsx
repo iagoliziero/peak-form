@@ -24,24 +24,40 @@ function ProfileBodyPage() {
     const heightInMeters = data.height / 100;
     const imc = (data.weight / (heightInMeters * heightInMeters)).toFixed(2);
 
+    const weightStatusMapping = {
+      UNDERWEIGHT: 'UNDERWEIGHT',
+      NORMAL_WEIGHT: 'NORMAL_WEIGHT',
+      OVERWEIGHT: 'OVERWEIGHT',
+      OBESITY: 'OVERWEIGHT',
+      SEVERE_OBESITY: 'SEVERE_OBESITY',
+    }
+
+    const obesityLevelMapping = {
+      NORMAL: 'NORMAL',
+      GRADE_1: 'GRADE_1',
+      GRADE_2: 'GRADE_2',
+      GRADE_3: 'GRADE_3',
+    } 
+    
+
     let weightStatus = "";
     let obesityLevel = "";
 
     if (imc < 18.5) {
-      weightStatus = "Abaixo do peso";
-      obesityLevel = "Normal";
+      weightStatus = weightStatusMapping.UNDERWEIGHT;
+      obesityLevel = obesityLevelMapping.NORMAL;
     } else if (imc < 24.9) {
-      weightStatus = "Peso normal";
-      obesityLevel = "Normal";
+      weightStatus = weightStatusMapping.NORMAL_WEIGHT;
+      obesityLevel = obesityLevelMapping.NORMAL;
     } else if (imc < 29.9) {
-      weightStatus = "Sobrepeso";
-      obesityLevel = "Obesidade grau 1";
+      weightStatus = weightStatusMapping.OVERWEIGHT;
+      obesityLevel = obesityLevelMapping.GRADE_1;
     } else if (imc < 34.9) {
-      weightStatus = "Obesidade";
-      obesityLevel = "Obesidade grau 2";
+      weightStatus = weightStatusMapping.OBESITY;
+      obesityLevel = obesityLevelMapping.GRADE_2;
     } else {
-      weightStatus = "Obesidade grave";
-      obesityLevel = "Obesidade grau 3";
+      weightStatus = weightStatusMapping.SEVERE_OBESITY;
+      obesityLevel = obesityLevelMapping.GRADE_3;
     }
 
     setProfileBody([
