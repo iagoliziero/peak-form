@@ -46,7 +46,7 @@ function MainPage() {
       </div>
       <Nav />
 
-      <div className="w-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5">
+      <div className="w-full h-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5">
         <div className="mt-10 flex justify-center xl:hidden ">
           <Button onClick={() => navigate(`/criarexercicio`)}>
             Criar exercício

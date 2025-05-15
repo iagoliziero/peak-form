@@ -70,13 +70,9 @@ function LoginPage() {
     } catch (error) {
       console.log('Erro ao criar o user', error);
       
-    }
-    if(response.ok) {
-      navigate(`/signin`)
-    } else {
-      alert('Erro ao criar o usuario')
-      navigate('/')
-    }
+    };
+    
+    navigate('/principal');
     
   }
 

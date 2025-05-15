@@ -1,5 +1,5 @@
 import { Eye, EyeClosed } from "lucide-react";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import validator from "validator";
 import Login from "../components/Login";
@@ -9,6 +9,7 @@ import Logo from "../components/Logo";
 import Paragraph from "../components/Paragraph";
 
 function SignIn() {
+
   const [isShowPasswordSignIn, setIsShowPasswordSignIn] = useState(false);
   useState(false);
 
@@ -28,6 +29,11 @@ function SignIn() {
     alert(JSON.stringify(data));
     navigate('/principal')
   };
+
+  const getData = useCallback(() => {
+    
+  }, [])
+
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar md:justify-center lg:justify-start">
       <Logo />

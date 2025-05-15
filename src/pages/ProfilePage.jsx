@@ -8,16 +8,27 @@ import Nav from "../components/Nav";
 import { NameContext } from "../contexts/NameContexts";
 import H2 from "../components/H2";
 import H2Bold from "./H2Bold";
+import { api } from "../services/api";
 
 
 function ProfilePage() {
   const { profileBody } = useContext(ProfileBodyContexts);
   const navigate = useNavigate();
-  const { profile } = useContext(ProfileContexts)
+  const { profile, setProfile } = useContext(ProfileContexts)
   const { name } = useContext(NameContext)
   useEffect(() => {
     console.log("Profile Data:", profile); // Verifique se name está atualizado
   }, [profile]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const response = await api.get('/users');
+      setProfile(response.data);
+    }
+
+    getData();
+  })
+
   return (
     
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
