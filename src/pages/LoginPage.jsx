@@ -53,14 +53,15 @@ function LoginPage() {
         name: name.name,
         date: profile.date,
         profileBodyData: {
-          height: profileBody.height,
-          weight: profileBody.weight,
-          imc: profileBody.imc,
-          goalWeight: profileBody.goalWeight,
-          weightStatus: profileBody.weightStatus,
+          weight: parseInt(profileBody[0].weight),
+          height: parseInt(profileBody[0].height),
+          goalWeight: parseInt(profileBody[0].goalWeight),
+          imc: parseFloat(profileBody[0].imc),
+          weightStatus: profileBody[0].weightStatus,
+          obesityLevel: profileBody[0].obesityLevel,
         }
       })
-  
+
       const {token} = response.data;
       console.log(token);
       
@@ -70,7 +71,13 @@ function LoginPage() {
       console.log('Erro ao criar o user', error);
       
     }
-    navigate(`/signin`)
+    if(response.ok) {
+      navigate(`/signin`)
+    } else {
+      alert('Erro ao criar o usuario')
+      navigate('/')
+    }
+    
   }
 
   return (
