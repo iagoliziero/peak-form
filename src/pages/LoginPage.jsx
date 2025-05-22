@@ -61,18 +61,28 @@ function LoginPage() {
           obesityLevel: profileBody[0].obesityLevel,
         }
       })
-
       const {token} = response.data;
+
+      console.log(response.data);
+      
+      
       console.log(token);
       
       localStorage.setItem('token', token)
+
+      if(response.status === 500 || response.status === 404) {
+          alert('erro ao criar o user');
+          navigate('/');
+          return;
+      }
+
+      navigate('/principal')
 
     } catch (error) {
       console.log('Erro ao criar o user', error);
       
     };
     
-    navigate('/principal');
     
   }
 
