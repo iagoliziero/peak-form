@@ -8,23 +8,36 @@ import {
   Trash2,
 } from "lucide-react";
 import DropdownMenu from "../components/DropDownMenu";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ExerciseContext } from "../contexts/ExerciseContext";
 import { useNavigate } from "react-router-dom";
 import InfoCard from "../components/InfoCard";
 import Nav from "../components/Nav";
 import Button from "../components/Button";
 import H2 from "../components/H2";
+import { api } from "../services/api";
+import { apiFunctions } from "../services/exercise-services.js";
 
 function MainPage() {
-  const { exercise } = useContext(ExerciseContext); // Obtém os exercícios globalmente
-
   const handleWheel = (event) => {
     if (event.deltaY === 0) {
       // Rola horizontalmente
       event.currentTarget.scrollLeft += event.deltaX;
     }
   };
+  
+
+  const [exercises, setExercises] = useState([])
+
+  useEffect(() => {
+      const getData = async () => {
+        const data = await apiFunctions.getExercise();
+        setExercises(data)
+      }
+
+      getData();
+    
+  }, []);
 
   const navigate = useNavigate();
 
@@ -54,12 +67,12 @@ function MainPage() {
         </div>
 
         {/* cards */}
-        {exercise.length > 0 ? (
+        {exercises.length > 0 ? (
           <div
           className="w-full flex gap-8 px-8 py-4 snap-x snap-mandatory scrollbar-hide mb-10 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-hide xl:grid xl:grid-cols-4 xl:max-w-[72rem] 3xl:max-w-[85rem] xl:gap-6 xl:px-4 xxl:grid-cols-4 3xl:grid-cols-4 items-center lg:overflow-auto xl:mt-10"
           onWheel={handleWheel}
         >
-          {exercise.map((exer) => (
+          {exercises.map((exer) => (
             <div key={exer.id} className="snap-center flex-shrink-0">
               <div className="w-[17rem] h-[24rem] 3xl:w-[20rem] bg-yellowMain rounded-lg flex-col">
                 <div className="flex items-center justify-between p-4">

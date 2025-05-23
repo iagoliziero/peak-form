@@ -14,17 +14,8 @@ import { api } from "../services/api";
 function ProfilePage() {
 
   const navigate = useNavigate();
-
-  const { profileBody } = useContext(ProfileBodyContexts);
-  const { profile, setProfile } = useContext(ProfileContexts);
-  const { name } = useContext(NameContext)
-
   const [user, setUser] = useState([]);
   const [userBody, setUserBody] = useState([]);
-
-  useEffect(() => {
-    console.log("Profile Data:", profile);
-  }, [profile]);
 
   useEffect(() => {
     const getData = async () => {
