@@ -7,6 +7,7 @@ import Button from "../components/Button";
 import H1 from "../components/H1";
 import Paragraph from "../components/Paragraph";
 import { api } from "../services/api";
+import { apiFunctions } from "../services/exercise-services";
 
 function CreateExercisePage() {
   const navigate = useNavigate();
@@ -18,19 +19,10 @@ function CreateExercisePage() {
   } = useForm();
 
   const onSubmit = (data) => {
-    try {
-      const response = api.post('/exercises', {
-        title: data.title,
-        numberSeries: data.numberSeries,
-        repetitions: data.repetitions,
-        advancedTechnique: data.advancedTechnique,
-        intensity: data.intensity,
-        description: data.description
-      })
-      return response;
-    } catch (error) {
-      console.log('Error creating the exercise', error);
-    }
+      const response = apiFunctions.createExercise(data);
+      if(response) {
+        navigate('/principal');
+      }
   };
 
   return (

@@ -1,5 +1,21 @@
 import { api } from "./api.js";
 
+const createExercise = async (data) => {
+    try {
+        const response = api.post('/exercises', {
+          title: data.title,
+          numberSeries: data.numberSeries,
+          repetitions: data.repetitions,
+          advancedTechnique: data.advancedTechnique,
+          intensity: data.intensity,
+          description: data.description
+        })
+        return response;
+      } catch (error) {
+        console.log('Error creating the exercise', error);
+      }
+}
+
 const getExercise = async () => {
     try {
       const response = await api.get('/exercises');
@@ -10,5 +26,6 @@ const getExercise = async () => {
   }
 
 export const apiFunctions = {
+    createExercise,
     getExercise
 }
