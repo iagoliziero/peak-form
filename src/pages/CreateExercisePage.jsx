@@ -6,6 +6,7 @@ import Nav from "../components/Nav";
 import Button from "../components/Button";
 import H1 from "../components/H1";
 import Paragraph from "../components/Paragraph";
+import { api } from "../services/api";
 
 function CreateExercisePage() {
   const navigate = useNavigate();
@@ -17,7 +18,19 @@ function CreateExercisePage() {
   } = useForm();
 
   const onSubmit = (data) => {
-    alert(JSON.stringify(data));
+    try {
+      const response = api.post('/exercises', {
+        title: data.title,
+        numberSeries: data.numberSeries,
+        repetitions: data.repetitions,
+        advancedTechnique: data.advancedTechnique,
+        intensity: data.intensity,
+        description: data.description
+      })
+      return response;
+    } catch (error) {
+      console.log('Error creating the exercise', error);
+    }
   };
 
   return (
@@ -131,27 +144,27 @@ function CreateExercisePage() {
                             <Paragraph> Intensidade: </Paragraph>
                             </span>
             <select
-              {...register('intesity', {validate: (value) => {
-                return value !== '0'
+              {...register('intensity', {validate: (value) => {
+                return value !== 'Selecionar'
               }})}
-              className={`w-[21.5rem] md:w-[20rem] p-4 border border-gray rounded-md bg-darker text-white text-xl focus:outline-none focus:ring-2 focus:ring-yellowMain ${errors?.intesity ?"border-lightRed" : "focus:border-yellowMain" }`}
+              className={`w-[21.5rem] md:w-[20rem] p-4 border border-gray rounded-md bg-darker text-white text-xl focus:outline-none focus:ring-2 focus:ring-yellowMain ${errors?.intensity ?"border-lightRed" : "focus:border-yellowMain" }`}
             >
-              <option value="0"> Selecionar </option>
-              <option value="1"> Pesado </option>
-              <option value="2"> Moderado </option>
-              <option value="3"> Leve </option>
+              <option value="Selecionar"> Selecionar </option>
+              <option value="HEAVY"> Pesado </option>
+              <option value="MODERATE"> Moderado </option>
+              <option value="LIGHT"> Leve </option>
             </select>
-            {errors?.intesity?.type === "validate" && <p className="text-lightRed mx-4 mt-1"> A intensidade é obrigatória. </p>}
+            {errors?.intensity?.type === "validate" && <p className="text-lightRed mx-4 mt-1"> A intensidade é obrigatória. </p>}
           </div>
             <div  className="flex flex-col">
             <span className="flex items-start mb-1 relative left-2">
                 <Paragraph> Descrição do exercício: </Paragraph>
                 </span>
-              <input
+              <textarea
                 {...register("description", { required: false })}
                 maxLength={200}
-                className="w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
-                type="text"
+                className="  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain"
+                type=""
                 placeholder="Descrição (Opcional)"
               />
             </div>

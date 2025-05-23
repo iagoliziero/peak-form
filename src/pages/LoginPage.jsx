@@ -79,7 +79,7 @@ function LoginPage() {
       navigate('/principal')
 
     } catch (error) {
-      console.log('Erro ao criar o user', error);
+      console.log('Error creating the user', error);
       
     };
     
