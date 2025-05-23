@@ -30,7 +30,7 @@ function ProfilePage() {
     const getData = async () => {
       const response = await api.get('/users');
       setUser(response.data);
-      setUserBody(response.data.user.profileBodyData[0]);
+      setUserBody(response.data.profileBodyData[0]);
     }
 
     getData();
@@ -116,7 +116,7 @@ function ProfilePage() {
                 <H2Bold className="text-xl lg:text-2xl font-semibold">
                   Meta de peso:
                 </H2Bold>
-                <H2 className="text-xl lg:text-2xl">{userBody.goalWeight} kg</H2>
+                <H2>{userBody.goalWeight} kg</H2>
               </div>
             )}
           </div>

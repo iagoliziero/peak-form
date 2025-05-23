@@ -54,7 +54,8 @@ function MainPage() {
         </div>
 
         {/* cards */}
-        <div
+        {exercise.length > 0 ? (
+          <div
           className="w-full flex gap-8 px-8 py-4 snap-x snap-mandatory scrollbar-hide mb-10 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-hide xl:grid xl:grid-cols-4 xl:max-w-[72rem] 3xl:max-w-[85rem] xl:gap-6 xl:px-4 xxl:grid-cols-4 3xl:grid-cols-4 items-center lg:overflow-auto xl:mt-10"
           onWheel={handleWheel}
         >
@@ -122,6 +123,16 @@ function MainPage() {
             </div>
           ))}
         </div>
+        ): <div className="flex flex-col max-w-[300px] mt-16 md:max-w-[400px] md:mt-7 lg:max-w-[450px] xl:max-w-[450px] xl:mt-28"> 
+            <h1 className="text-2xl lg:text-4xl text-yellowMain text-center font-semibold">Nenhum exercício registrado.</h1>
+            <p className="text-xl lg:text-2xl text-center text-whiteMain"> Comece agora a criar seus exercícios e personalize seu treino.</p>
+            <div className="hidden xl:flex xl:justify-center">
+              <Button onClick={() => navigate(`/criarexercicio`)}>
+             Criar exercício
+             </Button>
+            </div>
+          </div>
+          }
         {/* Fim do container dos cards */}
       </div>
 
