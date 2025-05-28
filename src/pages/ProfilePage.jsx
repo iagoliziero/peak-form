@@ -1,17 +1,25 @@
 import { CircleUserRound, Pencil } from "lucide-react";
 import DropdownMenu from "../components/DropDownMenu";
 import { useNavigate } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
-import { ProfileBodyContexts } from "../contexts/ProfileBodyContexts";
-import { ProfileContexts } from "../contexts/ProfileContexts";
+import { useEffect, useState } from "react";
 import Nav from "../components/Nav";
-import { NameContext } from "../contexts/NameContexts";
 import H2 from "../components/H2";
+import Loader from "../components/Loader";
 import H2Bold from "./H2Bold";
 import { api } from "../services/api";
 
 
 function ProfilePage() {
+
+  const [showMessage, setShowMessag] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowMessag(true);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const navigate = useNavigate();
   const [user, setUser] = useState([]);
@@ -57,7 +65,8 @@ function ProfilePage() {
             Seu perfil
           </h1>
         </div>
-        <div className="mt-10 mb-10 flex justify-center flex-col lg:flex-row gap-10 ">
+        {showMessage ? (
+          <div className="mt-10 mb-10 flex justify-center flex-col lg:flex-row gap-10 ">
           <div className="flex justify-center items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar">
             
               <div className="flex flex-col items-center gap-3">
@@ -112,6 +121,13 @@ function ProfilePage() {
             )}
           </div>
         </div>
+        ): 
+        <div className="w-full h-screen xxl:h-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5"> 
+        <div className="flex justify-center items-center flex-col mt-10 mb-10">
+              <Loader />
+          </div>
+          </div>
+          }
       </div>
     </div>
   );
