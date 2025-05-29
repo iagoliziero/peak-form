@@ -82,7 +82,7 @@ function LoginPage() {
       console.log('Error creating the user', error);
       
     };
-    
+
     
   }
 

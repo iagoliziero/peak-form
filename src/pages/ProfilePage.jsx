@@ -11,11 +11,11 @@ import { api } from "../services/api";
 
 function ProfilePage() {
 
-  const [showMessage, setShowMessag] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowMessag(true);
+      setShowProfile(true);
     }, 2000);
 
     return () => clearTimeout(timer);
@@ -65,7 +65,7 @@ function ProfilePage() {
             Seu perfil
           </h1>
         </div>
-        {showMessage ? (
+        {showProfile ? (
           <div className="mt-10 mb-10 flex justify-center flex-col lg:flex-row gap-10 ">
           <div className="flex justify-center items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar">
             
