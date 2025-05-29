@@ -25,7 +25,19 @@ const getExercise = async () => {
     }
   }
 
+  const deleteExercise = async (id) => {
+    try {
+      const response = await api.delete(`/exercises/${id}`);
+      return response;
+    } catch (error) {
+      console.log("Error get exercise", error);
+    }
+  }
+
+
 export const apiFunctions = {
     createExercise,
-    getExercise
+    getExercise,
+    deleteExercise
 }
+

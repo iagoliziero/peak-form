@@ -51,6 +51,10 @@ function MainPage() {
     
   }, []);
 
+  const deleteUser = (id) => {
+    setExercises((prev) => prev.filter(exer => exer.id != id))
+  }
+
   const navigate = useNavigate();
 
   return (
@@ -140,7 +144,10 @@ function MainPage() {
                         >
                           <Timer size={34} />
                         </button>
-                        <button className="w-16 h-12 3xl:w-18 3xl:h-14 bg-red rounded-md hover:scale-105 duration-300 transition-all text-darker flex justify-center items-center">
+                        <button onClick={() => {
+                          apiFunctions.deleteExercise(exer.id);
+                          deleteUser(exer.id);
+                        }} className="w-16 h-12 3xl:w-18 3xl:h-14 bg-red rounded-md hover:scale-105 duration-300 transition-all text-darker flex justify-center items-center">
                           <Trash2 size={34} strokeWidth={2} />
                         </button>
                       </div>
