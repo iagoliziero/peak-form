@@ -72,7 +72,7 @@ function LoginPage() {
 
       if(response.status === 500 || response.status === 404) {
           alert('erro ao criar o user');
-          navigate('/');
+          navigate('/erro');
           return;
       }
 

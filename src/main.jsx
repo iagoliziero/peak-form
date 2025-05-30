@@ -33,6 +33,7 @@ import Timer from "./pages/TimerPage.jsx";
 import BasalPage from "./pages/BasalPage.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
+import Error from "./pages/Error.jsx";
 import NameProvider from "./contexts/NameContexts.jsx";
 import ProfileBodyProvider from "./contexts/ProfileBodyContexts.jsx";
 import ProfileProvider from "./contexts/ProfileContexts.jsx";
@@ -59,6 +60,7 @@ const router = createBrowserRouter([
   { path: "/tempodepausa", element: <Timer /> },
   { path: "/tmb", element: <BasalPage /> },
   { path: "/sobre", element: <AboutUs /> },
+  {path: "/erro", element: <Error />}
 ]);
 
 createRoot(document.getElementById("root")).render(
