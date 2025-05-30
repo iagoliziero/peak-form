@@ -17,8 +17,6 @@ import { useNavigate } from "react-router-dom";
 function EditCard({ exercise, onClose, onSave }) {
   const [form, setForm] = useState({ ...exercise });
 
-  const navigate = useNavigate();
-
   const { register, handleSubmit } = useForm();
 
   const handleChange = (e) => {
@@ -26,9 +24,9 @@ function EditCard({ exercise, onClose, onSave }) {
   };
 
   const onSubmit = (data) => {
-    const response = apiFunctions.updateExercise(data);
+    const response = apiFunctions.updateExercise(data, exercise.id);
     if(response) {
-      navigate('/principal')
+      window.location.reload()
     }
   };
 
@@ -55,7 +53,7 @@ function EditCard({ exercise, onClose, onSave }) {
                 value={form.numberSeries}
                 className={`max-w-[20rem] md:w-[20rem] h-[3.3rem] rounded-md bg-whiteMain border border-gray text-3xl p-4 text-dark focus:outline-none focus:ring-3`}
                 type="text"
-                placeholder="series"
+                onChange={handleChange}
               />
   
             </div>
@@ -124,7 +122,9 @@ function EditCard({ exercise, onClose, onSave }) {
             <div className="flex flex-col items-center gap-4 mt-4">
               <button
                 className="bg-yellowMain md:w-[22.5rem] h-[3.125rem] w-[15.625rem] text-white  text-2xl rounded-lg  hover:scale-105 transition "
-                onClick={() => handleSubmit(onSubmit)()}
+                onClick={() => handleSubmit(onSubmit)()
+                  
+                }
               >
                 Salvar
               </button>

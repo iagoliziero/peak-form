@@ -25,6 +25,22 @@ const getExercise = async () => {
     }
   }
 
+  const updateExercise = async (data , id) => {
+    try {
+        const response = await api.put(`/exercises/${id}`, {
+          title: data.title,
+          numberSeries: data.numberSeries,
+          repetitions: data.repetitions,
+          advancedTechnique: data.advancedTechnique,
+          intensity: data.intensity,
+          description: data.description
+        })
+        return response;
+      } catch (error) {
+        console.log('Error update the exercise', error);
+      }
+}
+
   const deleteExercise = async (id) => {
     try {
       const response = await api.delete(`/exercises/${id}`);
@@ -38,6 +54,7 @@ const getExercise = async () => {
 export const apiFunctions = {
     createExercise,
     getExercise,
-    deleteExercise
+    deleteExercise,
+    updateExercise
 }
 
