@@ -37,6 +37,8 @@ import Error from "./pages/Error.jsx";
 import NameProvider from "./contexts/NameContexts.jsx";
 import ProfileBodyProvider from "./contexts/ProfileBodyContexts.jsx";
 import ProfileProvider from "./contexts/ProfileContexts.jsx";
+import RegisteredExercise from "./pages/registeredExercise.jsx";
+import UpdateExercise from "./pages/UpdateExercise.jsx";
 
 
 // Criando contexto para compartilhar nome do usuário
@@ -60,7 +62,9 @@ const router = createBrowserRouter([
   { path: "/tempodepausa", element: <Timer /> },
   { path: "/tmb", element: <BasalPage /> },
   { path: "/sobre", element: <AboutUs /> },
-  {path: "/erro", element: <Error />}
+  {path: "/erro", element: <Error />},
+  {path: "/registrado", element: <RegisteredExercise />},
+  {path: "/atualizado", element: <UpdateExercise />}
 ]);
 
 createRoot(document.getElementById("root")).render(

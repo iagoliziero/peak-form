@@ -21,7 +21,7 @@ function CreateExercisePage() {
   const onSubmit = (data) => {
       const response = apiFunctions.createExercise(data);
       if(response) {
-        navigate('/principal');
+        navigate('/registrado');
       }
   };
 

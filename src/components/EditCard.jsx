@@ -15,6 +15,9 @@ import { apiFunctions } from "../services/exercise-services";
 import { useNavigate } from "react-router-dom";
 
 function EditCard({ exercise, onClose, onSave }) {
+
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({ ...exercise });
 
   const { register, handleSubmit } = useForm();
@@ -26,7 +29,7 @@ function EditCard({ exercise, onClose, onSave }) {
   const onSubmit = (data) => {
     const response = apiFunctions.updateExercise(data, exercise.id);
     if(response) {
-      window.location.reload()
+      navigate('/atualizado');
     }
   };
 
