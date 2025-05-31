@@ -41,10 +41,24 @@ function MainPage() {
 
   const [exercises, setExercises] = useState([])
 
+ 
+
   useEffect(() => {
       const getData = async () => {
         const data = await apiFunctions.getExercise();
-        setExercises(data)
+
+        const intensityLevelMapping = {
+          LIGHT: "Leve",
+          MODERATE: "Moderado",
+          HEAVY: "Pesado"
+        }
+      
+        const translatedExercises = data.map((exercise) => ({
+          ...exercise,
+          intensity: intensityLevelMapping[exercise.intensity] || exercise.intensity
+        }));
+
+        setExercises(translatedExercises)
       }
 
       getData();

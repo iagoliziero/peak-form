@@ -28,8 +28,32 @@ function ProfilePage() {
   useEffect(() => {
     const getData = async () => {
       const response = await api.get('/users');
-      setUser(response.data);
-      setUserBody(response.data.profileBodyData[0]);
+      const userData = response.data;
+      const userBodyData = userData.profileBodyData[0];
+
+      const obesityLevelMapping = {
+        NORMAL: 'Normal',
+        GRADE_1: 'Obesidade Grau 1',
+        GRADE_2: 'Obesidade Grau 2',
+        GRADE_3: 'Obesidade Grau 3',
+      } 
+
+      const weightStatusMapping = {
+        UNDERWEIGHT: 'Abaixo do Peso',
+        NORMAL_WEIGHT: 'Peso Normal',
+        OVERWEIGHT: 'Acima do Peso',
+        OBESITY: 'Obeso',
+        SEVERE_OBESITY: 'Obesidade Grave',
+      }
+
+      const translateUserBody = {
+        ...userBodyData,
+        weightStatus: weightStatusMapping[userBodyData.weightStatus] || userBodyData.weightStatus,
+        obesityLevel: obesityLevelMapping[userBodyData.obesityLevel] || userBodyData.obesityLevel,
+      }
+
+      setUser(userData);
+      setUserBody(translateUserBody)
     }
 
     getData();

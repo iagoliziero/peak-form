@@ -97,7 +97,7 @@ function EditCard({ exercise, onClose, onSave }) {
                 <H2InfoCards>Intensidade:</H2InfoCards>
               </div>
               <select
-              value={form.intensity}
+              value={form.intensityLevel}
               {...register('intensity')}
               className={`max-w-[20rem] md:w-[20rem] p-2 rounded-md bg-whiteMain border right-10 border-gray text-3xl text-dark focus:outline-none focus:ring-3`}
             >
@@ -107,7 +107,7 @@ function EditCard({ exercise, onClose, onSave }) {
             </select>
             </div>
             
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3"> 
               <div className="flex flex-row items-center gap-3">
               <Text className="text-orange" />
               <H2InfoCards>Descrição</H2InfoCards>

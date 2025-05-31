@@ -82,7 +82,7 @@ function CreateExercisePage() {
                     : "focus:border-yellowMain"
                 }`}
                 type="text"
-                placeholder="Quantidade de Séries"
+                placeholder="Ex: 3 séries"
               />
               {errors?.numberSeries?.type === "required" && (
                 <p className="text-lightRed mx-4 mt-1">
@@ -104,7 +104,7 @@ function CreateExercisePage() {
                     : "focus:border-yellowMain"
                 }`}
                 type="text"
-                placeholder="ex: 4 séries"
+                placeholder="ex: 10-12 repetições"
               />
               {errors?.repetitions?.type === "required" && (
                 <p className="text-lightRed mx-4 mt-1">

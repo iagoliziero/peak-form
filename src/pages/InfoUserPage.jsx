@@ -22,7 +22,6 @@ function InfoUserPage() {
   } = useForm();
 
   const onSubmit = (data) => {
-    alert(JSON.stringify(data));
     setProfile((prev) => ({
       ...prev,
       date: data.date,
