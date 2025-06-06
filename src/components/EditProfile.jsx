@@ -87,9 +87,6 @@ function EditProfile({ user, onClose, onSave }) {
             />
             </div>
 
-            
-            
-
             <div className="flex flex-col items-center gap-4 mt-4">
               <button
                 className="bg-yellowMain md:w-[22.5rem] h-[3.125rem] w-[15.625rem] text-darker text-2xl rounded-lg font-bold  hover:scale-105 transition  "

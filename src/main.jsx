@@ -39,6 +39,7 @@ import ProfileBodyProvider from "./contexts/ProfileBodyContexts.jsx";
 import ProfileProvider from "./contexts/ProfileContexts.jsx";
 import RegisteredExercise from "./pages/registeredExercise.jsx";
 import UpdateExercise from "./pages/UpdateExercise.jsx";
+import UpdateProfile from "./pages/updateProfile.jsx";
 
 
 // Criando contexto para compartilhar nome do usuário
@@ -64,7 +65,8 @@ const router = createBrowserRouter([
   { path: "/sobre", element: <AboutUs /> },
   {path: "/erro", element: <Error />},
   {path: "/registrado", element: <RegisteredExercise />},
-  {path: "/atualizado", element: <UpdateExercise />}
+  {path: "/atualizado", element: <UpdateExercise />},
+  {path: "/perfil-atualizado", element: <UpdateProfile />}
 ]);
 
 createRoot(document.getElementById("root")).render(

@@ -82,7 +82,7 @@ function CreateExercisePage() {
                     : "focus:border-yellowMain"
                 }`}
                 type="text"
-                placeholder="Ex: 3 séries"
+                placeholder="ex: 3 séries"
               />
               {errors?.numberSeries?.type === "required" && (
                 <p className="text-lightRed mx-4 mt-1">
