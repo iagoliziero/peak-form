@@ -7,10 +7,7 @@ import {
   Text,
 } from "lucide-react";
 import H2InfoCards from "./H2InfoCards";
-import H2 from "./H2";
-import { data } from "autoprefixer";
 import { useForm } from "react-hook-form";
-import { api } from "../services/api";
 import { apiFunctions } from "../services/exercise-services";
 import { useNavigate } from "react-router-dom";
 
@@ -40,12 +37,25 @@ function EditCard({ exercise, onClose, onSave }) {
           <div className="bg-yellowMain rounded-b-none h-[4.6875rem] rounded-lg md:h-[6.25rem] ">
             <div className="flex justify-center text-center ">
               <h1 className="text-3xl p-6 md:text-4xl  lg:text-5xl items-center   text-darker text-center font-bold">
-                {exercise.title}
+                Editar Exercício
               </h1>
             </div>
           </div>
 
           <div className="flex flex-col gap-6 p-5 xl:p-8">
+            <div className="flex flex-col gap-3">
+             <div className="flex flex-row items-center gap-3">
+             <H2InfoCards> Nome do exercício: </H2InfoCards>
+             </div>
+              <input
+                {...register("title", { required: false})}
+                value={form.title}
+                className={`max-w-[20rem] md:w-[20rem] h-[3.3rem] rounded-md bg-whiteMain border border-gray text-3xl p-4 text-dark focus:outline-none focus:ring-3`}
+                type="text"
+                onChange={handleChange}
+              />
+            </div>
+
             <div className="flex flex-col gap-3">
              <div className="flex flex-row items-center gap-3">
              <ListOrdered className="text-orange" />
@@ -58,7 +68,6 @@ function EditCard({ exercise, onClose, onSave }) {
                 type="text"
                 onChange={handleChange}
               />
-  
             </div>
 
             <div className="flex flex-col gap-3">
@@ -112,19 +121,19 @@ function EditCard({ exercise, onClose, onSave }) {
               <Text className="text-orange" />
               <H2InfoCards>Descrição</H2InfoCards>
               </div>
-              <input
+              <textarea
                 {...register("description", { required: false })}
                 type="text"
                 name="description"
                 value={form.description}
                 onChange={handleChange}
-                className={`max-w-[20rem] md:w-[20rem] h-[3.3rem] rounded-md bg-whiteMain border border-gray text-3xl tig p-4 text-dark focus:outline-none focus:ring-3`}
+                className={`max-w-[20rem] md:w-[20rem] rounded-md bg-whiteMain border border-gray text-3xl tig p-4 text-dark focus:outline-none focus:ring-3`}
               />
             </div>
 
             <div className="flex flex-col items-center gap-4 mt-4">
               <button
-                className="bg-yellowMain md:w-[22.5rem] h-[3.125rem] w-[15.625rem] text-white  text-2xl rounded-lg  hover:scale-105 transition "
+                className="bg-yellowMain md:w-[22.5rem] h-[3.125rem] w-[15.625rem] text-darker text-2xl rounded-lg font-bold  hover:scale-105 transition  "
                 onClick={() => handleSubmit(onSubmit)()
                   
                 }
@@ -133,7 +142,7 @@ function EditCard({ exercise, onClose, onSave }) {
               </button>
               <div className="justify-center items-center flex flex-col ">
                 <button
-                  className=" bg-red md:w-[22.5rem] h-[3.125rem] w-[15.625rem] text-white  text-2xl rounded-lg  hover:scale-105 transition "
+                  className=" bg-red md:w-[22.5rem] h-[3.125rem] w-[15.625rem] text-whiteMain font-bold  text-2xl rounded-lg  hover:scale-105 transition "
                   onClick={onClose}
                 >
                   Fechar
