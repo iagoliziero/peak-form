@@ -14,10 +14,9 @@ function ActivityPage() {
     const buttons = [
         { id: 1,label: "Não muito ativo"},
         {id: 2,label: "Levemente ativo"}, 
-        { id: 3, label: "Ativo"},
-        {   id: 4, label: "Bastante ativo" },
+        {id: 3, label: "Ativo"},
+        {id: 4, label: "Bastante ativo"},
     ]
-
 
     const handleSelection = (id) => {
         setSelectedButton((prevSelected) => (prevSelected === id ? null : id));

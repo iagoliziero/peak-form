@@ -87,20 +87,25 @@ function ProfileBodyPage() {
           <div className="flex justify-center">
             <div>
               <input
-                {...register("height", { required: true })}
-                maxLength={3}
+                {...register("height", { required: true, maxLength: 3})}
                 className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
                   errors?.height ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
                 type="number"
                 placeholder="Sua altura "
               />
-              {errors?.height && (
+              {errors?.height?.type === 'required' && (
                 <p className="text-lightRed mx-4 mt-1">
                   {" "}
                   A altura é obrigatório.{" "}
                 </p>
               )}
+
+              {errors?.height?.type === 'maxLength' && (
+                <p className="text-lightRed mx-4 mt-1">
+                  {" "}
+                  Ops! Use no máximo 3 caracteres. {" "}
+                </p>)}
             </div>
             
           </div>
@@ -118,7 +123,7 @@ function ProfileBodyPage() {
           <div className="flex justify-center">
             <div>
               <input
-                {...register("weight", { required: true })}
+                {...register("weight", { required: true, maxLength:3 })}
                 maxLength={3}
                 className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
                   errors?.weight ? "border-lightRed" : "focus:border-yellowMain"
@@ -126,10 +131,19 @@ function ProfileBodyPage() {
                 type="number"
                 placeholder="Peso atual"
               />
-              {errors?.weight && (
+  
+
+              {errors?.weight?.type === 'required' && (
                 <p className="text-lightRed mx-4 mt-1">
                   {" "}
-                  O peso é obrigatório.{" "}
+                  O peso é obrigatório. {""}
+                </p>
+              )}  
+
+              {errors?.weight?.type === 'maxLength' && (
+                <p className="text-lightRed mx-4 mt-1">
+                  {" "}
+                  Ops! Use no máximo 3 caracteres. {""}
                 </p>
               )}
             </div>
@@ -144,18 +158,26 @@ function ProfileBodyPage() {
           <div className="flex justify-center">
             <div>
               <input
-                {...register("goalWeight", { required: true })}
+                {...register("goalWeight", { required: true, maxLength: 3})}
                 maxLength={3}
                 className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
-                  errors?.weight ? "border-lightRed" : "focus:border-yellowMain"
+                  errors?.weight?.type == 'required' ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
                 type="number"
                 placeholder="Meta de peso"
               />
-              {errors?.goalWeight && (
+
+              {errors?.goalWeight?.type == 'required' && (
                 <p className="text-lightRed mx-4 mt-1">
                   {" "}
-                  A meta é obrigatória.{" "}
+                  A meta de peso é obrigatório.  {" "}
+                </p>
+              )}
+
+              {errors?.goalWeight?.type == 'maxLength' && (
+                <p className="text-lightRed mx-4 mt-1">
+                  {" "}
+                  Ops! Use no máximo 3 caracteres. {" "}
                 </p>
               )}
             </div>
