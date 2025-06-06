@@ -7,11 +7,15 @@ import H2 from "../components/H2";
 import Loader from "../components/Loader";
 import H2Bold from "./H2Bold";
 import { api } from "../services/api";
+import EditProfile from "../components/EditProfile";
 
 
 function ProfilePage() {
 
   const [showProfile, setShowProfile] = useState(false);
+
+  const [isEditProfileOpen, setIsEditProfileOpen] = useState(false);
+  const [selectedProfile, setSelectedProfile] = useState(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -95,7 +99,13 @@ function ProfilePage() {
             
               <div className="flex flex-col items-center gap-3">
                 <div className="flex mt-10">
-                  <button className="relative left-56 lg:left-60 bottom-16">
+                  <button 
+                  onClick={() => { 
+                    setIsEditProfileOpen(!isEditProfileOpen)
+                    setSelectedProfile(user);
+                  }
+                  }
+                  className="relative left-56 lg:left-60 bottom-16">
                     <Pencil size={34} strokeWidth={2} />
                   </button>
                   <div className="w-44 h-44 rounded-full items-center bg-whiteMain flex justify-center relative right-4">
@@ -109,7 +119,7 @@ function ProfilePage() {
                 <H2>{user.date}</H2>
               </div>
               <div>
-              <button onClick={() => removeToken()} className="w-[18rem] md:w-[19rem] xxl:h-[3.5rem] h-[3.75rem] bg-red text-2xl rounded-lg hover:scale-105 transition-all font-semibold duration-[400ms]">
+              <button onClick={() => removeToken()} className="w-[18rem] md:w-[19rem] xxl:h-[3.5rem] h-[3.75rem] bg-red text-2xl rounded-lg hover:scale-105 transition-all font-semibold duration-[400ms] text-whiteMain">
                   Sair
               </button>
               </div>
@@ -144,7 +154,15 @@ function ProfilePage() {
               </div>
             )}
           </div>
+          {isEditProfileOpen && selectedProfile && (
+          <EditProfile
+            user={user}
+            onClose={() => setIsEditProfileOpen(false)}
+          />
+        )}
+        
         </div>
+        
         ): 
         <div className="w-full h-screen xxl:h-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5"> 
         <div className="flex justify-center items-center flex-col mt-10 mb-10">
