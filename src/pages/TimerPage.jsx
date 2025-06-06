@@ -105,8 +105,8 @@ function TimerPage() {
        
       </div>
       <Nav />
-      <div className="w-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5 ">
-        <div className="flex mt-10 ">
+      <div className="w-full h-screen bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5 ">
+        <div className="flex mt-10 max-w-[350px] ">
           <H1>
             {" "}
             Qual é o seu tempo de descanso?
