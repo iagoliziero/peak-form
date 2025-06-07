@@ -30,9 +30,6 @@ function SignIn() {
     navigate('/principal')
   };
 
-  const getData = useCallback(() => {
-    
-  }, [])
 
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar md:justify-center lg:justify-start">
@@ -133,7 +130,7 @@ function SignIn() {
           <div className="flex gap-1 mt-2 mb-12 text-xl font-darker text-whiteMain justify-center">
             <h2> Não tenho uma conta!</h2>
             <button
-              onClick={() => navigate(`/login`)}
+              onClick={() => navigate(`/nome`)}
               className="text-yellowMain hover:text-orange"
             >
               {" "}
