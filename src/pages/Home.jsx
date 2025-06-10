@@ -24,7 +24,7 @@ function Home() {
         <span className="flex flex-col items-center">
           <img
             className="w-[9rem] md:w-[11rem] xl:w-[12rem]"
-            src="../../public/logo.png"
+            src="../../logo.png"
             alt="logo"
           />
         </span>
@@ -33,7 +33,7 @@ function Home() {
         <div className="flex flex-col gap-4">
           <img
             className="w-[21.875rem] lg:w-[14.75rem] xxl:w-[18rem] rounded-2xl"
-            src="../../public/image1.png"
+            src="../../image1.png"
             alt="imagem 1"
           />
           <p className="text-3xl text-whiteMain text-center">
@@ -44,7 +44,7 @@ function Home() {
         <div className="flex flex-col gap-4">
           <img
             className="w-[21.875rem] xxl:w-[18rem] lg:w-[14.75rem] rounded-2xl"
-            src="../../public/image2.png"
+            src="../../image2.png"
             alt="imagem 2"
           />
           <p className="text-3xl text-whiteMain text-center">
@@ -54,7 +54,7 @@ function Home() {
         <div className="flex flex-col gap-4">
           <img
             className="w-[21.875rem] xxl:w-[18rem] lg:w-[14.75rem] rounded-2xl"
-            src="../../public/image3.png"
+            src="../../image3.png"
             alt="imagem 3"
           />
           <p className="text-3xl text-whiteMain text-center">

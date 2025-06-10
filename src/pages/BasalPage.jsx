@@ -50,7 +50,7 @@ function BasalPage() {
           <img
             onClick={() => navigate(`/principal`)}
             className="w-[9rem] md:w-[11rem] xl:w-[12rem] cursor-pointer"
-            src="../../public/logo.png"
+            src="../../logo.png"
             alt="logo"
           />
           <span className="relative left-28 md:left-72">

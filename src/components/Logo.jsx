@@ -4,7 +4,7 @@ const Logo = () => {
       <span className="flex flex-col items-center">
         <img
           className="w-[9rem] md:w-[11rem] xl:w-[12rem]"
-          src="../../public/logo.png"
+          src="../../logo.png"
           alt="logo"
         />
       </span>

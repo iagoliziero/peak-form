@@ -8,7 +8,6 @@ import {
   Repeat,
   Text,
 } from "lucide-react";
-import { ExerciseContext } from "../contexts/ExerciseContext";
 import H2InfoCards from "./H2InfoCards";
 import H2 from "./H2";
 
