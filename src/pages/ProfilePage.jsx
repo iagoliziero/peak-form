@@ -69,11 +69,6 @@ function ProfilePage() {
     getData();
   }, [])
 
-  const removeToken = () => {
-    localStorage.removeItem('token');
-    navigate("/");
-  }
-
   return (
     
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
@@ -124,7 +119,7 @@ function ProfilePage() {
                 <H2>{user.date}</H2>
               </div>
               <div>
-              <button onClick={() => removeToken()} className="w-[18rem] md:w-[19rem] xxl:h-[3.5rem] h-[3.75rem] bg-red text-2xl rounded-lg hover:scale-105 transition-all font-semibold duration-[400ms] text-whiteMain">
+              <button onClick={() => navigate(`/`)} className="w-[18rem] md:w-[19rem] xxl:h-[3.5rem] h-[3.75rem] bg-red text-2xl rounded-lg hover:scale-105 transition-all font-semibold duration-[400ms] text-whiteMain">
                   Sair
               </button>
               </div>

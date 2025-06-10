@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import H1 from "../components/H1";
 import Logo from "../components/Logo";
 import Paragraph from "../components/Paragraph";
+import { api } from "../services/api";
 
 function SignIn() {
 
@@ -25,11 +26,20 @@ function SignIn() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    alert(JSON.stringify(data));
-    navigate('/principal')
-  };
+  const onSubmit = async (data) => {
 
+    const token = localStorage.getItem(`token`)
+
+    const response = await api.get('/users', {
+      email: data.email,
+      password: data.password,
+      token
+    });
+    
+    if(response) {
+      navigate(`/principal`)
+    }
+  };
 
   return (
     <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar md:justify-center lg:justify-start">
@@ -53,7 +63,7 @@ function SignIn() {
                 className={` w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 ${
                   errors?.email ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
-                type={isShowPasswordSignIn ? "password" : "text"}
+                type="text"
                 placeholder="seuemail@exemplo.com"
               />
               {errors?.email?.type === "required" && (
@@ -76,16 +86,16 @@ function SignIn() {
                 <Paragraph> Sua senha: </Paragraph>
                 </span>
               <input
-                {...register("passwordSignIn", {
+                {...register("password", {
                   required: true,
                   minLength: 7,
                 })}
                 className={`w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain relative left-3 focus:outline-none focus:ring-3  ${
-                  errors?.passwordSignIn
+                  errors?.password
                     ? "border-lightRed"
                     : "focus:border-yellowMain"
                 }`}
-                type={isShowPasswordSignIn ? "password" : "text"}
+                type={isShowPasswordSignIn ? "text" : "password"}
                 placeholder="Digite sua senha "
               />
               <button
