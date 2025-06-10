@@ -8,6 +8,8 @@ import Loader from "../components/Loader";
 import H2Bold from "./H2Bold";
 import { api } from "../services/api";
 import EditProfile from "../components/EditProfile";
+import EditProfileBody from "../components/EditProfileBody";
+import { apiProfileBody } from "../services/profileBody-service";
 
 
 function ProfilePage() {
@@ -16,6 +18,9 @@ function ProfilePage() {
 
   const [isEditProfileOpen, setIsEditProfileOpen] = useState(false);
   const [selectedProfile, setSelectedProfile] = useState(null);
+
+  const [isEditProfileBodyOpen, setIsEditProfileBodyOpen] = useState(false);
+  const [selectedProfileBody, setSelectedProfileBody] = useState(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,6 +31,7 @@ function ProfilePage() {
   }, []);
 
   const navigate = useNavigate();
+
   const [user, setUser] = useState([]);
   const [userBody, setUserBody] = useState([]);
 
@@ -103,8 +109,7 @@ function ProfilePage() {
                   onClick={() => { 
                     setIsEditProfileOpen(!isEditProfileOpen)
                     setSelectedProfile(user);
-                  }
-                  }
+                  }}
                   className="relative left-56 lg:left-60 bottom-16">
                     <Pencil size={34} strokeWidth={2} />
                   </button>
@@ -129,7 +134,12 @@ function ProfilePage() {
           {userBody && (
               <div className="flex flex-col items-center gap-3">
                 <div className="flex">
-                  <button className="relative left-56 lg:left-60 bottom-16">
+                  <button
+                  onClick={() => {
+                    setIsEditProfileBodyOpen(!isEditProfileBodyOpen);
+                    setSelectedProfileBody(userBody);
+                  }}
+                  className="relative left-56 lg:left-60 bottom-16">
                     <Pencil size={34} strokeWidth={2} />
                   </button>
                   <div className="w-44 h-44 rounded-full items-center bg-whiteMain flex justify-center relative right-4">
@@ -158,6 +168,13 @@ function ProfilePage() {
           <EditProfile
             user={user}
             onClose={() => setIsEditProfileOpen(false)}
+          />
+        )}
+
+          {isEditProfileBodyOpen && selectedProfileBody && (
+          <EditProfileBody
+            userBody={userBody}
+            onClose={() => setIsEditProfileBodyOpen(false)}
           />
         )}
         
