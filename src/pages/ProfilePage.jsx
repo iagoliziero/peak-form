@@ -87,7 +87,7 @@ function ProfilePage() {
         </span>
       </div>
       <Nav />
-      <div className="w-full h-screen xxl:h-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5 ">
+      <div className="w-full xxl:h-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5 ">
         <div className="flex mt-10 ">
           <h1 className="text-3xl md:text-4xl lg:text-5xl text-whiteMain text-center font-semibold">
             {" "}

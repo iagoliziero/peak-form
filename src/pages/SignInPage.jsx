@@ -8,6 +8,8 @@ import H1 from "../components/H1";
 import Logo from "../components/Logo";
 import Paragraph from "../components/Paragraph";
 import { api } from "../services/api";
+import { toast, ToastContainer, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 function SignIn() {
 
@@ -27,17 +29,20 @@ function SignIn() {
   } = useForm();
 
   const onSubmit = async (data) => {
+    try {
+      const response = await api.get('/users');
 
-    const token = localStorage.getItem(`token`)
+      if (data.email !== response.data.email || data.password !== response.data.password) {
+        toast.error('Credenciais incorretas!');
+        return;
+      }
 
-    const response = await api.get('/users', {
-      email: data.email,
-      password: data.password,
-      token
-    });
-    
-    if(response) {
-      navigate(`/principal`)
+      toast.success('Login realizado com sucesso!');
+      setTimeout(() => {
+        navigate('/principal');
+      }, 2000);
+    } catch (error) {
+      toast.error('Email ou senha incorretos.');
     }
   };
 
@@ -98,6 +103,7 @@ function SignIn() {
                 type={isShowPasswordSignIn ? "text" : "password"}
                 placeholder="Digite sua senha "
               />
+              
               <button
                 onClick={handlePasswordSignIn}
                 className="text-whiteMain relative  m-0 right-[2rem] top-1 bottom-9 "
@@ -106,7 +112,7 @@ function SignIn() {
                 {isShowPasswordSignIn && <EyeClosed />}{" "}
                 {!isShowPasswordSignIn && <Eye />}{" "}
               </button>
-              {errors?.passwordSignIn?.type === "required" && (
+              {errors?.password?.type === "required" && (
                 <p className="text-lightRed mx-4 mt-1">
                   {" "}
                   A senha é obrigatória.{" "}
@@ -149,6 +155,19 @@ function SignIn() {
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Bounce}
+      />
     </div>
   );
 }
