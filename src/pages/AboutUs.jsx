@@ -38,7 +38,7 @@ function AboutUs() {
               <div className="rounded-full h-[250px] w-[250px] bg-slate-100 flex justify-center relative items-center ">
                 <img
                   className="rounded-full"
-                  src="../../public/artur.png"
+                  src="../../artur.png"
                   alt="imagem Artur"
                 />
               </div>
@@ -69,7 +69,7 @@ function AboutUs() {
                 {" "}
                 <img
                   className="rounded-full"
-                  src="../../public/Iago.png"
+                  src="../../Iago.png"
                   alt="imagem Iago"
                 />
               </div>
