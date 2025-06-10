@@ -15,7 +15,7 @@ function AboutUs() {
             <img
               onClick={() => navigate(`/principal`)}
               className="w-[9rem] md:w-[11rem] xl:w-[12rem] cursor-pointer"
-              src="src/public/logo.png"
+              src="../../public/logo.png"
               alt="logo"
             />
             {/* LOGO */}
@@ -38,8 +38,8 @@ function AboutUs() {
               <div className="rounded-full h-[250px] w-[250px] bg-slate-100 flex justify-center relative items-center ">
                 <img
                   className="rounded-full"
-                  src="./src/public/Artur.png"
-                  alt=""
+                  src="../../public/artur.png"
+                  alt="imagem Artur"
                 />
               </div>
 
@@ -69,8 +69,8 @@ function AboutUs() {
                 {" "}
                 <img
                   className="rounded-full"
-                  src="./src/public/Iago.png"
-                  alt=""
+                  src="../../public/Iago.png"
+                  alt="imagem Iago"
                 />
               </div>
               <h1 className=" text-2xl lg:text-3xl font-semibold">
@@ -80,15 +80,18 @@ function AboutUs() {
               <div>
                 <p className="text-xl lg:text-2xl text-center">
                   {" "}
-                  Sou um desenvolvedor full stack com foco na criação de
-                  sistemas inteligentes e otimizados. Com experiência em
-                  JavaScript, React, Tailwind CSS, C# e Node.js, trabalho para
-                  desenvolver soluções ágeis e robustas. Estudante de ADS na
-                  ETEC e FIAP, estou sempre em busca de novos desafios e
-                  aprimoramento técnico. No <b> Peak Form </b>, meu compromisso
-                  é proporcionar uma plataforma inovadora e de alto desempenho
-                  para facilitar o gerenciamento de exercícios e otimizar a
-                  rotina dos usuários.{" "}
+                  Sou desenvolvedor Full Stack com foco na criação de sistemas
+                  inteligentes, escaláveis e otimizados. Tenho experiência com
+                  JavaScript, TypeScript, React, Tailwind CSS, C#, Node.js,
+                  Express, MySQL, PostgreSQL e MongoDB. Atuo desenvolvendo
+                  soluções ágeis, robustas e centradas na experiência do
+                  usuário. Atualmente sou estudante de Análise e Desenvolvimento
+                  de Sistemas pela ETEC e FIAP, sempre em busca de novos
+                  desafios e constante evolução técnica. No projeto{" "}
+                  <b>Peak Form</b>, meu compromisso é oferecer uma plataforma
+                  inovadora e de alto desempenho, focada no gerenciamento
+                  eficiente de exercícios e na otimização da rotina dos
+                  usuários.
                 </p>
               </div>
             </div>
