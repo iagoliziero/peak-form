@@ -1,5 +1,5 @@
 import { Eye, EyeClosed } from "lucide-react";
-import { useState, useCallback } from "react";
+import { useState} from "react";
 import { useForm } from "react-hook-form";
 import validator from "validator";
 import Login from "../components/Login";
@@ -8,11 +8,10 @@ import H1 from "../components/H1";
 import Logo from "../components/Logo";
 import Paragraph from "../components/Paragraph";
 import { api } from "../services/api";
-import { toast, ToastContainer, Bounce } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'
+import { toast, ToastContainer, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function SignIn() {
-
   const [isShowPasswordSignIn, setIsShowPasswordSignIn] = useState(false);
   useState(false);
 
@@ -20,7 +19,7 @@ function SignIn() {
     setIsShowPasswordSignIn(!isShowPasswordSignIn);
   };
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const {
     register,
@@ -30,19 +29,22 @@ function SignIn() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await api.get('/users');
+      const response = await api.get("/users");
 
-      if (data.email !== response.data.email || data.password !== response.data.password) {
-        toast.error('Credenciais incorretas!');
+      if (
+        data.email !== response.data.email ||
+        data.password !== response.data.password
+      ) {
+        toast.error("Credenciais incorretas!");
         return;
       }
 
-      toast.success('Login realizado com sucesso!');
+      toast.success("Login realizado com sucesso!");
       setTimeout(() => {
-        navigate('/principal');
+        navigate("/principal");
       }, 2000);
     } catch (error) {
-      toast.error('Email ou senha incorretos.');
+      toast.error("Email ou senha incorretos.");
     }
   };
 
@@ -51,15 +53,12 @@ function SignIn() {
       <Logo />
       <div className="flex flex-col ">
         <div className="mt-5 flex flex-col gap-3">
-          <H1>
-            {" "}
-            Entrar em sua conta
-          </H1>
+          <H1> Entrar em sua conta</H1>
           <div className="flex flex-col items-center gap-3">
             <div>
-            <span className="flex items-start mb-1 ">
+              <span className="flex items-start mb-1 ">
                 <Paragraph> Seu email: </Paragraph>
-                </span>
+              </span>
               <input
                 {...register("email", {
                   required: true,
@@ -85,47 +84,45 @@ function SignIn() {
               )}
             </div>
             <div className="flex flex-col items-center">
-              
               <div>
-              <span className="flex items-start mb-1 relative left-3">
-                <Paragraph> Sua senha: </Paragraph>
+                <span className="flex items-start mb-1 relative left-3">
+                  <Paragraph> Sua senha: </Paragraph>
                 </span>
-              <input
-                {...register("password", {
-                  required: true,
-                  minLength: 7,
-                })}
-                className={`w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain relative left-3 focus:outline-none focus:ring-3  ${
-                  errors?.password
-                    ? "border-lightRed"
-                    : "focus:border-yellowMain"
-                }`}
-                type={isShowPasswordSignIn ? "text" : "password"}
-                placeholder="Digite sua senha "
-              />
-              
-              <button
-                onClick={handlePasswordSignIn}
-                className="text-whiteMain relative  m-0 right-[2rem] top-1 bottom-9 "
-              >
-                {" "}
-                {isShowPasswordSignIn && <EyeClosed />}{" "}
-                {!isShowPasswordSignIn && <Eye />}{" "}
-              </button>
-              {errors?.password?.type === "required" && (
-                <p className="text-lightRed mx-4 mt-1">
+                <input
+                  {...register("password", {
+                    required: true,
+                    minLength: 7,
+                  })}
+                  className={`w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain relative left-3 focus:outline-none focus:ring-3  ${
+                    errors?.password
+                      ? "border-lightRed"
+                      : "focus:border-yellowMain"
+                  }`}
+                  type={isShowPasswordSignIn ? "text" : "password"}
+                  placeholder="Digite sua senha "
+                />
+
+                <button
+                  onClick={handlePasswordSignIn}
+                  className="text-whiteMain relative  m-0 right-[2rem] top-1 bottom-9 "
+                >
                   {" "}
-                  A senha é obrigatória.{" "}
-                </p>
-              )}
-              {errors?.passwordSignIn?.type === "minLength" && (
-                <p className="text-lightRed mx-4 mt-1">
-                  {" "}
-                  A senha deve ter pelo menos 7 caracteres.{" "}
-                </p>
-              )}
+                  {isShowPasswordSignIn && <EyeClosed />}{" "}
+                  {!isShowPasswordSignIn && <Eye />}{" "}
+                </button>
+                {errors?.password?.type === "required" && (
+                  <p className="text-lightRed mx-4 mt-1">
+                    {" "}
+                    A senha é obrigatória.{" "}
+                  </p>
+                )}
+                {errors?.passwordSignIn?.type === "minLength" && (
+                  <p className="text-lightRed mx-4 mt-1">
+                    {" "}
+                    A senha deve ter pelo menos 7 caracteres.{" "}
+                  </p>
+                )}
               </div>
-              
             </div>
           </div>
           <div className="mt-8 gap-3 flex flex-col items-center ">

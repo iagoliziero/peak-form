@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-function Gender({setValue, register, errors}) {
+function Gender({ setValue, errors }) {
   const [selectedGender, setSelectedGender] = useState("");
   const handleSelect = (gender) => {
-    setSelectedGender(gender)
-    setValue('gender', gender, {shouldValidate: true})
-  }
+    setSelectedGender(gender);
+    setValue("gender", gender, { shouldValidate: true });
+  };
   return (
     <div className="flex flex-col justify-center text-whiteMain   items-center ">
       {["Masculino", "Feminino"].map((gender) => (
@@ -34,11 +34,8 @@ function Gender({setValue, register, errors}) {
         </label>
       ))}
       {errors?.gender && (
-                <p className="text-lightRed mx-4 mt-1">
-                  {" "}
-                  O gender é obrigatório.{" "}
-                </p>
-              )}
+        <p className="text-lightRed mx-4 mt-1"> O gender é obrigatório. </p>
+      )}
     </div>
   );
 }

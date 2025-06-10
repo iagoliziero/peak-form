@@ -39,13 +39,13 @@ import ProfileBodyProvider from "./contexts/ProfileBodyContexts.jsx";
 import ProfileProvider from "./contexts/ProfileContexts.jsx";
 import RegisteredExercise from "./pages/registeredExercise.jsx";
 import UpdateExercise from "./pages/UpdateExercise.jsx";
-import UpdateProfile from "./pages/updateProfile.jsx";
-
+import UpdateProfile from "./pages/UpdateProfile.jsx";
 
 // Criando contexto para compartilhar nome do usuário
 const UserContext = createContext();
 
-const clientId ="274780333869-3upraqeb95j68muct6t8t5nma280jqv2.apps.googleusercontent.com";
+const clientId =
+  "274780333869-3upraqeb95j68muct6t8t5nma280jqv2.apps.googleusercontent.com";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -63,16 +63,15 @@ const router = createBrowserRouter([
   { path: "/tempodepausa", element: <Timer /> },
   { path: "/tmb", element: <BasalPage /> },
   { path: "/sobre", element: <AboutUs /> },
-  {path: "/erro", element: <Error />},
-  {path: "/registrado", element: <RegisteredExercise />},
-  {path: "/atualizado", element: <UpdateExercise />},
-  {path: "/perfil-atualizado", element: <UpdateProfile />}
+  { path: "/erro", element: <Error /> },
+  { path: "/registrado", element: <RegisteredExercise /> },
+  { path: "/atualizado", element: <UpdateExercise /> },
+  { path: "/perfil-atualizado", element: <UpdateProfile /> },
 ]);
 
 createRoot(document.getElementById("root")).render(
-
   <ProfileProvider>
-    <ProfileBodyProvider> 
+    <ProfileBodyProvider>
       <NameProvider>
         <ExerciseProvider>
           <GoogleOAuthProvider clientId={clientId}>
@@ -84,5 +83,4 @@ createRoot(document.getElementById("root")).render(
       </NameProvider>
     </ProfileBodyProvider>
   </ProfileProvider>
-
 );

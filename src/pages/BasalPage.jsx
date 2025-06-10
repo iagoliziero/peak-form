@@ -8,36 +8,37 @@ import Paragraph from "../components/Paragraph";
 import H1 from "../components/H1";
 
 function BasalPage() {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
-
-  const [result, setResult] = useState('')
+  const [result, setResult] = useState("");
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm();
 
   const onSubmit = (data) => {
-    const {height, currentWeight, age, gender} = data
-    let tmb = 0
-    switch(gender) {
-      case 'masculino': 
-      tmb = 88.36 + (13.4 * currentWeight) + (4.8 * height) - (5.7 * age)
-      break;
-      case 'feminino': tmb = 447.6 + (9.2 * currentWeight) + (3.1 * height) - (4.3 * age)
-      break;
-      default: 'Inválido'
+    const { height, currentWeight, age, gender } = data;
+    let tmb = 0;
+    switch (gender) {
+      case "masculino":
+        tmb = 88.36 + 13.4 * currentWeight + 4.8 * height - 5.7 * age;
+        break;
+      case "feminino":
+        tmb = 447.6 + 9.2 * currentWeight + 3.1 * height - 4.3 * age;
+        break;
+      default:
+        "Inválido";
     }
 
-    setResult(tmb.toFixed(2))
+    setResult(tmb.toFixed(2));
     reset({
-      height: '',
-      currentWeight: '',
-      age: '',
-      gender: 'selecionar'
+      height: "",
+      currentWeight: "",
+      age: "",
+      gender: "selecionar",
     });
   };
 
@@ -46,8 +47,8 @@ function BasalPage() {
       {/* Logo */}
       <div className="flex mt-16 gap-8">
         <span className="flex relative">
-        <img
-          onClick={() => navigate(`/principal`)}
+          <img
+            onClick={() => navigate(`/principal`)}
             className="w-[9rem] md:w-[11rem] xl:w-[12rem] cursor-pointer"
             src="src/public/logo.png"
             alt="logo"
@@ -60,10 +61,7 @@ function BasalPage() {
       <Nav />
       <div className="w-full bg-main-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-5 ">
         <div className="flex mt-10 flex-col gap-3 ">
-          <H1>
-            {" "}
-            Taxa metabólica basal
-          </H1>
+          <H1> Taxa metabólica basal</H1>
           <Paragraph>
             {" "}
             A Taxa Metabólica Basal (TMB) representa{" "}
@@ -76,11 +74,10 @@ function BasalPage() {
         </div>
         <div className="flex flex-col mb-12 justify-center items-center gap-3 ">
           <div className="flex flex-col">
-          <span className="flex items-start mb-1">
-                <Paragraph> Sua altura: </Paragraph>
-                </span>
+            <span className="flex items-start mb-1">
+              <Paragraph> Sua altura: </Paragraph>
+            </span>
             <input
-    
               {...register("height", { required: true })}
               maxLength={10}
               className={` w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
@@ -98,11 +95,10 @@ function BasalPage() {
             <div></div>
           </div>
           <div className="flex flex-col">
-          <span className="flex items-start mb-1">
-                <Paragraph> Peso atual: </Paragraph>
-                </span>
+            <span className="flex items-start mb-1">
+              <Paragraph> Peso atual: </Paragraph>
+            </span>
             <input
-            
               {...register("currentWeight", { required: true })}
               maxLength={10}
               className={`w-[21.5rem] md:w-[20rem] h-[3.3rem]  rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3  ${
@@ -121,9 +117,9 @@ function BasalPage() {
             )}
           </div>
           <div className="flex flex-col ">
-          <span className="flex items-start mb-1">
-                <Paragraph> Sua idade: </Paragraph>
-                </span>
+            <span className="flex items-start mb-1">
+              <Paragraph> Sua idade: </Paragraph>
+            </span>
             <input
               {...register("age", { required: true })}
               maxLength={10}
@@ -141,46 +137,46 @@ function BasalPage() {
             )}
           </div>
           <div className="flex mt-10 flex-col gap-3">
-            <H1>
-              {" "}
-              Qual é o seu gênero?{" "}
-            </H1>
+            <H1> Qual é o seu gênero? </H1>
           </div>
           <div>
             <span className="flex items-start mb-1">
-                            <Paragraph> Selecione seu genêro: </Paragraph>
-                            </span>
+              <Paragraph> Selecione seu genêro: </Paragraph>
+            </span>
             <select
-              {...register('gender', {validate: (value) => {
-                return value !== 'selecionar'
-              }})}
-              className={`w-[21.5rem] md:w-[20rem] p-4 border border-gray rounded-md bg-darker text-white text-xl focus:outline-none focus:ring-2 focus:ring-yellowMain ${errors?.gender ?"border-lightRed" : "focus:border-yellowMain" }`}
+              {...register("gender", {
+                validate: (value) => {
+                  return value !== "selecionar";
+                },
+              })}
+              className={`w-[21.5rem] md:w-[20rem] p-4 border border-gray rounded-md bg-darker text-white text-xl focus:outline-none focus:ring-2 focus:ring-yellowMain ${
+                errors?.gender ? "border-lightRed" : "focus:border-yellowMain"
+              }`}
             >
               <option value="selecionar"> Selecionar </option>
               <option value="masculino"> Masculino </option>
               <option value="feminino"> Feminino </option>
             </select>
-            {errors?.gender?.type === "validate" && <p className="text-lightRed mx-4 mt-1"> O gênero está inválido. </p>}
+            {errors?.gender?.type === "validate" && (
+              <p className="text-lightRed mx-4 mt-1">
+                {" "}
+                O gênero está inválido.{" "}
+              </p>
+            )}
           </div>
           <div className="flex flex-col items-center gap-3">
             <div className="mt-5">
-              <Button
-                onClick={() => handleSubmit(onSubmit)()}
-              >
+              <Button onClick={() => handleSubmit(onSubmit)()}>
                 {" "}
                 Calcular{" "}
               </Button>
-
             </div>
             <h2 className="text-2xl text-whiteMain font-semibold">
               {" "}
               Resultado:{" "}
             </h2>
-            <h1 
-            
-            className="text-3xl md:text-4xl font-semibold text-yellowMain">
-              {result ? `${result } kcal/dia` : ''}
-              
+            <h1 className="text-3xl md:text-4xl font-semibold text-yellowMain">
+              {result ? `${result} kcal/dia` : ""}
             </h1>
           </div>
           <div className="flex justify-center mt-8">

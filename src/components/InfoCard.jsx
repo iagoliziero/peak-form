@@ -1,5 +1,13 @@
-import { useContext, useState } from "react";
-import { BicepsFlexed, Dumbbell, Info, Key, ListOrdered, Repeat, Text } from "lucide-react";
+import { useState } from "react";
+import {
+  BicepsFlexed,
+  Dumbbell,
+  Info,
+  Key,
+  ListOrdered,
+  Repeat,
+  Text,
+} from "lucide-react";
 import { ExerciseContext } from "../contexts/ExerciseContext";
 import H2InfoCards from "./H2InfoCards";
 import H2 from "./H2";
@@ -29,7 +37,6 @@ function InfoCard({ exercise }) {
               </div>
 
               <div className="flex  flex-col gap-6 p-5 xl:p-8">
-
                 <div className="flex items-center">
                   <div className="xxl:flex xxl:gap-3">
                     <div className="flex items-center">
@@ -38,9 +45,7 @@ function InfoCard({ exercise }) {
                       </span>
                       <H2InfoCards> Quantidade de séries: </H2InfoCards>
                     </div>
-                    <H2>
-                      {exercise.numberSeries}
-                    </H2>
+                    <H2>{exercise.numberSeries}</H2>
                   </div>
                 </div>
 
@@ -49,10 +54,10 @@ function InfoCard({ exercise }) {
                     <Repeat />
                   </span>
                   <div className="flex items-center gap-3">
-                  <H2InfoCards> Repetições: </H2InfoCards>
-                  <H2 className="text-xl text-darker  relative left-3">
-                    {exercise.repetitions}
-                  </H2>
+                    <H2InfoCards> Repetições: </H2InfoCards>
+                    <H2 className="text-xl text-darker  relative left-3">
+                      {exercise.repetitions}
+                    </H2>
                   </div>
                 </div>
 
@@ -75,18 +80,18 @@ function InfoCard({ exercise }) {
                     <BicepsFlexed />
                   </span>
                   <div className="flex items-center gap-3">
-                  <H2InfoCards> Intensidade: </H2InfoCards>
-                  <H2 className="text-xl text-darker  relative left-3">
-                    {exercise.intensity}
-                  </H2>
+                    <H2InfoCards> Intensidade: </H2InfoCards>
+                    <H2 className="text-xl text-darker  relative left-3">
+                      {exercise.intensity}
+                    </H2>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center">
                   <div className=" ">
                     <div className="flex  items-center">
                       <span className="text-xl text-orange ">
-                      <Text />
+                        <Text />
                       </span>
                       <H2InfoCards> Descrição: </H2InfoCards>
                     </div>
@@ -97,7 +102,6 @@ function InfoCard({ exercise }) {
                 </div>
               </div>
 
-              
               <div className="justify-center items-center mb-10 flex flex-col ">
                 <button
                   className=" bg-red md:w-[22.5rem] h-[3.125rem] w-[15.625rem] text-white  text-2xl rounded-lg  hover:scale-105 transition "

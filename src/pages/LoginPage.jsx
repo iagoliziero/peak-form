@@ -11,6 +11,8 @@ import Paragraph from "../components/Paragraph";
 import { api } from "../services/api.js";
 import { NameContext } from "../contexts/NameContexts.jsx";
 import { ProfileBodyContexts } from "../contexts/ProfileBodyContexts.jsx";
+import { toast, ToastContainer, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 function LoginPage() {
   const navigate = useNavigate()
@@ -62,12 +64,14 @@ function LoginPage() {
         }
       })
 
-      
-
       const {token} = response.data;
       localStorage.setItem('token', token)
 
-      navigate('/principal')
+      toast.success('Login realizado com sucesso!');
+
+      setTimeout(() => {
+        navigate('/principal')
+      }, 2000);
 
     } catch (error) {
       console.log('Error creating the user', error);
@@ -210,6 +214,19 @@ function LoginPage() {
             </div>
         </div>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Bounce}
+      />
     </div>
   );
 }

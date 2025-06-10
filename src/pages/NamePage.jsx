@@ -18,14 +18,14 @@ function NamePage() {
     formState: { errors },
   } = useForm();
 
-  const {setName } = useContext(NameContext);
+  const { setName } = useContext(NameContext);
 
   const onSubmit = (data) => {
     setName((prev) => ({
       ...prev,
       name: data.name,
     })),
-    navigate(`/metas`);
+      navigate(`/metas`);
   };
 
   return (
@@ -33,13 +33,10 @@ function NamePage() {
       <Logo />
       <div>
         <div className="mt-5 flex flex-col gap-5">
-          <H1>
-            {" "}
-            Qual é o seu nome?
-          </H1>
-          <Paragraph> 
-          Estamos contentes com a sua presença aqui. <br />
-          Vamos saber um pouco sobre você.
+          <H1> Qual é o seu nome?</H1>
+          <Paragraph>
+            Estamos contentes com a sua presença aqui. <br />
+            Vamos saber um pouco sobre você.
           </Paragraph>
           <div className="flex flex-col justify-center">
             <div>
@@ -48,9 +45,7 @@ function NamePage() {
                 maxLength={10}
                 onChange={(e) => setName(e.target.value)}
                 className={`mt-5 w-[21.5rem] md:w-[20rem] h-[3.3rem] rounded-md bg-darker border border-gray text-3xl p-4 text-whiteMain focus:outline-none focus:ring-3 focus:border-yellowMain ${
-                  errors?.name
-                    ? "border-lightRed"
-                    : "focus:border-yellowMain"
+                  errors?.name ? "border-lightRed" : "focus:border-yellowMain"
                 }`}
                 type="text"
                 placeholder="Nome"
@@ -66,12 +61,8 @@ function NamePage() {
         </div>
       </div>
       <div className="mb-12 flex flex-row lg:relative mt-8 items-center md:items-center gap-6">
-        <ButtonBack onClick={() => navigate(-1)}> 
-          Voltar
-        </ButtonBack>
-        <ButtonNext
-          onClick={() => handleSubmit(onSubmit)()}
-        >
+        <ButtonBack onClick={() => navigate(-1)}>Voltar</ButtonBack>
+        <ButtonNext onClick={() => handleSubmit(onSubmit)()}>
           Continuar
         </ButtonNext>
       </div>

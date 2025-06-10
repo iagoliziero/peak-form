@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { apiProfileBody } from "../services/profileBody-service";
 
-function EditProfileBody({ userBody, onClose, onSave }) {
+function EditProfileBody({ userBody, onClose}) {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({ ...userBody });

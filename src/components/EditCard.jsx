@@ -11,8 +11,7 @@ import { useForm } from "react-hook-form";
 import { apiFunctions } from "../services/exercise-services";
 import { useNavigate } from "react-router-dom";
 
-function EditCard({ exercise, onClose, onSave }) {
-
+function EditCard({ exercise, onClose}) {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({ ...exercise });
@@ -25,8 +24,8 @@ function EditCard({ exercise, onClose, onSave }) {
 
   const onSubmit = (data) => {
     const response = apiFunctions.updateExercise(data, exercise.id);
-    if(response) {
-      navigate('/atualizado');
+    if (response) {
+      navigate("/atualizado");
     }
   };
 
@@ -44,11 +43,11 @@ function EditCard({ exercise, onClose, onSave }) {
 
           <div className="flex flex-col gap-6 p-5 xl:p-8">
             <div className="flex flex-col gap-3">
-             <div className="flex flex-row items-center gap-3">
-             <H2InfoCards> Nome do exercício: </H2InfoCards>
-             </div>
+              <div className="flex flex-row items-center gap-3">
+                <H2InfoCards> Nome do exercício: </H2InfoCards>
+              </div>
               <input
-                {...register("title", { required: false})}
+                {...register("title", { required: false })}
                 value={form.title}
                 className={`max-w-[20rem] md:w-[20rem] h-[3.3rem] rounded-md bg-whiteMain border border-gray text-3xl p-4 text-dark focus:outline-none focus:ring-3`}
                 type="text"
@@ -57,12 +56,12 @@ function EditCard({ exercise, onClose, onSave }) {
             </div>
 
             <div className="flex flex-col gap-3">
-             <div className="flex flex-row items-center gap-3">
-             <ListOrdered className="text-orange" />
-             <H2InfoCards>Quantidade de séries:</H2InfoCards>
-             </div>
+              <div className="flex flex-row items-center gap-3">
+                <ListOrdered className="text-orange" />
+                <H2InfoCards>Quantidade de séries:</H2InfoCards>
+              </div>
               <input
-                {...register("numberSeries", { required: false})}
+                {...register("numberSeries", { required: false })}
                 value={form.numberSeries}
                 className={`max-w-[20rem] md:w-[20rem] h-[3.3rem] rounded-md bg-whiteMain border border-gray text-3xl p-4 text-dark focus:outline-none focus:ring-3`}
                 type="text"
@@ -72,8 +71,8 @@ function EditCard({ exercise, onClose, onSave }) {
 
             <div className="flex flex-col gap-3">
               <div className="flex flex-row items-center gap-3">
-              <Repeat className="text-orange" />
-              <H2InfoCards>Repetições:</H2InfoCards>
+                <Repeat className="text-orange" />
+                <H2InfoCards>Repetições:</H2InfoCards>
               </div>
               <input
                 {...register("repetitions", { required: false })}
@@ -87,8 +86,8 @@ function EditCard({ exercise, onClose, onSave }) {
 
             <div className="flex flex-col gap-3">
               <div className="flex flex-row items-center gap-3">
-              <Dumbbell className="text-orange" />
-              <H2InfoCards>Técnicas avançadas:</H2InfoCards>
+                <Dumbbell className="text-orange" />
+                <H2InfoCards>Técnicas avançadas:</H2InfoCards>
               </div>
               <input
                 {...register("advancedTechnique", { required: false })}
@@ -101,25 +100,25 @@ function EditCard({ exercise, onClose, onSave }) {
             </div>
 
             <div className="flex flex-col gap-3">
-              <div className="flex flex-row items-center gap-3"> 
+              <div className="flex flex-row items-center gap-3">
                 <BicepsFlexed className="text-orange" />
                 <H2InfoCards>Intensidade:</H2InfoCards>
               </div>
               <select
-              value={form.intensityLevel}
-              {...register('intensity')}
-              className={`max-w-[20rem] md:w-[20rem] p-2 rounded-md bg-whiteMain border right-10 border-gray text-3xl text-dark focus:outline-none focus:ring-3`}
-            >
-              <option value="HEAVY"> Pesado </option>
-              <option value="MODERATE"> Moderado </option>
-              <option value="LIGHT"> Leve </option>
-            </select>
+                value={form.intensityLevel}
+                {...register("intensity")}
+                className={`max-w-[20rem] md:w-[20rem] p-2 rounded-md bg-whiteMain border right-10 border-gray text-3xl text-dark focus:outline-none focus:ring-3`}
+              >
+                <option value="HEAVY"> Pesado </option>
+                <option value="MODERATE"> Moderado </option>
+                <option value="LIGHT"> Leve </option>
+              </select>
             </div>
-            
-            <div className="flex flex-col gap-3"> 
+
+            <div className="flex flex-col gap-3">
               <div className="flex flex-row items-center gap-3">
-              <Text className="text-orange" />
-              <H2InfoCards>Descrição</H2InfoCards>
+                <Text className="text-orange" />
+                <H2InfoCards>Descrição</H2InfoCards>
               </div>
               <textarea
                 {...register("description", { required: false })}
@@ -134,9 +133,7 @@ function EditCard({ exercise, onClose, onSave }) {
             <div className="flex flex-col items-center gap-4 mt-4">
               <button
                 className="bg-yellowMain md:w-[22.5rem] h-[3.125rem] w-[15.625rem] text-darker text-2xl rounded-lg font-bold  hover:scale-105 transition  "
-                onClick={() => handleSubmit(onSubmit)()
-                  
-                }
+                onClick={() => handleSubmit(onSubmit)()}
               >
                 Salvar
               </button>

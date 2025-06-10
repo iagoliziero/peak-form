@@ -1,4 +1,4 @@
-import {useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import Gender from "../components/Gender";
 import LocalInput from "../components/LocalInput";
 import { useNavigate } from "react-router-dom";
@@ -12,8 +12,7 @@ import { useContext } from "react";
 import { ProfileContexts } from "../contexts/ProfileContexts";
 
 function InfoUserPage() {
-
-  const {setProfile} = useContext(ProfileContexts)
+  const { setProfile } = useContext(ProfileContexts);
 
   const {
     register,
@@ -25,7 +24,7 @@ function InfoUserPage() {
     setProfile((prev) => ({
       ...prev,
       date: data.date,
-    }))
+    }));
     navigate(`/login`);
   };
 
@@ -52,13 +51,13 @@ function InfoUserPage() {
               placeholder="Data de nascimento"
               maskChar=""
             />
-            
           </div>
           {errors?.date?.type === "required" && (
-              <p className="text-lightRed mx-4 mt-1">
-                {" "}
-                Digite sua data de nascimento.{" "}
-              </p>)}
+            <p className="text-lightRed mx-4 mt-1">
+              {" "}
+              Digite sua data de nascimento.{" "}
+            </p>
+          )}
           <div className=" flex justify-center items-center flex-col gap-5 mt-5">
             <H1>Onde você mora?</H1>
 

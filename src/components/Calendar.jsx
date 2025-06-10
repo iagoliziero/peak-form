@@ -1,7 +1,7 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import '../global.css'
+import "../global.css";
 
 function Calendar() {
   const [selectedDate, setSelectedDate] = useState("");
@@ -21,7 +21,6 @@ function Calendar() {
       maxDate={new Date()}
     />
   );
-  
 }
 
 export default Calendar;
