@@ -37,7 +37,7 @@ import Error from "./pages/Error.jsx";
 import NameProvider from "./contexts/NameContexts.jsx";
 import ProfileBodyProvider from "./contexts/ProfileBodyContexts.jsx";
 import ProfileProvider from "./contexts/ProfileContexts.jsx";
-import RegisteredExercise from "./pages/registeredExercise.jsx";
+import RegisteredExercise from "./pages/RegisteredExercise.jsx";
 import UpdateExercise from "./pages/UpdateExercise.jsx";
 import UpdateProfile from "./pages/UpdateProfile.jsx";
 
