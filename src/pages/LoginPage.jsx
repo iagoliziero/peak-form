@@ -81,7 +81,7 @@ function LoginPage() {
   }
 
   return (
-    <div className="h-full bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 custom-scrollbar md:justify-center lg:justify-start">
+    <div className="min-h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 custom-scrollbar md:justify-center lg:justify-start">
       <Logo />
       <div className="flex flex-col ">
         <div className="mt-5 flex flex-col gap-3">
