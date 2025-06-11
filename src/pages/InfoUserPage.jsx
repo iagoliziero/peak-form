@@ -30,7 +30,7 @@ function InfoUserPage() {
 
   const navigate = useNavigate();
   return (
-    <div className="h-full bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 custom-scrollbar md:justify-center lg:justify-start">
+    <div className="h-screen lg:h-full bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 custom-scrollbar md:justify-center lg:justify-start">
       <Logo />
       <div className="flex-col flex gap-5">
         <div className="mt-5 flex flex-col gap-5">

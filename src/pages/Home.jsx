@@ -6,7 +6,7 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className="h-screen xl:h-screen xxl:h-screen  bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center custom-scrollbar">
+    <div className="h-full xl:h-screen xxl:h-screen  bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 lg:justify-center custom-scrollbar">
       <div className=" flex flex-col justify-center 3xl:mt-0 gap-8">
         <div>
           <button
