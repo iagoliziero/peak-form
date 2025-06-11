@@ -22,10 +22,10 @@ function ActivityPage() {
   };
 
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 custom-scrollbar md:justify-center lg:justify-start 3xl:justify-center">
+    <div className="min-h-screen bg-darker flex flex-col items-center gap-12 custom-scrollbar md:justify-center lg:justify-start 3xl:justify-center">
       <Logo />
       <div>
-        <div className="mt-5 flex flex-col gap-5">
+        <div className="mt-5 flex flex-col gap-5 max-w-[20rem]">
           <H1>
             Qual é o seu nível de <br /> atividade física?
           </H1>
@@ -51,7 +51,7 @@ function ActivityPage() {
           </div>
         </div>
       </div>
-      <div className="mb-5 flex flex-row lg:relative mt-8  items-center md:items-center gap-6">
+      <div className="mb-12 flex flex-row lg:relative mt-8  items-center md:items-center gap-6">
         <ButtonBack onClick={() => navigate(-1)}>Voltar</ButtonBack>
         <ButtonNext onClick={() => navigate(`/perfilusuario`)}>
           Continuar
