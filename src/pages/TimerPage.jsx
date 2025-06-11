@@ -82,7 +82,7 @@ function TimerPage() {
   };
 
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 custom-scrollbar">
       {/* Logo */}
       <div className="flex mt-16 gap-8">
         <span className="flex relative">

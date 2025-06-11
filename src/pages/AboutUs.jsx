@@ -8,7 +8,7 @@ function AboutUs() {
   return (
     <>
       {/* HEADER */}
-      <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
+      <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 custom-scrollbar no-scrollbar ">
         {/* LOGO */}
         <div className="flex mt-16 gap-8">
           <span className="flex relative">
@@ -34,8 +34,8 @@ function AboutUs() {
             </h1>
           </div>
           <div className="mt-10 mb-10 flex justify-center flex-col lg:flex-row gap-10 ">
-            <div className=" flex items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar ">
-              <div className="rounded-full h-[250px] w-[250px] bg-slate-100 flex justify-center relative items-center ">
+            <div className=" flex items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar overflow-x-clip ">
+              <div className="rounded-full h-[250px] w-[250px] bg-slate-100 flex justify-center relative items-center  ">
                 <img
                   className="rounded-full"
                   src="../../artur.png"
@@ -64,7 +64,7 @@ function AboutUs() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar ">
+            <div className="flex items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar overflow-x-clip">
               <div className=" h-[250px] w-[250px] flex justify-center relative items-center ">
                 {" "}
                 <img

@@ -3,13 +3,25 @@
 @tailwind utilities;
 
 @layer utilities {
-    @media (min-width: 1281px) {
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none; 
-            scrollbar-width: none;  
-      }
+  /* Scroll escuro apenas para notebooks */
+  @media (min-width: 1024px) {
+    .custom-scrollbar {
+      scrollbar-width: thin;
+      scrollbar-color: #555 #1a1a1a;
     }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #555;
+      border-radius: 4px;
+      border: 2px solid #1a1a1a;
+    }
+  }
 }

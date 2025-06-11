@@ -12,7 +12,7 @@ function Thankspage() {
   const { name } = useContext(NameContext);
 
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 md:justify-center overflow-scroll no-scrollbar ">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 md:justify-center custom-scrollbar">
       <Logo />
       <div>
         <div className="mt-5 flex flex-col gap-5">

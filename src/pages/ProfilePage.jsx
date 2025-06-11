@@ -71,7 +71,7 @@ function ProfilePage() {
   }, []);
 
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 custom-scrollbar">
       {/* Logo */}
       <div className="flex mt-16 gap-8">
         <span className="flex relative">
@@ -96,7 +96,7 @@ function ProfilePage() {
         </div>
         {showProfile ? (
           <div className="mt-10 mb-10 flex justify-center flex-col lg:flex-row gap-10 ">
-            <div className="flex justify-center items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar">
+            <div className="flex justify-center items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar overflow-x-clip">
               <div className="flex flex-col items-center gap-3">
                 <div className="flex mt-10">
                   <button
@@ -128,7 +128,7 @@ function ProfilePage() {
               </div>
             </div>
 
-            <div className="flex items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar ">
+            <div className="flex items-center flex-col w-[350px] lg:w-[400px] h-[370px] lg:h-[450px] xl:w-[400px] bg-yellowMain rounded-lg p-6 gap-5 overflow-scroll no-scrollbar overflow-x-clip">
               {userBody && (
                 <div className="flex flex-col items-center gap-3">
                   <div className="flex">

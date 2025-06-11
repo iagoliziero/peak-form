@@ -29,7 +29,7 @@ function NamePage() {
   };
 
   return (
-    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 overflow-scroll no-scrollbar md:justify-center">
+    <div className="h-screen bg-darker bg-cover bg-center bg-no-repeat flex flex-col items-center gap-12 custom-scrollbar md:justify-center">
       <Logo />
       <div>
         <div className="mt-5 flex flex-col gap-5">
