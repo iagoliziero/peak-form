@@ -5,7 +5,7 @@ O **Peak Form** é um sistema completo de gerenciamento de treinos focado em per
 
 ## 🚀 Acesse Agora
 
-- 🔗 **Site Online**: [[https://peak-form-train-manager.vercel.app/](https://peak-form-psi.vercel.app/perfil)](https://peak-form-psi.vercel.app/)
+- 🔗 **Site Online**: https://peak-form-psi.vercel.app/perfil)](https://peak-form-psi.vercel.app/
 -  **Repositório Front-end GitHub**: https://github.com/iagoliziero/PeakForm-Train-Manager
 -  **Repositório Back-end GitHub**: https://github.com/iagoliziero/backend-peakform
 
